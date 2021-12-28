@@ -26,7 +26,7 @@ description: >-                        # used by seo meta and the atom feed
   toy by iceeer collect.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'http://jekyll.xystoy.com/'
 
 github:
   username: iceeer             # change to your github username
@@ -80,7 +80,7 @@ theme_mode:   # [light|dark]
 #img_cdn: 'https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images@0a003683c0c3ca549d12c309f9b3e03ea20981e5'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/commons/avatar.jpg'
+avatar:
 
 # boolean type, the global switch for ToC in posts.
 toc: true
