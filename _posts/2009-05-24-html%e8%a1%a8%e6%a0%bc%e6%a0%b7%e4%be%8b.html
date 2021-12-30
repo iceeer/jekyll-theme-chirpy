@@ -1,0 +1,128 @@
+---
+layout: post
+status: publish
+published: true
+title: HTML表格样例
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 229
+wordpress_url: http://iceeer.huiq.org/?p=229
+date: '2009-05-24 00:22:37 +0800'
+date_gmt: '2009-05-23 16:22:37 +0800'
+categories:
+- 开发
+tags:
+- HTML
+- sample
+- table
+comments: []
+---
+<table border="1" frame="hsides" rules="groups" summary="some more info.">
+<caption><em>a test table</em></caption>
+<thead>
+<tr>
+<th> ...header information...</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th> ...footer information...</th>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>...first row of block one data...</td>
+</tr>
+<tr>
+<td>...second row of block one data...</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td>...first row of block two data...</td>
+</tr>
+<tr>
+<td>...second row of block two data...</td>
+</tr>
+<tr>
+<td>...third row of block two data...</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<th rowspan="2"></th>
+<th colspan="2">average</th>
+<th rowspan="2">red<br />
+eyes</th>
+</tr>
+<tr>
+<th>height</th>
+<th>weight</th>
+</tr>
+<tr>
+<th>males</th>
+<td>1.9</td>
+<td>0.003</td>
+<td>40%</td>
+</tr>
+<tr>
+<th>females</th>
+<td>1.7</td>
+<td>0.002</td>
+<td>43%</td>
+</tr>
+</tbody>
+</table>
+<p>frame 属性可取的值及含义如下：</p>
+<p>* void - 默认值。表示不显示表格最外围的边框。<br />
+* box - 同时显示四条边框。<br />
+* border - 同时显示四条边框。<br />
+* above - 只显示顶部边框。<br />
+* below - 只显示底部边框。<br />
+* lhs - 只显示左侧边框。<br />
+* rhs - 只显示右侧边框。<br />
+* hsides - 只显示水平方向的两条边框。<br />
+* vsides - 只显示垂直方面的两条边框。</p>
+<p>rules 属性可取的值及含义如下：</p>
+<p>* none - 默认值。无边框。<br />
+* groups - 为行组或列组加边框。<br />
+* rows - 为行加边框。<br />
+* cols - 为列加边框。<br />
+* all - 为所有行列（单元格）加边框</p>
+<p>一个 col 和 colgroup 的例子：</p>
+<table border="0" frame="&rdquo;vsides&rdquo;" rules="&rdquo;groups&rdquo;">
+<colgroup span="2"> </colgroup>
+<colgroup>
+<col></col>
+</colgroup>
+<col>COL</col>
+<tbody>
+<tr>
+<td>colgroup1</td>
+<td>colgroup1</td>
+<td>colgroup2</td>
+<td>colgroup2</td>
+</tr>
+<tr>
+<td>colgroup1</td>
+<td>colgroup1</td>
+<td>colgroup2</td>
+<td>colgroup2</td>
+</tr>
+</tbody>
+</table>
+<p>英文长字符串限宽截断(不适用于Firefox)</p>
+<table width="400px" style="table-layout:fixed;word-break:break-all">
+<tr>
+<td>
+<div>
+LONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONGLONG
+</div>
+</td>
+</tr>
+</table>

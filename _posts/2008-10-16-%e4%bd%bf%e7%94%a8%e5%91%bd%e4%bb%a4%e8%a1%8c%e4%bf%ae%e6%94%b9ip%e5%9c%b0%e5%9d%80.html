@@ -1,0 +1,48 @@
+---
+layout: post
+status: publish
+published: true
+title: 使用命令行修改IP地址
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 81
+wordpress_url: http://iceeer.huiq.org/?p=81
+date: '2008-10-16 16:10:48 +0800'
+date_gmt: '2008-10-16 08:10:48 +0800'
+categories:
+- 软件
+tags:
+- 命令行
+- 软件
+comments: []
+---
+<p><code>Netsh interface ip set address 网卡名 static/dhcp IP地址 子网掩码 网关 跃点数</code><br />
+设置静态地址<br />
+<code>Netsh interface ip set address LAN static 192.168.1.2 255.255.255.0 192.168.1.1 1</code><br />
+设置为动态获得地址<br />
+<code>Netsh interface ip set address LAN dhcp</code></p>
+<blockquote><p>用法: set address [name=]<string><br />
+[[source language=""][/source]dhcp |<br />
+[source language=""][/source] static [addr=]IP address [mask=]IP subnet mask]<br />
+[[gateway=]<IP address>|none [gwmetric=]integer]</p>
+<p>参数:</p>
+<p>标记&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 值<br />
+name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 接口名称。<br />
+source&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 下列值之一:<br />
+dhcp: 对于指定接口，设置用 DHCP 配置 IP地址。<br />
+static: 设置使用本地静态配置设置 IP地址。</p>
+<p>gateway&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 下列值之一:<br />
+<IP address>: 您设置的 IP 地址的指定默认网关。<br />
+none: 不设置默认网关。<br />
+gwmetric&nbsp;&nbsp;&nbsp;&nbsp; - 默认网关的跃点数。如果网关设置为 'none'，则不应设置此字段。<br />
+只有在 'source' 为 'static' 时才设置下列选项:</p>
+<p>addr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 指定接口的 IP 地址。<br />
+mask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 指定 IP 地址的子网掩码。</p>
+<p>注释&nbsp;&nbsp; : 用来将 IP 地址配置模式从 DHCP 模式改为 static，或从 static模式改为 DHCP。用静态 IP 地址在接口上添加 IP 地址，或添加默认网关。</p></blockquote>
+<p>PS:修改DNS: <code>netsh interface ip set dns</code></p>
+<p>Exp:<a href="http://www.boxcn.net/shared/og3vsy44nn">netsh interface ip set</a></p>

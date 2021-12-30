@@ -1,0 +1,45 @@
+---
+layout: post
+status: publish
+published: true
+title: ubuntu kylin 14.04硬盘安装
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 2197
+wordpress_url: http://blog.xystoy.com/?p=2197
+date: '2014-08-21 20:51:52 +0800'
+date_gmt: '2014-08-21 12:51:52 +0800'
+categories:
+- Linux
+tags: []
+comments: []
+---
+<div align="left">1）准备两个东西<span style="font-family: Times New Roman,serif;">EasyBCD</span>软件和<span style="font-family: Times New Roman,serif;">ISO</span>镜像</div>
+<div align="left">2）把准备好的<span style="font-family: Times New Roman,serif;">ISO</span>用解压缩软件或者虚拟光驱打开，找到<span style="font-family: Times New Roman,serif;">casper</span>文件夹，复制<span style="font-family: Times New Roman,serif;">initrd.lz</span>和<span style="font-family: Times New Roman,serif;">vmlinuz（</span>或vmlinuz.efi<span style="font-family: Times New Roman,serif;">）</span>到某盘根目录<span style="font-family: Times New Roman,serif;">,</span>然后在把<span style="font-family: Times New Roman,serif;">ISO</span>文件也放到该分区根目录。</div>
+<div align="left">3）打开<span style="font-family: Times New Roman,serif;">EasyBCD</span>软件，可以看到现在我们的计算机启动&ldquo;入口&rdquo;情况，</div>
+<div align="left">选择添加新条目（<span style="font-family: Times New Roman,serif;">AddNew Entry</span>）</div>
+<div align="left">选<span style="font-family: Times New Roman,serif;">NeoGrub</span>然后点安装（<span style="font-family: Times New Roman,serif;">Install</span>），接着是配置（<span style="font-family: Times New Roman,serif;">Configure</span>），然后就会出现一个<span style="font-family: Times New Roman,serif;">menu.lst</span>文件</div>
+<div align="left">编辑这个文件，让<span style="font-family: Times New Roman,serif;">Windows</span>管理器引导<span style="font-family: Times New Roman,serif;">UbuntuKylin</span>安装。</div>
+<div align="left">把下面的粘贴进去</div>
+<div align="left">title Install UbuntuKylin</div>
+<div align="left">root (hd0,5)</div>
+<div class="blockcode">
+<div id="code_s44">kernel (hd0,5)/vmlinuz boot=casper iso-scan/filename=/raring-desktop-i386.iso ro quiet splash locale=zh_CN.UTF-8<br />
+initrd (hd0,5)/initrd.lz</div>
+</div>
+<div align="left">*注意<span style="color: #ff0000;">(<span style="font-family: Times New Roman,serif;">hd0,x</span>)</span>这个<span style="font-family: Times New Roman,serif;">x</span>得看你放置<span style="font-family: Times New Roman,serif;">ISO</span>文件的分区是磁盘中第几个分区，不要遗漏隐藏分区</div>
+<p>64位系统第三句请改为kernel <span style="color: #ff0000;">(hd0,x)/vmlinuz.efi</span> boot=casper iso-scan/filename=/<span style="color: #ff0000;">raring-desktop-amd64.iso</span> ro quiet splash locale=zh_CN.UTF-8，<span style="color: #ff0000;">raring-desktop-amd64.iso</span>与<span style="color: #ff0000;">raring-desktop-i386.iso</span>为镜像名，请根据实际情况更改。</p>
+<div align="left">保存关闭</div>
+<div align="left">4）重启,你就会看到有<span style="font-family: Times New Roman,serif;">2</span>个启动菜单给你选择我们选择<span style="font-family: Times New Roman,serif;">NeoGrub</span>这个</div>
+<div align="left">&nbsp; &nbsp;&nbsp;&nbsp;然后等待一段时间，就会见到<span style="font-family: Times New Roman,serif;">LiveCDUbuntuKylin</span>系统了。</div>
+<div align="left">5）进入系统后，打开终端，运行以下命令卸载镜像分区：</div>
+<div align="left">sudo umount -l /isodevice</div>
+<div class="blockcode"></div>
+<div align="left"><span style="font-family: Times New Roman,serif;">6</span>）回到LiveCD UbuntuKylin系统桌面，点击安装<span style="font-family: Times New Roman,serif;">UbuntuKylin。</span></div>
+<p>&nbsp;</p>
+<p>链接：<a href="http://www.ubuntukylin.com/ukylin/forum.php?mod=viewthread&amp;tid=244">几种安装UbuntuKylin的方法</a></p>

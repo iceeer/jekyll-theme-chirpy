@@ -1,0 +1,60 @@
+---
+layout: post
+status: publish
+published: true
+title: JS清理Word宏代码
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 2206
+wordpress_url: http://blog.xystoy.com/?p=2206
+date: '2014-09-04 15:21:19 +0800'
+date_gmt: '2014-09-04 07:21:19 +0800'
+categories:
+- Javascript
+tags: []
+comments: []
+---
+<p>function cleanMacro(filepath){<br />
+//alert("start macro");<br />
+//alert(filepath);<br />
+var wrd;<br />
+//try{<br />
+wrd = new ActiveXObject("Word.Application");<br />
+wrd.visible=true;<br />
+wrd.documents.Open(filepath);<br />
+var count = wrd.ActiveDocument.VBProject.VBComponents.Count;<br />
+//alert(count);<br />
+for(var i=1;i<=count;i++){<br />
+try{<br />
+var o = wrd.ActiveDocument.VBProject.VBComponents(i);</p>
+<p>try{<br />
+wrd.ActiveDocument.VBProject.VBComponents.Remove(o);<br />
+}catch(e){<br />
+//alert("remove comp error:"+e);<br />
+try{<br />
+var line = o.CodeModule.CountOfLines;<br />
+o.CodeModule.DeleteLines(1,line);<br />
+}catch(e){<br />
+//alert("remove line error:"+e);<br />
+}<br />
+}<br />
+}catch(e){<br />
+//alert("macro not exist:"+e);<br />
+}</p>
+<p>}<br />
+wrd.ActiveDocument.Save();<br />
+//}catch(e){alert(e);}<br />
+try{<br />
+wrd.Quit();<br />
+}catch(e){}<br />
+//alert("end macro");<br />
+return true;<br />
+}</p>
+<p>需要设置IE的安全选项才能运行上面的代码</p>
+<p>链接：<a href="http://blog.sina.com.cn/s/blog_51f1e43301009716.html"><span style="color: #6a3f30;">VBProject：代码操作代码之常用语句</span></a></p>
+<h1 class="entry-title entry-title" style="color: #447da4;"><a href="http://www.exceltip.com/modules-class-modules-in-vba/delete-all-macros-in-a-workbookdocument-using-vba-in-microsoft-excel.html">Delete all macros in a workbook/document using VBA in Microsoft Excel</a></h1>

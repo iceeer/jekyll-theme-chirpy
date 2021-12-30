@@ -1,0 +1,46 @@
+---
+layout: post
+status: publish
+published: true
+title: false操作符使用环境
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 41
+wordpress_url: http://iceeer.huiq.org/?p=41
+date: '2008-10-06 19:45:48 +0800'
+date_gmt: '2008-10-06 11:45:48 +0800'
+categories:
+- 开发
+tags:
+- 'false'
+- operator
+- 开发
+- 操作符
+comments: []
+---
+<p>true/false运算符重载：<br id="zqyf" /><br />
+<code><br />
+public static bool operator true(DBBool x)<br />
+public static bool operator false(DBBool x)<br />
+</code><br />
+在下面的if判断代码中：先对c做false操作，返回结果，然后在对结果进行true操作，如果返回&ldquo;false&rdquo;就不会对a进行操作<br id="eb77" /><br />
+<code><br />
+        if (c &amp;&amp; a)<br />
+            Console.WriteLine("c &amp;&amp; a is definitely true");<br />
+        else<br />
+            Console.WriteLine("c &amp;&amp; a is definitely false");<br />
+</code></p>
+<blockquote><p>
+当 &amp;&amp; 或 || 的操作数所属的类型声明了适用的用户定义的 operator &amp; 或 operator | 时，下列两个条件必须都为真（其中 T 是声明的选定运算符的类型）：<br />
+* 选定运算符的返回类型和每个参数的类型都必须为 T。换言之，该运算符必须计算类型为 T 的两个操作数的逻辑 AND 或逻辑 OR，且必须返回类型为 T 的结果。<br />
+* T 必须包含关于 operator true 和 operator false 的声明。<br />
+如果这两个要求中有一个未满足，则发生编译时错误。如果这两个要求都满足，则通过将用户定义的 operator true 或 operator false 与选定的用户定义的运算符组合在一起来计算 &amp;&amp; 或 || 运算：<br />
+* x &amp;&amp; y 运算按 T.false(x) ? x : T.&amp;(x, y) 进行计算，其中 T.false(x) 是 T 中声明的 operator false 的调用，T.&amp;(x, y) 是选定 operator &amp; 的调用。换言之，首先计算 x，并对结果调用 operator false 以确定 x 是否肯定为假。然后，如果 x 肯定为假，则运算结果为先前为 x 计算的值。否则将计算 y，并对先前为 x 计算的值和为 y 计算的值调用选定的 operator &amp; 以产生运算结果。<br />
+* x || y 运算按 T.true(x) ? x : T.|(x, y) 进行计算，其中 T.true(x) 是 T 中声明的 operator true 的调用，T.|(x, y) 是选定 operator | 的调用。换言之，首先计算 x，并对结果调用 operator true 以确定 x 是否肯定为真。然后，如果 x 肯定为真，则运算结果为先前为 x 计算的值。否则将计算 y，并对先前为 x 计算的值和为 y 计算的值调用选定的 operator | 以产生运算结果。<br />
+在这两个运算中，x 给定的表达式只计算一次，y 给定的表达式要么不计算，要么只计算一次。</p>
+</blockquote>

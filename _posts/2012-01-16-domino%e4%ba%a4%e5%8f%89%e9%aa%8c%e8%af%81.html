@@ -1,0 +1,53 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino交叉验证-不同域服务器连接
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1375
+wordpress_url: http://iceeer.huiq.net/?p=1375
+date: '2012-01-16 13:45:52 +0800'
+date_gmt: '2012-01-16 05:45:52 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags:
+- Domino
+- names.nsf
+- 不同域
+- 交叉验证
+- 网络域
+- 通讯录
+- 邮件
+comments: []
+---
+<p>两个不相关的服务器分别属于不同的组织，不同的网络域，按照以下步骤来设置它们的用户互相收发邮件：<br />
+（一）交叉验证<br />
+１启动Administrator软件，连接到您的服务器，点击＂配置＂标签．<br />
+２点击右边屏幕＂工具＂－－＂验证字＂－－＂交叉验证＂<br />
+３选择您自己的cert.id或server.id，输入其口令<br />
+４选择被验证的对方的cert.id或server.id，点击按钮＂交叉验证＂</p>
+<p>（二）创建连接文档<br />
+１启动Administrator软件，连接到您的服务器，点击＂配置＂标签．<br />
+２选择＂服务器＂视图下的＂连接＂子视图，点击按钮＂添加连接＂<br />
+３选择连接类型，在原服务器和原网络域中输入您的服务器的层次结构名称和Notes网络域名称，在目的服务器和目的网络域中输入对方的服 务器的层次结构名称和Notes网络域<br />
+名称，保存关闭该文档</p>
+<p><strong>第三、四步可以不做：发邮件的时候使用 <对方用户名>@<对方网络域名称>也可以发送到</strong></p>
+<p>（三）创建相邻的网络域文档<br />
+１启动Administrator软件，连接到您的服务器，点击＂配置＂标签．<br />
+２选择＂消息＂视图下的＂网络域＂子视图，点击按钮＂添加网络域＂<br />
+３网络域类型：选择＂相邻的网络域＂<br />
+相邻的网络域名称：输入对方的Notes网络域名称<br />
+４保存关闭该文档</p>
+<p>（四）创建层叠的通信录<br />
+１将对方的通信录数据库在自己的服务器上创建一个复本，例如names1.nsf<br />
+２编辑服务器的notes.ini文件<br />
+names=names.nsf,names1.nsf<br />
+<strong></strong></p>
+<p><strong>最后重新启动服务器</strong></p>

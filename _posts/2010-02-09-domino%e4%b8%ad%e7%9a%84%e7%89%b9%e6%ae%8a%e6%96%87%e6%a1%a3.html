@@ -1,0 +1,201 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino中的特殊文档
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 607
+wordpress_url: http://iceeer.huiq.net/?p=607
+date: '2010-02-09 16:58:25 +0800'
+date_gmt: '2010-02-09 08:58:25 +0800'
+categories:
+- 未分类
+tags:
+- Domino
+- 文档
+- Domino文档
+- Domino特殊文档
+- profile
+- 简要表
+comments: []
+---
+<p>$FormulaClass</p>
+<table style="height: 582px;" border="1px" cellspacing="0" cellpadding="8">
+<tbody>
+<tr>
+<th>Note Class Type</th>
+<th>Hex Value</th>
+<th>Decimal Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>NOTE_CLASS_DOCUMENT</td>
+<td>0x0001</td>
+<td>1</td>
+<td>document note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_INFO</td>
+<td>0x0002</td>
+<td>2</td>
+<td>notefile info (help-about) note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_FORM</td>
+<td>0x0004</td>
+<td>4</td>
+<td>form note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_VIEW</td>
+<td>0x0008</td>
+<td>8</td>
+<td>view note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_ICON</td>
+<td>0x0010</td>
+<td>16</td>
+<td>icon note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_DESIGN</td>
+<td>0x0020</td>
+<td>32</td>
+<td>design note collection</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_ACL</td>
+<td>0x0040</td>
+<td>64</td>
+<td>acl note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_HELP_INDEX</td>
+<td>0x0080</td>
+<td>128</td>
+<td>Notes product help index note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_HELP</td>
+<td>0x0100</td>
+<td>256</td>
+<td>designer's help note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_FILTER</td>
+<td>0x0200</td>
+<td>512</td>
+<td>filter note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_FIELD</td>
+<td>0x0400</td>
+<td>1024</td>
+<td>field note</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_REPLFORMULA</td>
+<td>0x0800</td>
+<td>2048</td>
+<td>replication formula</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_PRIVATE</td>
+<td>0x1000</td>
+<td>4096</td>
+<td>Private design note, use $PrivateDesign view to locate/classify</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_DEFAULT</td>
+<td>0x8000</td>
+<td>32,768</td>
+<td>MODIFIER - default version of each</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_ALL</td>
+<td>0x7fff</td>
+<td>32,767</td>
+<td>all note types</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_ALLNONDATA</td>
+<td>0x7ffe</td>
+<td>32,766</td>
+<td>all non-data notes</td>
+</tr>
+<tr>
+<td>NOTE_CLASS_NONE</td>
+<td>0x0000</td>
+<td>0</td>
+<td>no notes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table border="1px" cellspacing="0" cellpadding="8">
+<tbody>
+<tr>
+<th>Note ID</th>
+<th>Database Element</th>
+</tr>
+<tr>
+<td>FFFF0002</td>
+<td>"About This Database" document</td>
+</tr>
+<tr>
+<td>FFFF0004</td>
+<td>Default form</td>
+</tr>
+<tr>
+<td>FFFF0008</td>
+<td>Default view</td>
+</tr>
+<tr>
+<td>FFFF0010</td>
+<td>Database icon</td>
+</tr>
+<tr>
+<td>FFFF0020</td>
+<td>Database Design Collection (view)</td>
+</tr>
+<tr>
+<td>FFFF0040</td>
+<td>Database ACL</td>
+</tr>
+<tr>
+<td>FFFF0100</td>
+<td>"Using This Database" document</td>
+</tr>
+<tr>
+<td>FFFF0800</td>
+<td>Replication Formula</td>
+</tr>
+</tbody>
+</table>
+<p>You'll notice that the last 4 numbers of the Note IDs are the hex values of the corresponding design elements in the previous tip. What's neat about this (and it makes sense if you think about it) is that these Note IDs are the same for every Notes database, so if you call:<br />
+db.GetDocumentByID("FFFF0002")</p>
+<p><strong>获得所有iNotes简要表信息</strong></p>
+<p>Dim s As New NotesSession<br />
+Dim db As NotesDatabase<br />
+Dim doc As NotesDocument<br />
+Set db=s.currentdatabase<br />
+Set doc = db.GetProfileDocument("iNotesProfile")<br />
+ForAll item In doc.Items<br />
+Print item.Name + |:| + item.Text+ Chr(10) + Chr(13)<br />
+End ForAll</p>
+<p><strong>删除所有简要表</strong></p>
+<p>Dim s As New NotesSession<br />
+Dim db As NotesDatabase<br />
+Dim col As NotesDocumentCollection<br />
+Set db = s.currentdatabase<br />
+Set col = db.GetProfileDocCollection<br />
+Call col.RemoveAll(True)<br />
+Messagebox"All Profiles Document Deleted"</p>
+<p>链接：<a href="http://www.nsftools.com/tips/NotesTips.htm">Lotus Notes and Domino Tips</a></p>

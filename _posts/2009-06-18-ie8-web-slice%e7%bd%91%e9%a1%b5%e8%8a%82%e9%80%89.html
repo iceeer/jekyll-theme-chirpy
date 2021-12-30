@@ -1,0 +1,46 @@
+---
+layout: post
+status: publish
+published: true
+title: IE8 &ldquo;Web Slice&rdquo;(网页节选)
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 267
+wordpress_url: http://iceeer.huiq.org/?p=267
+date: '2009-06-18 15:55:46 +0800'
+date_gmt: '2009-06-18 07:55:46 +0800'
+categories:
+- 开发
+tags:
+- IE8
+- Web
+comments: []
+---
+<p>WebSlice 的基本属性是 WebSlice 容器、条目标题和条目内容。</p>
+<p><strong>WebSlice容器</strong><br />
+- 必需。<br />
+- 使用类名称 hslice。<br />
+- WebSlice 元素必须包括一个 ID。<br />
+- 表示 WebSlice 的整个区域，包括主题、描述和其他 WebSlice 属性。</p>
+<p><strong>条目标题</strong><br />
+- 必需。<br />
+- 使用 hAtom Microformat 中定义的类名称 entry-title。<br />
+- 条目标题可以有多个实例。</p>
+<p><strong>条目内容</strong><br />
+- 可选。<br />
+- 使用 hAtom Microformat 中定义的类名称 entry-content。<br />
+- 如果条目内容丢失，则认为它是空字符串。<br />
+- 条目内容可以有多个实例。<br />
+<!--more--><br />
+<strong>样例：</strong></p>
+<div class="<span style="color: #ff6600;">hslice</span>" id="<span style="color: #99cc00;">item123</span>"></p>
+<p class="<span style="color: #ff9900;">entry-title</span>">标题</p>
+<div class="<span style="color: #ff0000;">entry-content</span>">内容</div>
+</div>
+<p>链接：<br />
+<a href="http://blogs.msdn.com/ie/archive/2008/03/06/activities-and-webslices-in-internet-explorer-8.aspx">Activities and WebSlices in Internet Explorer 8</a></p>

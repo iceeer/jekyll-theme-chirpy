@@ -1,0 +1,24 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino与Web 服务
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 300
+wordpress_url: http://iceeer.huiq.org/?p=300
+date: '2009-09-15 16:35:34 +0800'
+date_gmt: '2009-09-15 08:35:34 +0800'
+categories:
+- Domino/Notes
+tags: []
+comments: []
+---
+<p><strong>搭建Web服务：</strong><br /> 写一代理构建服务<br /> <strong>消费Web服务：</strong><br /> 一般都是使用JAVA来调用代理</p>
+<p><strong>8.0消费服务</strong>：<br />1）找到wsdl文档的位置<br />2）打开designer，点script库，类型为lotusscript<br />3）在编写代码的最下面有一个从wsdl中导入的按钮，选择wsdl文件，然后导入<br />4）在其他lotusscript代码中，用use "scriptname"，然后就能直接使用了。用dim sv as new ServiceName，创建对象。其他的和调用类的成员和方法没多大区别。<br />5）在调用方法的时候有些要注意的，生成的web服务的script里，用的都是xsd_type的类型，所以在传参数的时候，不能传script的类型，必须定义xsd的类型。如字符串，你需要dim ss as new xsd_string来定义一个字符串，然后用ss.SetValueFromString("your value")来赋值。像某个类里面用到了对象数组的概念，比如你要传一个类型abc的对象数组给web服务，那么你需要redim webservice.array(count) as abc，来重定义域里面的数组。其中webservice为你服务的名称，array为需要传入的对象的数组。我试过想直接用dim a(count) as abc，然后把a传进去是不行的。</p>
+<p>8.5+：Domino/Notes 8.5 已支持Web服务的搭建与消费，以前的版本调用Web服务可以参考下面的链接<br /> 链接：<a href="http://www.ibm.com/developerworks/cn/webservices/ws-soapcon/index.html">在 Domino 6 中使用外部 Web 服务</a><br /> <a href="http://space.itpub.net/14751907/viewspace-440446">利用IBM Lotus Domino 编写和测试简单的 Web 服务</a><br /> <a href="http://www.ibm.com/developerworks/cn/lotus/domino-webservices/">通过 Lotus Domino Java 代理消费 Web 服务</a><br /> <a href="http://www.ibm.com/developerworks/cn/lotus/nd7-webservices/">Lotus Notes/Domino 7 Web Services</a><br /> <a href="http://my.advisor.com/articles.nsf/aid/08998">Web Services: UDDI and WSDL</a></p>

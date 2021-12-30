@@ -1,0 +1,76 @@
+---
+layout: post
+status: publish
+published: true
+title: 代理设置
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1401
+wordpress_url: http://iceeer.huiq.net/?p=1401
+date: '2012-01-29 09:42:19 +0800'
+date_gmt: '2012-01-29 01:42:19 +0800'
+categories:
+- 杂
+tags:
+- Agent
+- Ant
+- java
+- Maven
+- SVN
+- 代理
+comments: []
+---
+<p><strong>Maven代理</strong><br />
+C:Userssky.m2settings.xml<br />
+apache-maven-2.2.1confsettings.xml<br />
+Xml代码</p>
+<proxies>
+<!-- proxy<br />
+| Specification for one proxy, to be used in connecting to the network.<br />
+| --></p>
+<proxy>
+<id>optional</id><br />
+<active>true</active></p>
+<protocol>http</protocol>
+<username></username></p>
+<password></password>
+<host>172.11.22.33</host></p>
+<port>8888</port>
+<nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+</proxy>
+</proxies>
+<p><strong>SVN代理</strong><br />
+报错如下：<br />
+Txt代码<br />
+[ERROR] 175002 : svn: PROPFIND request failed on '/svn/appfuse~svn/tags/APPFUSE_2.1.0/data/common/src'<br />
+[ERROR] 175002 : svn: Connection timed out: connect<br />
+解决方法：<br />
+C:UsersskyAppDataRoamingSubversionservers<br />
+Txt代码<br />
+[global]<br />
+http-proxy-host = 172.22.17.66<br />
+http-proxy-port = 8888<br />
+http-proxy-username = defaultusername<br />
+http-proxy-password = defaultpassword<br />
+<strong>ant代理</strong> ANT_OPTS=-Dhttp.proxyHost=172.22.17.66 -Dhttp.proxyPort=8888<br />
+<strong>Java代理</strong> java -DproxySet=true -DproxyHost=myProxyServer.com -DproxyPort=80 MyJavaApp</p>
+<p><strong>YUM代理设置</strong></p>
+<p>etc/yum.conf在 Linux YUM配置中加入下面这一行proxy=http://ip:port/</p>
+<p><strong>设置Centos（linux）全局代理</strong><br />
+/etc/profile<br />
+最后加入</p>
+<div>http_proxy=http://ip:port</div>
+<div>export http_proxy</div>
+<div>保存、退出</div>
+<div>source /etc/profile</div>
+<div><strong>Perl&nbsp;CPAN</strong></div>
+<div>
+perl -MCPAN -e shell<br />
+o conf init /proxy/ 代理格式为192.168.168.1:808<br />
+o conf commit</p>
+</div>

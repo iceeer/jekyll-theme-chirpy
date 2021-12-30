@@ -1,0 +1,45 @@
+---
+layout: post
+status: publish
+published: true
+title: IBM Connection 3.0.1.0安装
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1443
+wordpress_url: http://iceeer.huiq.org/?p=1443
+date: '2012-03-15 12:05:15 +0800'
+date_gmt: '2012-03-15 04:05:15 +0800'
+categories:
+- 开发
+- 杂
+tags:
+- Connection
+- IBM
+- Lotus
+- 备份
+- 安装
+- 恢复
+- 部署
+comments: []
+---
+<p>https://127.0.0.1:9043/ibm/console/logon.jsp</p>
+<p>127.0.0.1 example.com<br />127.0.0.1 connections.example.com<br />127.0.0.1 ldap.example.com</p>
+<p>安装DB2<br /> db2admin 1qaz2wsx</p>
+<p>安装IBM WebSphere Application Server Network Deployment V7.0<br /> 管理安全性：wsadmin 1qaz2wsx</p>
+<p>安装IBM HTTP Server<br /> ihsadmin<br />安装WebSphere更新、HTTP Server更新、HTTP Server插件更新</p>
+<p>安装Tivoli Directory Server<br /> 种子：rh68RoFpIdOy<br /> 控制台User：superadmin Password：secret</p>
+<p>安装connection<br /> 配置WebSphere时主机名需要这类型：example.com</p>
+<p>Domino作为LDAP<br />stdp.stddev.com ldap.example.com<br />cn=admin 1qaz2wsx<br />o=org<br />(&amp;(uid=*)(objectclass=inetOrgPerson))</p>
+<p>链接：<a href="http://www-10.lotus.com/ldd/lcwiki.nsf">IBM Connections Wiki</a></p>
+<p><a href="/wp-content/uploads/2012/03/Installing_Lotus_Connections_3.0安装.pdf">Installing_Lotus_Connections_3.0安装</a></p>
+<p><a href="/wp-content/uploads/2012/03/Connections_TDI_GuideFinal.pdf">Connections_TDI_GuideFinal</a></p>
+<p><a href="http://www-10.lotus.com/ldd/lcwiki.nsf/dx/Setting_up_federated_repositories_lc3">Setting up federated repositories</a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/connections-deploy-pt2/">部署 IBM Lotus Connections: 安装后的调优</a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/ls-cn-connections3-maintenance/index.html">备份与恢复 Lotus Connections 3.0 集群环境</a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/ls-cn-connections-intgrt/index.html">Connections 3.0 中集成其他应用</a></p>
+<p><a href="http://www-10.lotus.com/ldd/lcwiki.nsf/dx/Worksheet_for_installing_Lotus_Connections_lc3">Worksheet for installing Lotus Connections</a></p>

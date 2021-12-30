@@ -1,0 +1,41 @@
+---
+layout: post
+status: publish
+published: true
+title: 电信HG255d路由器设置
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1621
+wordpress_url: http://iceeer.huiq.org/?p=1621
+date: '2012-06-05 16:29:52 +0800'
+date_gmt: '2012-06-05 08:29:52 +0800'
+categories:
+- 杂
+tags: []
+comments: []
+---
+<p>家里换了数字电视后，电信送了个HG255d的路由器，害得我以前设置的DDNS、DMZ都得重新配置</p>
+<p>HG255d的管理员帐户:telecomadmin&nbsp;&nbsp;&nbsp; 密码:nE7jA%5m（密码不是的话可以<a title="中国电信p-660hnu-51 超级密码破解" href="/?p=1371">破解下密码</a>）</p>
+<p>附件：<a href="/wp-content/uploads/2012/06/huawei_HG526_code_encode.rar">华为HG526代码加解密工具</a></p>
+<p><del>DDNS不知道怎么设置，只好在操作系统里设置，在Ubuntu下更新3322动态域名：</del></p>
+<p><del>lynx -mime_header -auth=用户名:密码 "http://members.3322.net/dyndns/update?system=dyndns&amp;hostname=域名"</p>
+<p></del></p>
+<p><del><a href="/wp-content/uploads/2012/06/3322.zip">3322</a>更新程序下载（放到启动运行/ect/init.d和每小时运行/etc/cron.hourly）</del></p>
+<p><strong>&nbsp;设置</strong>DDNS</p>
+<p>在http://dyndns.co.za注册个帐号，打开"应用" - "DDNS配置",设置如下<br />
+服务商：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "其他" dyndns.co.za<br />
+服务器地址：&nbsp;&nbsp;&nbsp; www.dyndns.co.za/cgi-bin/gdipupdt.cgi<br />
+服务端口：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80<br />
+主机名称：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dyndns<br />
+域名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; co.za<br />
+用户名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yourusername<br />
+密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yourpassword</p>
+<p>链接：<a href="http://email2me.blog.163.com/blog/static/343470332011010111338654/">高级篇：教你如何修改华为HG526无线猫超级用户密码、修改IPTV无线名及密钥、打开FTP服务、打开telnet权限</a></p>
+<p><a href="http://www.imadmin.com/network/wideband/hg255d-pojie-huawei.html">HG255D破解方法,无需telecomadmin超级密码</a></p>
+<p><a href="http://www.right.com.cn/forum/forum-70-1.html">恩山WIFI论坛&rsaquo;论坛&rsaquo;无线设备软件相关板块&rsaquo;DD-WRT专版</a></p>
+<p><a href="http://yongke.blogspot.com/2012/05/ddns-configuration-for-hg526china.htmlhttp://">Yongke's Blog: DDNS configuration for HG526(China Telecom)</a></p>

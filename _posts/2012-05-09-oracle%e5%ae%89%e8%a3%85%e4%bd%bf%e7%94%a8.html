@@ -1,0 +1,42 @@
+---
+layout: post
+status: publish
+published: true
+title: Oracle安装使用
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1551
+wordpress_url: http://iceeer.huiq.org/?p=1551
+date: '2012-05-09 16:17:08 +0800'
+date_gmt: '2012-05-09 08:17:08 +0800'
+categories:
+- 开发
+- 数据库
+tags:
+- Oracle
+- 数据库
+comments: []
+---
+<p>orcl orcl</p>
+<p>Enterprise Manager Database Control URL - (orcl) :</p>
+<p>http://DELLPC174:1158/em</p>
+<p>数据库配置文件已经安装到 D:oracleproduct10.2.0,同时其他选定的安装组件也已经安装到 D:oracleproduct10.2.0db_1。</p>
+<p>iSQL*Plus URL 为:</p>
+<p>http://DELLPC174:5560/isqlplus</p>
+<p>iSQL*Plus DBA URL 为:</p>
+<p>http://DELLPC174:5560/isqlplus/dba</p>
+<p><a href="/wp-content/uploads/2012/05/1.bmp"><img class="aligncenter size-full wp-image-1555" title="1" alt="" src="/wp-content/uploads/2012/05/1.bmp" /></a></p>
+<p><a href="/wp-content/uploads/2012/05/2.png"><img class="aligncenter size-full wp-image-1554" title="2" alt="" src="/wp-content/uploads/2012/05/2.png" width="294" height="205" /></a></p>
+<p>默认密码表：</p>
+<p><a href="/wp-content/uploads/2012/05/password.jpg"><img class="aligncenter size-medium wp-image-1553" title="password" alt="" src="/wp-content/uploads/2012/05/password-300x233.jpg" width="300" height="233" /></a></p>
+<p>create tablespace xystoy<br />
+NOLOGGING<br />
+datafile 'D:\oradata\xystoy.dbf' size 500m;</p>
+<p>create user xystoy identified by xystoy<br />
+default tablespace xystoy;</p>
+<p>grant connect,resource to xystoy;</p>

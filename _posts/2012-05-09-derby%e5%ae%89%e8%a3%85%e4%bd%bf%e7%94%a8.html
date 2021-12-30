@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+published: true
+title: Derby安装使用
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1546
+wordpress_url: http://iceeer.huiq.org/?p=1546
+date: '2012-05-09 16:10:20 +0800'
+date_gmt: '2012-05-09 08:10:20 +0800'
+categories:
+- 开发
+- 数据库
+tags:
+- apache
+- derby
+- java
+- javadb
+comments: []
+---
+<p><strong>启动：</strong>startNetworkServer.bat</p>
+<p><strong>客户端：</strong>ij.bat</p>
+<p><strong>连接：</strong></p>
+<p>connect 'jdbc:derby://localhost:1527/../data/airlinesDB';<br />connect 'jdbc:derby://localhost:1527/D:/dev/server/javadb/data/airlinesDB';<br /> connect 'jdbc:derby://localhost:1527/airlinesDB';</p>
+<p>connect 'jdbc:derby:d:/Derby_data/mydb;create=true;territory=zh_CN;user=root&nbsp;<br />;password=root';&nbsp;<br />显示所有表：show tables;</p>
+<p>清除数据：truncate table APP.SMSS;&nbsp;</p>
+<p>显示连接：show connections;&nbsp;</p>
+<p>退出：exit</p>
+<p>查看表结构：&nbsp;describe test</p>
+<p><strong>中文问题：</strong></p>
+<p>连接时加上;territory=zh_CN</p>
+<p>链接：<a href="http://db.apache.org/derby/">Apache Derby</a></p>

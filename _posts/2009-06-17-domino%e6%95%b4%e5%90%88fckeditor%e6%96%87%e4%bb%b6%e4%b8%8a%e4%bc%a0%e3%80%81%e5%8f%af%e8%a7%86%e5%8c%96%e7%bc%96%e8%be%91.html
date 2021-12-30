@@ -1,0 +1,82 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino整合Fckeditor(文件上传、可视化编辑)
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 245
+wordpress_url: http://iceeer.huiq.org/?p=245
+date: '2009-06-17 16:59:33 +0800'
+date_gmt: '2009-06-17 08:59:33 +0800'
+categories:
+- Domino/Notes
+tags:
+- Domino
+- FckEditor
+comments: []
+---
+<p>1.修改Notes.ini设置：<br />
+<em>DominoDisableFileUploadChecks=1</em></p>
+<p>2.新建一富文本域</p>
+<p>如果你的编辑与显示表单是同一张，可能会遇到不解析HTML的情况，那就需要把富文本域加在&ldquo;<span style="color: #ffcc00;">[
+<div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </div>
+<p>]</span>&rdquo;之间。</p>
+<p>3.建一数据库，存放通过FckEditor上传的资源</p>
+<p>新建三类表单分别存放图片、Flash和普通文件（对应FckEditor中的<em>ImageUpload 、</em><em>FlashUpload 和</em><em>LinkUpload </em>），如果觉得不需要分类也可以只建一个表单。[wpfilebase tag='file' id='1']</p>
+<p><!--more--></p>
+<p>4.修改FckEditor JS文件</p>
+<p>*根据需要修改fckconfig.js</p>
+<pre><em>FCKConfig.LinkUpload = true ;</em><em>FCKConfig.ImageUpload = true ;</em><em>FCKConfig.FlashUpload = true ;</em></pre>
+<p>*修改fck_flash.js，在</p>
+<pre class="wiki"><em>// Set the actual uploader URL.
+if ( FCKConfig.FlashUpload )
+	GetE('frmUpload').action = FCKConfig.FlashUploadURL ;</em></pre>
+<p>后添加：</p>
+<pre class="wiki">if(FCKConfig.FlashUploadName)
+	GetE("txtUploadFile").name = FCKConfig.FlashUploadName;</pre>
+<pre class="wiki">*修改fck_image.js，在
+UpdateOriginal() ;
+// Set the actual uploader URL.
+if ( FCKConfig.ImageUpload )
+	GetE('frmUpload').action = FCKConfig.ImageUploadURL ;</pre>
+<p>后添加：</p>
+<pre class="wiki">if(FCKConfig.ImageUploadName)
+	GetE('txtUploadFile').name=FCKConfig.ImageUploadName;</pre>
+<p>*修改fck_link.js，在</p>
+<pre class="wiki">// Set the actual uploader URL.
+if ( FCKConfig.LinkUpload )
+	GetE('frmUpload').action = FCKConfig.LinkUploadURL ;</pre>
+<p>后添加</p>
+<pre class="wiki">if(FCKConfig.LinkUploadName)
+	GetE("txtUploadFile").name=FCKConfig.LinkUploadName;</pre>
+<p>4.集成FckEditor至富文本域</p>
+<p>在JS头上添加加载FckEditor替换富文本域的代码：</p>
+<pre><em>window.onload = function()
+{
+var curDBPath = document.location.href.substring(0, document.location.href.indexOf(".nsf")+4)</em><em>var sBasePath = '/fckeditor/';
+var fckDBPath = "/StdPublic/fckeditor.nsf"
+var blogsphereRepID = '862570e0004d5a0a';
+var ImageUploadUNID&nbsp;&nbsp;&nbsp; = '7776b9e374369061862570e200292c38';
+var LinkUploadUNID = '288fb109df6447d5862570e20029030f';
+var FlashUploadUNID&nbsp;&nbsp;&nbsp; = '54a04ff5fdbd678d862570e200287d46';</em><em>var oFCKeditor = new FCKeditor('fldBody') ;
+oFCKeditor.BasePath&nbsp;&nbsp;&nbsp; = sBasePath ;
+oFCKeditor.Height&nbsp;&nbsp;&nbsp; = 400 ;</em><em>oFCKeditor.Config.ImageBrowserURL&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = fckDBPath + '/fck_ImageBrowser' ;
+oFCKeditor.Config.ImageUploadURL &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = fckDBPath + '/fck_ImageUpload?CreateDocument' ;
+oFCKeditor.Config.LinkBrowserURL&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = fckDBPath + '/fck_LinkBrowser' ;
+oFCKeditor.Config.LinkUploadURL&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = fckDBPath + '/fck_LinkUpload?CreateDocument' ;
+oFCKeditor.Config.FlashBrowserURL&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = fckDBPath + '/fck_FlashBrowser' ;
+oFCKeditor.Config.FlashUploadURL&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = fckDBPath + '/fck_FlashUpload?CreateDocument' ;</em><em>oFCKeditor.Config.ImageUploadName&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = '%%File.' + blogsphereRepID + '.'+ImageUploadUNID+'.$Body.0.70' ;
+oFCKeditor.Config.LinkUploadName&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = '%%File.' + blogsphereRepID + '.'+ LinkUploadUNID +'.$Body.0.70' ;
+oFCKeditor.Config.FlashUploadName&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; = '%%File.' + blogsphereRepID + '.'+ FlashUploadUNID +'.$Body.0.70' ;</em><em>oFCKeditor.ReplaceTextarea();
+}</em></pre>
+<p><span style="color: #ff6600;">注：测试成功于FckEditor 2.6.4</span><em><br />
+</em></p>
+<p>参考：<a href="http://docs.fckeditor.net/FCKeditor_2.x/Developers_Guide/Server_Side_Integration" target="_blank">FckEditor Server Side Integration</a></p>
+<p><a href="http://www.codestore.net/store.nsf/unid/BLOG-20051125?OpenDocument" target="_blank">Adding Your Own File Uploads to Forms</a></p>
+<p><a href="http://www-10.lotus.com/ldd/nd6forum.nsf/DateAllThreadedweb/09467d31ceb6c94885257084006b57db?OpenDocument" target="_blank">Rich text editing, browser &amp; Domino - here's is how to do it</a></p>

@@ -1,0 +1,37 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino中的域
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 917
+wordpress_url: http://iceeer.huiq.net/?p=917
+date: '2010-09-30 15:39:02 +0800'
+date_gmt: '2010-09-30 07:39:02 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags:
+- Domino
+- NotesRichTextItem
+- RichText
+- RTF
+- 域
+- 富文本
+comments: []
+---
+<p>Domino关于域的限制<br />
+1.单个域大小不能超过32K<br />
+2.文档中所有属性summary=true的文本域的总大小不能超过 64K<br />
+3.文档中读者域、作者域值的总和不能超过32K<br />
+4.<span style="color: #ff6600;">使域的属性summary=false</span>，域大小限制可以达到64K，且文档中所有属性summary=false的文本域的总大小无限制<br />
+5.更改读者域/作者域的IsSummary=false 会使读者域/作者域失效</p>
+<p>链接：</p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/lotusscript-richitem/">利用 LotusScript 灵活操作 Lotus Notes 富文本域</a></p>
+<p><a href="http://www.stevecastledine.com/sc.nsf/dx/xpages-rich-text-filtering-custom-converters-all-in-one-post?opendocument&amp;comments#06102010063809PMXPHNPE.htm">XPages, Rich Text, Filtering, Custom Converters all in one post</a></p>

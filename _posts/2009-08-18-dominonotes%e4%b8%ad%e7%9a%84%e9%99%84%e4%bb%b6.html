@@ -1,0 +1,57 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino/Notes中的附件
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 445
+wordpress_url: http://blog.xystoy.com/?p=445
+date: '2009-08-18 23:04:54 +0800'
+date_gmt: '2009-08-18 15:04:54 +0800'
+categories:
+- 未分类
+- Domino/Notes
+tags: []
+comments: []
+---
+<p><strong>显示文档中的附件（WEB）</strong><br />
+thisDb:=@ReplaceSubstring(@ReplaceSubstring(@Subset(@DbName;-1);" ";"+");"\";"/");<br />
+aa:=@URLEncode("domino";@AttachmentNames);<br />
+class= @LowerCase(@RightBack(@AttachmentNames; "."));<br />
+@If(@Attachments!=0;"[<a class="""+" href="" target=" _mce_href=">"+@AttachmentNames+"</a>]";"")</p>
+<p><strong>关于附件的一些设置：</strong><br />
+1.HTTPAllowDecodedUrlPercent=1 ; 允许上传的文件带百分号(%)<br />
+2.修改服务器文档中-因特网协议-HTTP-请求内容的最大大小(Maximum size of request content) 为&ldquo;0&rdquo; (无限制)<br />
+3.修改服务器文档中-因特网协议-Domino Web引擎-最大POST数据(Maximum POST data) 为最大上传附件大小(默认为10MB，如果开启了Internet站点文档加载Internet配置就在相应的Internet站点文档设置)</p>
+<p><br class="spacer_" /></p>
+<p><strong>Office2007格式附件不能下载：</strong></p>
+<p><strong> </strong></p>
+<div id="_mcePaste">问题描述：邮件中的附件是Office2007格式，单击文件名时，弹出的另存为页面，将附件自动存为了zip格式，而且解压后不是正确的Office2007文件格式。</div>
+<div id="_mcePaste">原因：因为Microsoft Office 2007 MIME格式未列在Domino Web Server metabase（httpd.cnf）中，所以导致请求一个Microsoft Office2007文件时，被当作未知类型的请求处理。此时服务器会使用&ldquo;Application/octet-stream&rdquo;内容作为返回来替代 Office 2007 MIME类型。</div>
+<div id="_mcePaste">受影响版本：6.x,7.x,8.0.x,8.5,8.5.1</div>
+<div id="_mcePaste">解决办法：修改httpd.cnf，在文件后添加以下：</div>
+<div id="_mcePaste">#</div>
+<div id="_mcePaste"># Microsoft Office 2007 formats</div>
+<div id="_mcePaste">#</div>
+<div id="_mcePaste">AddType .docx application/vnd.openxmlformats-officedocument.wordprocessingml.document</div>
+<div id="_mcePaste">AddType .dotx application/vnd.openxmlformats-officedocument.wordprocessingml.template</div>
+<div id="_mcePaste">AddType .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</div>
+<div id="_mcePaste">AddType .xltx application/vnd.openxmlformats-officedocument.spreadsheetml.template</div>
+<div id="_mcePaste">AddType .pptx application/vnd.openxmlformats-officedocument.presentationml.presentation</div>
+<div id="_mcePaste">AddType .potx application/vnd.openxmlformats-officedocument.presentationml.template</div>
+<div id="_mcePaste">AddType .ppsx application/vnd.openxmlformats-officedocument.presentationml.slideshow</div>
+<div id="_mcePaste">重启domio服务器即可。</div>
+<p>问题描述：邮件中的附件是Office2007格式，单击文件名时，弹出的另存为页面，将附件自动存为了zip格式，而且解压后不是正确的Office2007文件格式。<br />
+原因：因为Microsoft Office 2007 MIME格式未列在Domino Web Server metabase（httpd.cnf）中，所以导致请求一个Microsoft Office2007文件时，被当作未知类型的请求处理。此时服务器会使用&ldquo;Application/octet-stream&rdquo;内容作为返回来替代 Office 2007 MIME类型。<br />
+受影响版本：6.x,7.x,8.0.x,8.5,8.5.1解决办法：修改httpd.cnf，在文件后添加以下：</p>
+<p>## Microsoft Office 2007 formats#AddType .docx application/vnd.openxmlformats-officedocument.wordprocessingml.documentAddType .dotx application/vnd.openxmlformats-officedocument.wordprocessingml.templateAddType .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheetAddType .xltx application/vnd.openxmlformats-officedocument.spreadsheetml.templateAddType .pptx application/vnd.openxmlformats-officedocument.presentationml.presentationAddType .potx application/vnd.openxmlformats-officedocument.presentationml.templateAddType .ppsx application/vnd.openxmlformats-officedocument.presentationml.slideshow重启domio服务器即可。</p>
+<p><strong>不能下载带#%的附件</strong></p>
+<p>将链接中的附件名改成：@URLEncode("Domino";@AttachmentNames)</p>
+<p><strong>去掉只能使用Domino自带的控件上传附件的限制</strong></p>
+<p><strong><span style="font-family: verdana, arial, sans-serif; font-size: 12px; color: #000000; font-weight: normal; line-height: normal;"><label for="Subject">DominoDisableFileUploadChecks=1</label> </span></strong></p>

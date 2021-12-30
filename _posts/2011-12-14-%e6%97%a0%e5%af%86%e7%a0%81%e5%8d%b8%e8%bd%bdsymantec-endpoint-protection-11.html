@@ -1,0 +1,27 @@
+---
+layout: post
+status: publish
+published: true
+title: 无密码卸载Symantec Endpoint Protection 11
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1346
+wordpress_url: http://iceeer.huiq.net/?p=1346
+date: '2011-12-14 14:12:35 +0800'
+date_gmt: '2011-12-14 06:12:35 +0800'
+categories:
+- 杂
+tags: []
+comments: []
+---
+<p>1. 点击&ldquo;开始&rdquo;按钮 -> 运行 (或直接： Window徽标键 + R)<br />
+2. 输入 smc -stop. 如果要密码，则打开注册表(Window徽标键 + R; 输入 regedit; 敲回车) ，然后找到 HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC，在右边删除类似于 smc_exit_test 的键，然后再在运行里输入 smc -stop 。<br />
+3. 现在继续到 HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC.，在右边删除类似于 smcinstdata 的键。<br />
+4. 现在你可以到 添加删除程序 里无需密码就可以卸载 SEP 11<br />
+链接：<a href="http://blog.csdn.net/hobbypei/article/details/6750870">无密码卸载Symantec Endpoint Protection 11</a><br />
+<a href="https://pan.baidu.com/s/1kUa7cLT">官方卸载工具CleanWipe_12.1.4100.4126.zip</a></p>

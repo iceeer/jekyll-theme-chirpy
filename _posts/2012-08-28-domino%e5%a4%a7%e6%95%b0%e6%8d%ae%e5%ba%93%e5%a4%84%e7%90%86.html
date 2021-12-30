@@ -1,0 +1,41 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino大数据库处理
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1677
+wordpress_url: http://iceeerblog.sinaapp.com/?p=1677
+date: '2012-08-28 00:48:04 +0800'
+date_gmt: '2012-08-28 00:48:04 +0800'
+categories:
+- TODO
+- 开发
+- Domino/Notes
+tags:
+- BIG
+- DAOS
+- Domino
+- 大数据库
+comments: []
+---
+<p><strong>启用DAOS</strong><br />
+load compact -c -daos on 8.5+升级数据库、开启DAOS（需要notes.ini添加Create_R85_Databases=1、删除Create_R8_Databases=1）<br />
+出现：One or more of the source document's attachment are missing. Run Fixup to delete the document in the source database.<br />
+解决：load fixup -J -F</p>
+<p><strong>减少文档数</strong><br />
+1、Domino归档：先设置数据库归档属性，程序中添加定时服务器定时归档任务，程序名：nserver，命令行：-c "load compact -a <数据库名>"</p>
+<p><em>2、移到其他关系型数据库 或专业的归档系统 这些数据只读</em></p>
+<p>3、分库：按照年月分成多个数据库，通过写代码复制文档至其他数据库（注意复制后文档的创建日期还是原来的日期），然后删除原文档</p>
+<p><strong>日程维护</strong><br />
+定时修复数据库-定时任务：load fixup -f</p>
+<p><strong>压缩数据库</strong></p>
+<p>load compact -B</p>
+<p><strong>商业归档方案</strong></p>
+<p>比如邮件、日记归档：Symantec Enterprise Vault</p>

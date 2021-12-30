@@ -1,0 +1,35 @@
+---
+layout: post
+status: publish
+published: true
+title: transmission-daemon - BT服务器(centos)
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1878
+wordpress_url: http://blog.xystoy.com/?p=1878
+date: '2013-04-15 11:55:47 +0800'
+date_gmt: '2013-04-15 03:55:47 +0800'
+categories:
+- 软件
+- Linux
+tags: []
+comments: []
+---
+<p>yum install -y http://download.fedora.devel.redhat.com/pub/epel/6/i386/epel-release-6-8.noarch.rpm<br />
+yum install -y transmission-daemon<br />
+chkconfig transmission-daemon on<br />
+Start transmission and set your configuration options.<br />
+# transmission-daemon -auth -u <username> -v
+<password> If you want to set a different port, utilize the -p option. The default is 9091<br />
+# transmission-daemon -auth -u <username> -v
+<password> -p
+<port>
+* If you want to change the directory you download to, specify the -w option. The default is /root/Downloads<br />
+# transmission-daemon -auth -u <username> -v
+<password> -w </directory/to/download/files><br />
+链接：<a href="http://jack-server.com/blog/?p=3221">Dedicated Torrent Server</a> </p>

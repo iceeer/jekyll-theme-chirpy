@@ -1,0 +1,44 @@
+---
+layout: post
+status: publish
+published: true
+title: Windows奔溃调试
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1922
+wordpress_url: http://blog.xystoy.com/?p=1922
+date: '2013-05-23 10:34:15 +0800'
+date_gmt: '2013-05-23 02:34:15 +0800'
+categories:
+- 未分类
+- 软件
+- Windows
+tags: []
+comments: []
+---
+<p>首先下载  windebug</p>
+<p>http://www.microsoft.com/whdc/devtools/debugging/installx86.mspx</p>
+<p>说下 debug 方法<br />
+1. 我的电脑，属性 -> 高级 -> 启动，最下面的内存调试选最后一项的全部，确定后重新启动<br />
+2. 蓝屏后不要急着重启，系统会保存整个内存内容，然后会自动重启<br />
+3. 找到 C:\Windows\Minidump\</p>
+<p>4. 下载安装 windwos 的 debug tools, 我这有下载地址，或微软网站<br />
+http://public.hshh.org/SysTools/debug/dbg_x86_6.6.07.5.exe<br />
+5. 安装后创建一个临时目录，例如 c:\temp<br />
+6. 启动 windbg<br />
+7. windbg 界面 : file->symbol file path (ctrl+s) 输入 :<br />
+SRV*c:\temp*http://msdl.microsoft.com/download/symbols<br />
+然后确定<br />
+8. windbg 界面 : file->open crash dump(ctrl+d) ，打开 9. 打开例如 C:\Windows\Minidump\Mini122208-01.dmp 后，等待提示<br />
+当出现 Use !analyze -v to get detailed debugging information. 字样后，在下面输入框<br />
+!analyze -v<br />
+10. 等待分析完毕，可以知道什么导致的出错<br />
+11. windbg 使用中需要网上下载调试内容，这个速度嘛，取决于你的网络了。<br />
+链接：<a href="http://www.cnblogs.com/flying_bat/archive/2006/10/27/541665.html">Windows调试器及不同平台符号包下载地址</a><br />
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/gg463028.aspx#Download_windows">Windows Symbol File 下载</a><br />
+<a href="http://answers.microsoft.com/en-us/windows/forum/windows_8-hardware/frequent-kerneldatainpageerror-7a-on-windows-8-x64/30df4f7f-36ce-45d9-b585-9dd5de8ddd3f">Frequent KERNEL_DATA_INPAGE_ERROR (7a) on Windows 8 x64, strangely error status is 0000000000000000</a></p>

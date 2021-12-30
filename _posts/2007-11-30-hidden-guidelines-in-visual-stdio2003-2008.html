@@ -1,0 +1,29 @@
+---
+layout: post
+status: publish
+published: true
+title: 在Visual Stdio里显示标尺
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 13
+wordpress_url: http://iceeer.huiqiu.net.cn/?p=13
+date: '2007-11-30 01:55:48 +0800'
+date_gmt: '2007-11-29 17:55:48 +0800'
+categories:
+- Visual Studio
+tags:
+- Visual Studio
+- 技巧
+- 注册表
+comments: []
+---
+<p><script src="http://www.nciku.com/js/eventBind.js?0.3447210288889524" type="text/javascript"></script></p>
+<p>有些编程规程规范可能要求一行代码只能有几个字符，而你总不能每行去数吧。加个标尺应该不错：</p>
+<p>在注册表"<em>HKEY_CURRENT_USERSoftwareMicrosoftVisualStudio9.0Text Editor</em>"处添加一字符串值"Guides" ，并设置为"<em>RGB(0,0,0) 5, 80</em>"（颜色 开始字符数,结束字符数）。</p>
+<p>这样就能在编辑区看到 5个字符处和80字符处有两条标尺。</p>
+<p style="text-align: right;">- 适用于2003 - 2008</p>

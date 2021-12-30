@@ -1,0 +1,87 @@
+---
+layout: post
+status: publish
+published: true
+title: ubuntu10.04安装
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1431
+wordpress_url: http://iceeer.huiq.org/?p=1431
+date: '2012-03-14 21:35:01 +0800'
+date_gmt: '2012-03-14 13:35:01 +0800'
+categories:
+- 开发
+tags:
+- '10.04'
+- Linux
+- Ubuntu
+comments: []
+---
+<p><strong>Ubuntu查看版本</strong>：lsb_release -a</p>
+<p><strong>Ubuntu版本更新</strong></p>
+<ol type="1">
+<li>
+<pre>sudo apt-get install update-manager-core</pre>
+</li>
+<li>If and only if upgrading from an LTS release, then edit&nbsp;<tt>/etc/update-manager/release-upgrades</tt>&nbsp;and set&nbsp;<tt>Prompt=lts</tt></li>
+<li>do-release-upgrade 或者试试do-release-upgrade -d</li>
+</ol>
+<p><strong>安装 subversion</strong></p>
+<p>sudo apt-get install subversion subversion-tools<br />
+创建一个新的储存库：</p>
+<p>svnadmin create /svn/repository</p>
+<p>svnserve -d -r /svn/repository</p>
+<p>匿名不能使用：</p>
+<p>修改svnserve.conf 添加&nbsp;anon-access = none</p>
+<p><strong>安装 tomcat6</strong></p>
+<pre>apt-get install sun-java6-jdk
+aptinstall tomcat6 tomcat6-admin tomcat6-webapps
+/etc/init.d/tomcat6 restart
+<strong>安装更新</strong>
+<strong>sudo apt-get install unattended-upgrades</strong>
+<strong>sudo apt-get update &amp;&amp; sudo apt-get upgrade</strong>
+<strong>更新提醒</strong>
+<strong>sudo apt-get install apticron</strong></pre>
+<p>Once the package is installed edit&nbsp;<code>/etc/apticron/apticron.conf</code>, to set the email address and other options:</p>
+<pre>EMAIL="root@example.com"
+<strong>修改时区</strong>
+dpkg-reconfigure tzdata
+<strong>通过网络更新时间</strong>
+ntpdate ntp.ubuntu.com
+<strong>禁用屏保</strong></pre>
+<p>/etc/kbd/config</p>
+<pre><code>BLANK_TIME=0</code>
+<code>BLANK_DPMS=off</code></pre>
+<p><strong>设置root密码</strong></p>
+<div id="node-64">
+<p><code>sudo passwd root</code></p>
+<p>禁用root用户：sudo passwd -l root</p>
+<p><strong>Ubuntu添加删除软件源</strong><br />
+sudo add-apt-repository ppa:user/ppa-name添加源<br />
+sudo apt-get update 从源更新列表</p>
+<p>sudo add-apt-repository --remove ppa:user/ppa-name 删除源</p>
+<p>apt-get install software-name 安装</p>
+<p>apt-cache search&nbsp;software-name 搜索</p>
+</div>
+<pre>&nbsp;<strong>设置网络</strong>
+sudo nano /etc/network/interfaces
+auto lo eth0iface lo inet loopbackiface eth0 inet staticaddress xxx.xxx.xxx.xxx(enter your ip here)netmask xxx.xxx.xxx.xxxgateway xxx.xxx.xxx.xxx(enter gateway ip here)
+设置完后重启sudo /etc/init.d/networking restart
+<strong>安装ssh</strong>
+sudo apt-get install openssh-server
+<tt>启动service sshd start</tt>
+<strong>管理员操作时不提示输入密码</strong></pre>
+<p>sudo visudo添加</p>
+<p>用户名 ALL=NOPASSWD: ALL</p>
+<pre><strong>安装Xfce</strong>
+sudo apt-get update &amp;&amp; sudo apt-get install xubuntu-desktop</pre>
+<p>链接：<a title="svn开机启动脚本及设置" href="http://blog.sina.com.cn/s/blog_652adbda0100gohe.html"> svn开机启动脚本及设置 </a><br />
+<a title="Subversion" href="http://wiki.ubuntu.org.cn/SubVersion#.E9.80.9A.E8.BF.87.E8.87.AA.E5.B8.A6.E5.8D.8F.E8.AE.AE.E8.AE.BF.E9.97.AE.28svn:.2F.2F.29"> Subversion</a></p>
+<p><a href="https://help.ubuntu.com/10.04/serverguide/C/tomcat.html">Apache Tomcat</a></p>
+<p><a href="http://alexsleat.co.uk/2010/11/27/how-to-fix-unknown-keyword-in-configuration-file-ubuntu-usb-boot/">How To: Fix &ldquo;Unknown keyword in configuration file.&rdquo; Ubuntu USB Boot</a></p>
+<p><a href="http://wiki.ubuntu.org.cn/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2#.E6.9C.AC.E8.B4.B4.E4.B8.BB.E8.A6.81.E7.9B.AE.E7.9A.84.E4.B8.BA.E8.AF.B4.E6.98.8E.E5.A6.82.E4.BD.95.E5.9C.A8windows.E7.B3.BB.E7.BB.9F.E4.B8.8B.E8.BF.9C.E7.A8.8B.E6.8E.A7.E5.88.B6xfce.E6.A1.8C.E9.9D.A2">VNC 远程桌面 配置/使用 for xfce</a></p>
