@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="启用DAOS load compact -c -daos on 8.5+升级数据库、开启DAOS（需要notes.ini添加Create_R85_Databases=1、删除Create_R8_Databases=1） 出现：One or more of the source document&#39;s attachment are missing. Run Fixup to delete the document in the source database. 解决：load fixup -J -F 减少文档数 1、Domino归档：先设置数据库归档属性，程序中添加定时服务器定时归档任务，程序名：nserver，命令行：-c &quot;load compact -a &quot;&lt;/p&gt; 2、移到其他关系型数据库 或专业的归档系统 这些数据只读 3、分库：按照年月分成多个数据库，通过写代码复制文档至其他数据库（注意复制后文档的创建日期还是原来的日期），然后删除原文档 日程维护 定时修复数据库-定时任务：load fixup -f 压缩数据库 load compact -B 商业归档方案 比如邮件、日记归档：Symantec Enterprise Vault" />
 <meta property="og:description" content="启用DAOS load compact -c -daos on 8.5+升级数据库、开启DAOS（需要notes.ini添加Create_R85_Databases=1、删除Create_R8_Databases=1） 出现：One or more of the source document&#39;s attachment are missing. Run Fixup to delete the document in the source database. 解决：load fixup -J -F 减少文档数 1、Domino归档：先设置数据库归档属性，程序中添加定时服务器定时归档任务，程序名：nserver，命令行：-c &quot;load compact -a &quot;&lt;/p&gt; 2、移到其他关系型数据库 或专业的归档系统 这些数据只读 3、分库：按照年月分成多个数据库，通过写代码复制文档至其他数据库（注意复制后文档的创建日期还是原来的日期），然后删除原文档 日程维护 定时修复数据库-定时任务：load fixup -f 压缩数据库 load compact -B 商业归档方案 比如邮件、日记归档：Symantec Enterprise Vault" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" />
+<link rel="canonical" href="http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" />
+<meta property="og:url" content="http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-08-28T00:48:04+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/","headline":"Domino大数据库处理","dateModified":"2012-08-28T00:48:04+08:00","datePublished":"2012-08-28T00:48:04+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/"},"description":"启用DAOS load compact -c -daos on 8.5+升级数据库、开启DAOS（需要notes.ini添加Create_R85_Databases=1、删除Create_R8_Databases=1） 出现：One or more of the source document&#39;s attachment are missing. Run Fixup to delete the document in the source database. 解决：load fixup -J -F 减少文档数 1、Domino归档：先设置数据库归档属性，程序中添加定时服务器定时归档任务，程序名：nserver，命令行：-c &quot;load compact -a &quot;&lt;/p&gt; 2、移到其他关系型数据库 或专业的归档系统 这些数据只读 3、分库：按照年月分成多个数据库，通过写代码复制文档至其他数据库（注意复制后文档的创建日期还是原来的日期），然后删除原文档 日程维护 定时修复数据库-定时任务：load fixup -f 压缩数据库 load compact -B 商业归档方案 比如邮件、日记归档：Symantec Enterprise Vault","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/","headline":"Domino大数据库处理","dateModified":"2012-08-28T00:48:04+08:00","datePublished":"2012-08-28T00:48:04+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/"},"description":"启用DAOS load compact -c -daos on 8.5+升级数据库、开启DAOS（需要notes.ini添加Create_R85_Databases=1、删除Create_R8_Databases=1） 出现：One or more of the source document&#39;s attachment are missing. Run Fixup to delete the document in the source database. 解决：load fixup -J -F 减少文档数 1、Domino归档：先设置数据库归档属性，程序中添加定时服务器定时归档任务，程序名：nserver，命令行：-c &quot;load compact -a &quot;&lt;/p&gt; 2、移到其他关系型数据库 或专业的归档系统 这些数据只读 3、分库：按照年月分成多个数据库，通过写代码复制文档至其他数据库（注意复制后文档的创建日期还是原来的日期），然后删除原文档 日程维护 定时修复数据库-定时任务：load fixup -f 压缩数据库 load compact -B 商业归档方案 比如邮件、日记归档：Symantec Enterprise Vault","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -683,19 +683,19 @@ load compact -c -daos on 8.5+升级数据库、开启DAOS（需要notes.ini添�
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Domino大数据库处理 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Domino大数据库处理 - 馨羽的玩具&url=http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Domino大数据库处理 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Domino大数据库处理 - 馨羽的玩具&u=http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Domino大数据库处理 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Domino大数据库处理 - 馨羽的玩具&url=http://localhost:4000/posts/domino-e5-a4-a7-e6-95-b0-e6-8d-ae-e5-ba-93-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

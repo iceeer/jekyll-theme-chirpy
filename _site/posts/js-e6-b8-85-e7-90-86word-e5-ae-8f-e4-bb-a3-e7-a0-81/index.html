@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="function cleanMacro(filepath){ //alert(&quot;start macro&quot;); //alert(filepath); var wrd; //try{ wrd = new ActiveXObject(&quot;Word.Application&quot;); wrd.visible=true; wrd.documents.Open(filepath); var count = wrd.ActiveDocument.VBProject.VBComponents.Count; //alert(count); for(var i=1;i&lt;=count;i++){ try{ var o = wrd.ActiveDocument.VBProject.VBComponents(i); try{ wrd.ActiveDocument.VBProject.VBComponents.Remove(o); }catch(e){ //alert(&quot;remove comp error:&quot;+e); try{ var line = o.CodeModule.CountOfLines; o.CodeModule.DeleteLines(1,line); }catch(e){ //alert(&quot;remove line error:&quot;+e); } } }catch(e){ //alert(&quot;macro not exist:&quot;+e); } } wrd.ActiveDocument.Save(); //}catch(e){alert(e);} try{ wrd.Quit(); }catch(e){} //alert(&quot;end macro&quot;); return true; } 需要设置IE的安全选项才能运行上面的代码 链接：VBProject：代码操作代码之常用语句 Delete all macros in a workbook/document using VBA in Microsoft Excel" />
 <meta property="og:description" content="function cleanMacro(filepath){ //alert(&quot;start macro&quot;); //alert(filepath); var wrd; //try{ wrd = new ActiveXObject(&quot;Word.Application&quot;); wrd.visible=true; wrd.documents.Open(filepath); var count = wrd.ActiveDocument.VBProject.VBComponents.Count; //alert(count); for(var i=1;i&lt;=count;i++){ try{ var o = wrd.ActiveDocument.VBProject.VBComponents(i); try{ wrd.ActiveDocument.VBProject.VBComponents.Remove(o); }catch(e){ //alert(&quot;remove comp error:&quot;+e); try{ var line = o.CodeModule.CountOfLines; o.CodeModule.DeleteLines(1,line); }catch(e){ //alert(&quot;remove line error:&quot;+e); } } }catch(e){ //alert(&quot;macro not exist:&quot;+e); } } wrd.ActiveDocument.Save(); //}catch(e){alert(e);} try{ wrd.Quit(); }catch(e){} //alert(&quot;end macro&quot;); return true; } 需要设置IE的安全选项才能运行上面的代码 链接：VBProject：代码操作代码之常用语句 Delete all macros in a workbook/document using VBA in Microsoft Excel" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" />
+<link rel="canonical" href="http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" />
+<meta property="og:url" content="http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2014-09-04T15:21:19+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/","headline":"JS清理Word宏代码","dateModified":"2014-09-04T15:21:19+08:00","datePublished":"2014-09-04T15:21:19+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/"},"description":"function cleanMacro(filepath){ //alert(&quot;start macro&quot;); //alert(filepath); var wrd; //try{ wrd = new ActiveXObject(&quot;Word.Application&quot;); wrd.visible=true; wrd.documents.Open(filepath); var count = wrd.ActiveDocument.VBProject.VBComponents.Count; //alert(count); for(var i=1;i&lt;=count;i++){ try{ var o = wrd.ActiveDocument.VBProject.VBComponents(i); try{ wrd.ActiveDocument.VBProject.VBComponents.Remove(o); }catch(e){ //alert(&quot;remove comp error:&quot;+e); try{ var line = o.CodeModule.CountOfLines; o.CodeModule.DeleteLines(1,line); }catch(e){ //alert(&quot;remove line error:&quot;+e); } } }catch(e){ //alert(&quot;macro not exist:&quot;+e); } } wrd.ActiveDocument.Save(); //}catch(e){alert(e);} try{ wrd.Quit(); }catch(e){} //alert(&quot;end macro&quot;); return true; } 需要设置IE的安全选项才能运行上面的代码 链接：VBProject：代码操作代码之常用语句 Delete all macros in a workbook/document using VBA in Microsoft Excel","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/","headline":"JS清理Word宏代码","dateModified":"2014-09-04T15:21:19+08:00","datePublished":"2014-09-04T15:21:19+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/"},"description":"function cleanMacro(filepath){ //alert(&quot;start macro&quot;); //alert(filepath); var wrd; //try{ wrd = new ActiveXObject(&quot;Word.Application&quot;); wrd.visible=true; wrd.documents.Open(filepath); var count = wrd.ActiveDocument.VBProject.VBComponents.Count; //alert(count); for(var i=1;i&lt;=count;i++){ try{ var o = wrd.ActiveDocument.VBProject.VBComponents(i); try{ wrd.ActiveDocument.VBProject.VBComponents.Remove(o); }catch(e){ //alert(&quot;remove comp error:&quot;+e); try{ var line = o.CodeModule.CountOfLines; o.CodeModule.DeleteLines(1,line); }catch(e){ //alert(&quot;remove line error:&quot;+e); } } }catch(e){ //alert(&quot;macro not exist:&quot;+e); } } wrd.ActiveDocument.Save(); //}catch(e){alert(e);} try{ wrd.Quit(); }catch(e){} //alert(&quot;end macro&quot;); return true; } 需要设置IE的安全选项才能运行上面的代码 链接：VBProject：代码操作代码之常用语句 Delete all macros in a workbook/document using VBA in Microsoft Excel","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -689,19 +689,19 @@ return true;<br />
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=JS清理Word宏代码 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=JS清理Word宏代码 - 馨羽的玩具&url=http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=JS清理Word宏代码 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=JS清理Word宏代码 - 馨羽的玩具&u=http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=JS清理Word宏代码 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=JS清理Word宏代码 - 馨羽的玩具&url=http://localhost:4000/posts/js-e6-b8-85-e7-90-86word-e5-ae-8f-e4-bb-a3-e7-a0-81/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

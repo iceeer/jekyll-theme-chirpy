@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="1）准备两个东西EasyBCD软件和ISO镜像 2）把准备好的ISO用解压缩软件或者虚拟光驱打开，找到casper文件夹，复制initrd.lz和vmlinuz（或vmlinuz.efi）到某盘根目录,然后在把ISO文件也放到该分区根目录。 3）打开EasyBCD软件，可以看到现在我们的计算机启动&ldquo;入口&rdquo;情况， 选择添加新条目（AddNew Entry） 选NeoGrub然后点安装（Install），接着是配置（Configure），然后就会出现一个menu.lst文件 编辑这个文件，让Windows管理器引导UbuntuKylin安装。 把下面的粘贴进去 title Install UbuntuKylin root (hd0,5) kernel (hd0,5)/vmlinuz boot=casper iso-scan/filename=/raring-desktop-i386.iso ro quiet splash locale=zh_CN.UTF-8 initrd (hd0,5)/initrd.lz *注意(hd0,x)这个x得看你放置ISO文件的分区是磁盘中第几个分区，不要遗漏隐藏分区 64位系统第三句请改为kernel (hd0,x)/vmlinuz.efi boot=casper iso-scan/filename=/raring-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8，raring-desktop-amd64.iso与raring-desktop-i386.iso为镜像名，请根据实际情况更改。 保存关闭 4）重启,你就会看到有2个启动菜单给你选择我们选择NeoGrub这个 &nbsp; &nbsp;&nbsp;&nbsp;然后等待一段时间，就会见到LiveCDUbuntuKylin系统了。 5）进入系统后，打开终端，运行以下命令卸载镜像分区： sudo umount -l /isodevice 6）回到LiveCD UbuntuKylin系统桌面，点击安装UbuntuKylin。 &nbsp; 链接：几种安装UbuntuKylin的方法" />
 <meta property="og:description" content="1）准备两个东西EasyBCD软件和ISO镜像 2）把准备好的ISO用解压缩软件或者虚拟光驱打开，找到casper文件夹，复制initrd.lz和vmlinuz（或vmlinuz.efi）到某盘根目录,然后在把ISO文件也放到该分区根目录。 3）打开EasyBCD软件，可以看到现在我们的计算机启动&ldquo;入口&rdquo;情况， 选择添加新条目（AddNew Entry） 选NeoGrub然后点安装（Install），接着是配置（Configure），然后就会出现一个menu.lst文件 编辑这个文件，让Windows管理器引导UbuntuKylin安装。 把下面的粘贴进去 title Install UbuntuKylin root (hd0,5) kernel (hd0,5)/vmlinuz boot=casper iso-scan/filename=/raring-desktop-i386.iso ro quiet splash locale=zh_CN.UTF-8 initrd (hd0,5)/initrd.lz *注意(hd0,x)这个x得看你放置ISO文件的分区是磁盘中第几个分区，不要遗漏隐藏分区 64位系统第三句请改为kernel (hd0,x)/vmlinuz.efi boot=casper iso-scan/filename=/raring-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8，raring-desktop-amd64.iso与raring-desktop-i386.iso为镜像名，请根据实际情况更改。 保存关闭 4）重启,你就会看到有2个启动菜单给你选择我们选择NeoGrub这个 &nbsp; &nbsp;&nbsp;&nbsp;然后等待一段时间，就会见到LiveCDUbuntuKylin系统了。 5）进入系统后，打开终端，运行以下命令卸载镜像分区： sudo umount -l /isodevice 6）回到LiveCD UbuntuKylin系统桌面，点击安装UbuntuKylin。 &nbsp; 链接：几种安装UbuntuKylin的方法" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" />
+<link rel="canonical" href="http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" />
+<meta property="og:url" content="http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2014-08-21T20:51:52+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/","headline":"ubuntu kylin 14.04硬盘安装","dateModified":"2014-08-21T20:51:52+08:00","datePublished":"2014-08-21T20:51:52+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/"},"description":"1）准备两个东西EasyBCD软件和ISO镜像 2）把准备好的ISO用解压缩软件或者虚拟光驱打开，找到casper文件夹，复制initrd.lz和vmlinuz（或vmlinuz.efi）到某盘根目录,然后在把ISO文件也放到该分区根目录。 3）打开EasyBCD软件，可以看到现在我们的计算机启动&ldquo;入口&rdquo;情况， 选择添加新条目（AddNew Entry） 选NeoGrub然后点安装（Install），接着是配置（Configure），然后就会出现一个menu.lst文件 编辑这个文件，让Windows管理器引导UbuntuKylin安装。 把下面的粘贴进去 title Install UbuntuKylin root (hd0,5) kernel (hd0,5)/vmlinuz boot=casper iso-scan/filename=/raring-desktop-i386.iso ro quiet splash locale=zh_CN.UTF-8 initrd (hd0,5)/initrd.lz *注意(hd0,x)这个x得看你放置ISO文件的分区是磁盘中第几个分区，不要遗漏隐藏分区 64位系统第三句请改为kernel (hd0,x)/vmlinuz.efi boot=casper iso-scan/filename=/raring-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8，raring-desktop-amd64.iso与raring-desktop-i386.iso为镜像名，请根据实际情况更改。 保存关闭 4）重启,你就会看到有2个启动菜单给你选择我们选择NeoGrub这个 &nbsp; &nbsp;&nbsp;&nbsp;然后等待一段时间，就会见到LiveCDUbuntuKylin系统了。 5）进入系统后，打开终端，运行以下命令卸载镜像分区： sudo umount -l /isodevice 6）回到LiveCD UbuntuKylin系统桌面，点击安装UbuntuKylin。 &nbsp; 链接：几种安装UbuntuKylin的方法","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/","headline":"ubuntu kylin 14.04硬盘安装","dateModified":"2014-08-21T20:51:52+08:00","datePublished":"2014-08-21T20:51:52+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/"},"description":"1）准备两个东西EasyBCD软件和ISO镜像 2）把准备好的ISO用解压缩软件或者虚拟光驱打开，找到casper文件夹，复制initrd.lz和vmlinuz（或vmlinuz.efi）到某盘根目录,然后在把ISO文件也放到该分区根目录。 3）打开EasyBCD软件，可以看到现在我们的计算机启动&ldquo;入口&rdquo;情况， 选择添加新条目（AddNew Entry） 选NeoGrub然后点安装（Install），接着是配置（Configure），然后就会出现一个menu.lst文件 编辑这个文件，让Windows管理器引导UbuntuKylin安装。 把下面的粘贴进去 title Install UbuntuKylin root (hd0,5) kernel (hd0,5)/vmlinuz boot=casper iso-scan/filename=/raring-desktop-i386.iso ro quiet splash locale=zh_CN.UTF-8 initrd (hd0,5)/initrd.lz *注意(hd0,x)这个x得看你放置ISO文件的分区是磁盘中第几个分区，不要遗漏隐藏分区 64位系统第三句请改为kernel (hd0,x)/vmlinuz.efi boot=casper iso-scan/filename=/raring-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8，raring-desktop-amd64.iso与raring-desktop-i386.iso为镜像名，请根据实际情况更改。 保存关闭 4）重启,你就会看到有2个启动菜单给你选择我们选择NeoGrub这个 &nbsp; &nbsp;&nbsp;&nbsp;然后等待一段时间，就会见到LiveCDUbuntuKylin系统了。 5）进入系统后，打开终端，运行以下命令卸载镜像分区： sudo umount -l /isodevice 6）回到LiveCD UbuntuKylin系统桌面，点击安装UbuntuKylin。 &nbsp; 链接：几种安装UbuntuKylin的方法","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -674,19 +674,19 @@ initrd (hd0,5)/initrd.lz</div>
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=ubuntu kylin 14.04硬盘安装 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=ubuntu kylin 14.04硬盘安装 - 馨羽的玩具&url=http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=ubuntu kylin 14.04硬盘安装 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=ubuntu kylin 14.04硬盘安装 - 馨羽的玩具&u=http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=ubuntu kylin 14.04硬盘安装 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=ubuntu kylin 14.04硬盘安装 - 馨羽的玩具&url=http://localhost:4000/posts/ubuntu-kylin-14-04-e7-a1-ac-e7-9b-98-e5-ae-89-e8-a3-85/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

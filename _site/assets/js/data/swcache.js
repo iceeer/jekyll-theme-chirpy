@@ -45,7 +45,7 @@ const resource = [
 const allowedDomains = [
   
 
-  'jekyll.xystoy.com/',
+  'localhost:4000',
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',

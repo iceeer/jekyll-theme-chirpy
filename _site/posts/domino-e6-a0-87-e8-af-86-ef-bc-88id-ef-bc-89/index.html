@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="标识类型 使用 包含数据库信息 各数据库 文档修改 数据库副本 Notes数据库复制 系统数据库复制 Database ID 数据库标识 唯一 n/a 不同 不同 不同 Replica ID 数据库副本标识 唯一 n/a 相同 different same UNID (Universal Note ID) 唯一地确定了文档 唯一 相同 相同 相同 相同 OID(Originator ID) 确定文档(note)的特殊的修订版本 唯一 different same same same (w/o revision) NID (Note ID) 确定给定数据库中的一个特殊的文档 不唯一 相同 不同 相同 相同 GNID (Global Note ID) 确定一个特殊数据库中的一个特殊文档 不包含 唯一 same different different same IID (Instance ID) 确定一个给定数据库中的一个文档(note)的特殊修订版本 不包含 不唯一 different different different same (w/o revision) GIID (Global Instance ID) 确定一个特殊数据库中的一个文档(note)的特殊修订版本 包含 唯一 different different different same (w/o revision) 第一行：OF后为文件号(File) 第二行：ON后为文档号(Note) 第三行：序列时间（SD后）和序列号（SN后） 第四行：DB后16位数字与数据库副本标识相同 第五行：NT后为Note ID 第一、二行组合为Universal Note ID 第一、二、三行组合为Originator ID 第四、五行组合为Global Note ID 链接： What are the components of a Note ID? Lotus Note ID详解" />
 <meta property="og:description" content="标识类型 使用 包含数据库信息 各数据库 文档修改 数据库副本 Notes数据库复制 系统数据库复制 Database ID 数据库标识 唯一 n/a 不同 不同 不同 Replica ID 数据库副本标识 唯一 n/a 相同 different same UNID (Universal Note ID) 唯一地确定了文档 唯一 相同 相同 相同 相同 OID(Originator ID) 确定文档(note)的特殊的修订版本 唯一 different same same same (w/o revision) NID (Note ID) 确定给定数据库中的一个特殊的文档 不唯一 相同 不同 相同 相同 GNID (Global Note ID) 确定一个特殊数据库中的一个特殊文档 不包含 唯一 same different different same IID (Instance ID) 确定一个给定数据库中的一个文档(note)的特殊修订版本 不包含 不唯一 different different different same (w/o revision) GIID (Global Instance ID) 确定一个特殊数据库中的一个文档(note)的特殊修订版本 包含 唯一 different different different same (w/o revision) 第一行：OF后为文件号(File) 第二行：ON后为文档号(Note) 第三行：序列时间（SD后）和序列号（SN后） 第四行：DB后16位数字与数据库副本标识相同 第五行：NT后为Note ID 第一、二行组合为Universal Note ID 第一、二、三行组合为Originator ID 第四、五行组合为Global Note ID 链接： What are the components of a Note ID? Lotus Note ID详解" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" />
+<link rel="canonical" href="http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" />
+<meta property="og:url" content="http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2010-06-16T14:51:24+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/","headline":"Domino标识（ID）","dateModified":"2010-06-16T14:51:24+08:00","datePublished":"2010-06-16T14:51:24+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/"},"description":"标识类型 使用 包含数据库信息 各数据库 文档修改 数据库副本 Notes数据库复制 系统数据库复制 Database ID 数据库标识 唯一 n/a 不同 不同 不同 Replica ID 数据库副本标识 唯一 n/a 相同 different same UNID (Universal Note ID) 唯一地确定了文档 唯一 相同 相同 相同 相同 OID(Originator ID) 确定文档(note)的特殊的修订版本 唯一 different same same same (w/o revision) NID (Note ID) 确定给定数据库中的一个特殊的文档 不唯一 相同 不同 相同 相同 GNID (Global Note ID) 确定一个特殊数据库中的一个特殊文档 不包含 唯一 same different different same IID (Instance ID) 确定一个给定数据库中的一个文档(note)的特殊修订版本 不包含 不唯一 different different different same (w/o revision) GIID (Global Instance ID) 确定一个特殊数据库中的一个文档(note)的特殊修订版本 包含 唯一 different different different same (w/o revision) 第一行：OF后为文件号(File) 第二行：ON后为文档号(Note) 第三行：序列时间（SD后）和序列号（SN后） 第四行：DB后16位数字与数据库副本标识相同 第五行：NT后为Note ID 第一、二行组合为Universal Note ID 第一、二、三行组合为Originator ID 第四、五行组合为Global Note ID 链接： What are the components of a Note ID? Lotus Note ID详解","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/","headline":"Domino标识（ID）","dateModified":"2010-06-16T14:51:24+08:00","datePublished":"2010-06-16T14:51:24+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/"},"description":"标识类型 使用 包含数据库信息 各数据库 文档修改 数据库副本 Notes数据库复制 系统数据库复制 Database ID 数据库标识 唯一 n/a 不同 不同 不同 Replica ID 数据库副本标识 唯一 n/a 相同 different same UNID (Universal Note ID) 唯一地确定了文档 唯一 相同 相同 相同 相同 OID(Originator ID) 确定文档(note)的特殊的修订版本 唯一 different same same same (w/o revision) NID (Note ID) 确定给定数据库中的一个特殊的文档 不唯一 相同 不同 相同 相同 GNID (Global Note ID) 确定一个特殊数据库中的一个特殊文档 不包含 唯一 same different different same IID (Instance ID) 确定一个给定数据库中的一个文档(note)的特殊修订版本 不包含 不唯一 different different different same (w/o revision) GIID (Global Instance ID) 确定一个特殊数据库中的一个文档(note)的特殊修订版本 包含 唯一 different different different same (w/o revision) 第一行：OF后为文件号(File) 第二行：ON后为文档号(Note) 第三行：序列时间（SD后）和序列号（SN后） 第四行：DB后16位数字与数据库副本标识相同 第五行：NT后为Note ID 第一、二行组合为Universal Note ID 第一、二、三行组合为Originator ID 第四、五行组合为Global Note ID 链接： What are the components of a Note ID? Lotus Note ID详解","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -770,19 +770,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Domino标识（ID） - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Domino标识（ID） - 馨羽的玩具&url=http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Domino标识（ID） - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Domino标识（ID） - 馨羽的玩具&u=http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Domino标识（ID） - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Domino标识（ID） - 馨羽的玩具&url=http://localhost:4000/posts/domino-e6-a0-87-e8-af-86-ef-bc-88id-ef-bc-89/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="错误处理： Must specify type of OS (&quot;DOS&quot;, &quot;OS2&quot;, etc) on C command line! 按照网上搜索到的解决方法在包含的最上面加上了#define NT，编译通过后部署到Domino里出现HTTP Server: Failed to load DSAPI module，其实如果是32位Windows系统应该改成#define W32，其它系统可以查看globl.h中定义的 如果使用VS（2010）开发就不需要这么做了。 使用VS(2010)开发 1、创建项目 选择Win32控制台程序，应用程序设置：类型为dll，选择&quot;导出符号&quot; 2、修改项目属性 配置属性 - C/C++ - 多处理器编译 选择为&quot;是(/MP)&quot; 配置属性 - VC++目录 - 包含目录 添加notescppinclude所在目录 配置属性 - VC++目录 - 预编译头 选择&quot;不使用预编译头&quot; 配置属性 - 预处理器 - 预处理器定义 添加&quot;W32&quot; 配置属性 - 链接器 - 输入 - 附加依赖项 添加notes.lib路径 3、代码里注意加上 extern &quot;C&quot; {} （不加这个害的我一直 Failed to load DSAPI module） 示例下载 调试 Debug_DSApi=3Debug_Threadid=1Debug_SSO_Trace_Level=2Debug_Outfile=c:debugdebug.txtWebAuth_Verbose_Trace=1WebSess_Verbose_Trace=1Console_Loglevel=2Console_Log_Enabled=1 链接： C - Built-in Library Functions Lotus C/C++ API Toolkits for Lotus Notes and Domino documentation Starting work on a DSAPI filter for Domino 8.5.2 on 64-bit Ubuntu &laquo; Tired Programmer Setting up a DSAPI project in Visual Studio 2005 Lotus Notes/Domino 的 C API 编程" />
 <meta property="og:description" content="错误处理： Must specify type of OS (&quot;DOS&quot;, &quot;OS2&quot;, etc) on C command line! 按照网上搜索到的解决方法在包含的最上面加上了#define NT，编译通过后部署到Domino里出现HTTP Server: Failed to load DSAPI module，其实如果是32位Windows系统应该改成#define W32，其它系统可以查看globl.h中定义的 如果使用VS（2010）开发就不需要这么做了。 使用VS(2010)开发 1、创建项目 选择Win32控制台程序，应用程序设置：类型为dll，选择&quot;导出符号&quot; 2、修改项目属性 配置属性 - C/C++ - 多处理器编译 选择为&quot;是(/MP)&quot; 配置属性 - VC++目录 - 包含目录 添加notescppinclude所在目录 配置属性 - VC++目录 - 预编译头 选择&quot;不使用预编译头&quot; 配置属性 - 预处理器 - 预处理器定义 添加&quot;W32&quot; 配置属性 - 链接器 - 输入 - 附加依赖项 添加notes.lib路径 3、代码里注意加上 extern &quot;C&quot; {} （不加这个害的我一直 Failed to load DSAPI module） 示例下载 调试 Debug_DSApi=3Debug_Threadid=1Debug_SSO_Trace_Level=2Debug_Outfile=c:debugdebug.txtWebAuth_Verbose_Trace=1WebSess_Verbose_Trace=1Console_Loglevel=2Console_Log_Enabled=1 链接： C - Built-in Library Functions Lotus C/C++ API Toolkits for Lotus Notes and Domino documentation Starting work on a DSAPI filter for Domino 8.5.2 on 64-bit Ubuntu &laquo; Tired Programmer Setting up a DSAPI project in Visual Studio 2005 Lotus Notes/Domino 的 C API 编程" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/domino-dsapi/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/domino-dsapi/" />
+<link rel="canonical" href="http://localhost:4000/posts/domino-dsapi/" />
+<meta property="og:url" content="http://localhost:4000/posts/domino-dsapi/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2011-08-24T14:25:53+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/domino-dsapi/","headline":"Lotus Notes/Domino 的 API 编程","dateModified":"2011-08-24T14:25:53+08:00","datePublished":"2011-08-24T14:25:53+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/domino-dsapi/"},"description":"错误处理： Must specify type of OS (&quot;DOS&quot;, &quot;OS2&quot;, etc) on C command line! 按照网上搜索到的解决方法在包含的最上面加上了#define NT，编译通过后部署到Domino里出现HTTP Server: Failed to load DSAPI module，其实如果是32位Windows系统应该改成#define W32，其它系统可以查看globl.h中定义的 如果使用VS（2010）开发就不需要这么做了。 使用VS(2010)开发 1、创建项目 选择Win32控制台程序，应用程序设置：类型为dll，选择&quot;导出符号&quot; 2、修改项目属性 配置属性 - C/C++ - 多处理器编译 选择为&quot;是(/MP)&quot; 配置属性 - VC++目录 - 包含目录 添加notescppinclude所在目录 配置属性 - VC++目录 - 预编译头 选择&quot;不使用预编译头&quot; 配置属性 - 预处理器 - 预处理器定义 添加&quot;W32&quot; 配置属性 - 链接器 - 输入 - 附加依赖项 添加notes.lib路径 3、代码里注意加上 extern &quot;C&quot; {} （不加这个害的我一直 Failed to load DSAPI module） 示例下载 调试 Debug_DSApi=3Debug_Threadid=1Debug_SSO_Trace_Level=2Debug_Outfile=c:debugdebug.txtWebAuth_Verbose_Trace=1WebSess_Verbose_Trace=1Console_Loglevel=2Console_Log_Enabled=1 链接： C - Built-in Library Functions Lotus C/C++ API Toolkits for Lotus Notes and Domino documentation Starting work on a DSAPI filter for Domino 8.5.2 on 64-bit Ubuntu &laquo; Tired Programmer Setting up a DSAPI project in Visual Studio 2005 Lotus Notes/Domino 的 C API 编程","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/domino-dsapi/","headline":"Lotus Notes/Domino 的 API 编程","dateModified":"2011-08-24T14:25:53+08:00","datePublished":"2011-08-24T14:25:53+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/domino-dsapi/"},"description":"错误处理： Must specify type of OS (&quot;DOS&quot;, &quot;OS2&quot;, etc) on C command line! 按照网上搜索到的解决方法在包含的最上面加上了#define NT，编译通过后部署到Domino里出现HTTP Server: Failed to load DSAPI module，其实如果是32位Windows系统应该改成#define W32，其它系统可以查看globl.h中定义的 如果使用VS（2010）开发就不需要这么做了。 使用VS(2010)开发 1、创建项目 选择Win32控制台程序，应用程序设置：类型为dll，选择&quot;导出符号&quot; 2、修改项目属性 配置属性 - C/C++ - 多处理器编译 选择为&quot;是(/MP)&quot; 配置属性 - VC++目录 - 包含目录 添加notescppinclude所在目录 配置属性 - VC++目录 - 预编译头 选择&quot;不使用预编译头&quot; 配置属性 - 预处理器 - 预处理器定义 添加&quot;W32&quot; 配置属性 - 链接器 - 输入 - 附加依赖项 添加notes.lib路径 3、代码里注意加上 extern &quot;C&quot; {} （不加这个害的我一直 Failed to load DSAPI module） 示例下载 调试 Debug_DSApi=3Debug_Threadid=1Debug_SSO_Trace_Level=2Debug_Outfile=c:debugdebug.txtWebAuth_Verbose_Trace=1WebSess_Verbose_Trace=1Console_Loglevel=2Console_Log_Enabled=1 链接： C - Built-in Library Functions Lotus C/C++ API Toolkits for Lotus Notes and Domino documentation Starting work on a DSAPI filter for Domino 8.5.2 on 64-bit Ubuntu &laquo; Tired Programmer Setting up a DSAPI project in Visual Studio 2005 Lotus Notes/Domino 的 C API 编程","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -684,19 +684,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Lotus Notes/Domino 的 API 编程 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/domino-dsapi/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Lotus Notes/Domino 的 API 编程 - 馨羽的玩具&url=http://localhost:4000/posts/domino-dsapi/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Lotus Notes/Domino 的 API 编程 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/domino-dsapi/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Lotus Notes/Domino 的 API 编程 - 馨羽的玩具&u=http://localhost:4000/posts/domino-dsapi/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Lotus Notes/Domino 的 API 编程 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/domino-dsapi/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Lotus Notes/Domino 的 API 编程 - 馨羽的玩具&url=http://localhost:4000/posts/domino-dsapi/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="Try/Catch错误处理 try: &#39;set up error handler On Error Goto catch&lt;/p&gt; Goto finally catch: &#39;log error &#39;Msgbox Erl &amp; &quot;:&quot; &amp; Error MsgBox LSI_Info(2) &amp; &quot; called by &quot; &amp; LSI_Info(12) &amp; &quot;(&quot; &amp; LSI_Info(430) &amp; &quot;): &quot; &amp; Error$ &amp; &quot; - Line: &quot; &amp; CStr(Erl) &#39;resume to the final thing Resume finally finally: &#39;do the final thing&lt;/code&gt; Option Public Option Declare Sub Initialize &#39;set up error handler On Error Goto catch &#39;变量定义 Dim s As New NotesSession&#39;当前进程 Dim dbCur As NotesDatabase&#39;当前数据库 Dim collection As NotesDocumentCollection&#39;选中文档的集合 Dim doc As NotesDocument&#39;处理的文档 &#39;变量初始化 Set dbCur = s.CurrentDatabase Set collection = dbCur.UnprocessedDocuments Set doc = collection.GetFirstDocument&#39;获得第一个要处理的文档 While Not doc Is Nothing&#39;当集合中没有要处理的文档时退出 &#39;处理文档 &#39;获得下一要处理的文档 Set doc = collection.GetNextDocument(doc) Wend Goto finally catch: &#39;log error Msgbox Erl &amp; &quot;:&quot; &amp; Error &#39;resume to the final thing Resume finally finally: &#39;do the final thing Exit Sub&#39;不抛出错误 End Sub 链接： LSI_Info: obscure but useful information in LotusScript" />
 <meta property="og:description" content="Try/Catch错误处理 try: &#39;set up error handler On Error Goto catch&lt;/p&gt; Goto finally catch: &#39;log error &#39;Msgbox Erl &amp; &quot;:&quot; &amp; Error MsgBox LSI_Info(2) &amp; &quot; called by &quot; &amp; LSI_Info(12) &amp; &quot;(&quot; &amp; LSI_Info(430) &amp; &quot;): &quot; &amp; Error$ &amp; &quot; - Line: &quot; &amp; CStr(Erl) &#39;resume to the final thing Resume finally finally: &#39;do the final thing&lt;/code&gt; Option Public Option Declare Sub Initialize &#39;set up error handler On Error Goto catch &#39;变量定义 Dim s As New NotesSession&#39;当前进程 Dim dbCur As NotesDatabase&#39;当前数据库 Dim collection As NotesDocumentCollection&#39;选中文档的集合 Dim doc As NotesDocument&#39;处理的文档 &#39;变量初始化 Set dbCur = s.CurrentDatabase Set collection = dbCur.UnprocessedDocuments Set doc = collection.GetFirstDocument&#39;获得第一个要处理的文档 While Not doc Is Nothing&#39;当集合中没有要处理的文档时退出 &#39;处理文档 &#39;获得下一要处理的文档 Set doc = collection.GetNextDocument(doc) Wend Goto finally catch: &#39;log error Msgbox Erl &amp; &quot;:&quot; &amp; Error &#39;resume to the final thing Resume finally finally: &#39;do the final thing Exit Sub&#39;不抛出错误 End Sub 链接： LSI_Info: obscure but useful information in LotusScript" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" />
+<link rel="canonical" href="http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" />
+<meta property="og:url" content="http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2010-07-13T08:46:41+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/","headline":"Domino LotusScript脚本代码集","dateModified":"2010-07-13T08:46:41+08:00","datePublished":"2010-07-13T08:46:41+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/"},"description":"Try/Catch错误处理 try: &#39;set up error handler On Error Goto catch&lt;/p&gt; Goto finally catch: &#39;log error &#39;Msgbox Erl &amp; &quot;:&quot; &amp; Error MsgBox LSI_Info(2) &amp; &quot; called by &quot; &amp; LSI_Info(12) &amp; &quot;(&quot; &amp; LSI_Info(430) &amp; &quot;): &quot; &amp; Error$ &amp; &quot; - Line: &quot; &amp; CStr(Erl) &#39;resume to the final thing Resume finally finally: &#39;do the final thing&lt;/code&gt; Option Public Option Declare Sub Initialize &#39;set up error handler On Error Goto catch &#39;变量定义 Dim s As New NotesSession&#39;当前进程 Dim dbCur As NotesDatabase&#39;当前数据库 Dim collection As NotesDocumentCollection&#39;选中文档的集合 Dim doc As NotesDocument&#39;处理的文档 &#39;变量初始化 Set dbCur = s.CurrentDatabase Set collection = dbCur.UnprocessedDocuments Set doc = collection.GetFirstDocument&#39;获得第一个要处理的文档 While Not doc Is Nothing&#39;当集合中没有要处理的文档时退出 &#39;处理文档 &#39;获得下一要处理的文档 Set doc = collection.GetNextDocument(doc) Wend Goto finally catch: &#39;log error Msgbox Erl &amp; &quot;:&quot; &amp; Error &#39;resume to the final thing Resume finally finally: &#39;do the final thing Exit Sub&#39;不抛出错误 End Sub 链接： LSI_Info: obscure but useful information in LotusScript","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/","headline":"Domino LotusScript脚本代码集","dateModified":"2010-07-13T08:46:41+08:00","datePublished":"2010-07-13T08:46:41+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/"},"description":"Try/Catch错误处理 try: &#39;set up error handler On Error Goto catch&lt;/p&gt; Goto finally catch: &#39;log error &#39;Msgbox Erl &amp; &quot;:&quot; &amp; Error MsgBox LSI_Info(2) &amp; &quot; called by &quot; &amp; LSI_Info(12) &amp; &quot;(&quot; &amp; LSI_Info(430) &amp; &quot;): &quot; &amp; Error$ &amp; &quot; - Line: &quot; &amp; CStr(Erl) &#39;resume to the final thing Resume finally finally: &#39;do the final thing&lt;/code&gt; Option Public Option Declare Sub Initialize &#39;set up error handler On Error Goto catch &#39;变量定义 Dim s As New NotesSession&#39;当前进程 Dim dbCur As NotesDatabase&#39;当前数据库 Dim collection As NotesDocumentCollection&#39;选中文档的集合 Dim doc As NotesDocument&#39;处理的文档 &#39;变量初始化 Set dbCur = s.CurrentDatabase Set collection = dbCur.UnprocessedDocuments Set doc = collection.GetFirstDocument&#39;获得第一个要处理的文档 While Not doc Is Nothing&#39;当集合中没有要处理的文档时退出 &#39;处理文档 &#39;获得下一要处理的文档 Set doc = collection.GetNextDocument(doc) Wend Goto finally catch: &#39;log error Msgbox Erl &amp; &quot;:&quot; &amp; Error &#39;resume to the final thing Resume finally finally: &#39;do the final thing Exit Sub&#39;不抛出错误 End Sub 链接： LSI_Info: obscure but useful information in LotusScript","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -715,19 +715,19 @@ End Sub</p>
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Domino LotusScript脚本代码集 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Domino LotusScript脚本代码集 - 馨羽的玩具&url=http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Domino LotusScript脚本代码集 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Domino LotusScript脚本代码集 - 馨羽的玩具&u=http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Domino LotusScript脚本代码集 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Domino LotusScript脚本代码集 - 馨羽的玩具&url=http://localhost:4000/posts/lotusscript-trycatch-e9-94-99-e8-af-af-e5-a4-84-e7-90-86/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

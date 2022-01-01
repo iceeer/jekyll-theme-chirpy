@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="把Ubuntu从Vmware虚拟机搬到一台华硕的笔记本上跑： 难过的是笔记本光驱坏了，优盘启动Ubuntu安装又失败，只好把硬盘拆下来作为移动硬盘插在台式机上。本来想硬盘对拷也就行了，可惜从容量大到拷到小的不行，唉！只好把移动硬盘挂到虚拟机上安装个Ubuntu。 先备份原来虚拟机里的系统： cd / tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys 拷到新安装的系统后解压缩恢复： tar xvpfz backup.tgz -C / 没想到放到笔记本后还有事，网络不通 lshw -class network 查看到eth1为disabled，应该是网卡不一样导致的 开启：ifconfig eth0 up 修改：nano /etc/network/interfaces中的eth0为eth1 链接： 用tar备份linux系统 BackupYourSystemTAR 恢复GRUB&nbsp;" />
 <meta property="og:description" content="把Ubuntu从Vmware虚拟机搬到一台华硕的笔记本上跑： 难过的是笔记本光驱坏了，优盘启动Ubuntu安装又失败，只好把硬盘拆下来作为移动硬盘插在台式机上。本来想硬盘对拷也就行了，可惜从容量大到拷到小的不行，唉！只好把移动硬盘挂到虚拟机上安装个Ubuntu。 先备份原来虚拟机里的系统： cd / tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys 拷到新安装的系统后解压缩恢复： tar xvpfz backup.tgz -C / 没想到放到笔记本后还有事，网络不通 lshw -class network 查看到eth1为disabled，应该是网卡不一样导致的 开启：ifconfig eth0 up 修改：nano /etc/network/interfaces中的eth0为eth1 链接： 用tar备份linux系统 BackupYourSystemTAR 恢复GRUB&nbsp;" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/" />
+<link rel="canonical" href="http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/" />
+<meta property="og:url" content="http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-04-18T20:42:56+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/","headline":"Ubuntu搬家","dateModified":"2012-04-18T20:42:56+08:00","datePublished":"2012-04-18T20:42:56+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/"},"description":"把Ubuntu从Vmware虚拟机搬到一台华硕的笔记本上跑： 难过的是笔记本光驱坏了，优盘启动Ubuntu安装又失败，只好把硬盘拆下来作为移动硬盘插在台式机上。本来想硬盘对拷也就行了，可惜从容量大到拷到小的不行，唉！只好把移动硬盘挂到虚拟机上安装个Ubuntu。 先备份原来虚拟机里的系统： cd / tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys 拷到新安装的系统后解压缩恢复： tar xvpfz backup.tgz -C / 没想到放到笔记本后还有事，网络不通 lshw -class network 查看到eth1为disabled，应该是网卡不一样导致的 开启：ifconfig eth0 up 修改：nano /etc/network/interfaces中的eth0为eth1 链接： 用tar备份linux系统 BackupYourSystemTAR 恢复GRUB&nbsp;","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/","headline":"Ubuntu搬家","dateModified":"2012-04-18T20:42:56+08:00","datePublished":"2012-04-18T20:42:56+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/"},"description":"把Ubuntu从Vmware虚拟机搬到一台华硕的笔记本上跑： 难过的是笔记本光驱坏了，优盘启动Ubuntu安装又失败，只好把硬盘拆下来作为移动硬盘插在台式机上。本来想硬盘对拷也就行了，可惜从容量大到拷到小的不行，唉！只好把移动硬盘挂到虚拟机上安装个Ubuntu。 先备份原来虚拟机里的系统： cd / tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys 拷到新安装的系统后解压缩恢复： tar xvpfz backup.tgz -C / 没想到放到笔记本后还有事，网络不通 lshw -class network 查看到eth1为disabled，应该是网卡不一样导致的 开启：ifconfig eth0 up 修改：nano /etc/network/interfaces中的eth0为eth1 链接： 用tar备份linux系统 BackupYourSystemTAR 恢复GRUB&nbsp;","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -666,19 +666,19 @@ tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.t
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Ubuntu搬家 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Ubuntu搬家 - 馨羽的玩具&url=http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Ubuntu搬家 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Ubuntu搬家 - 馨羽的玩具&u=http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Ubuntu搬家 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/ubuntu-e6-90-ac-e5-ae-b6/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Ubuntu搬家 - 馨羽的玩具&url=http://localhost:4000/posts/ubuntu-e6-90-ac-e5-ae-b6/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

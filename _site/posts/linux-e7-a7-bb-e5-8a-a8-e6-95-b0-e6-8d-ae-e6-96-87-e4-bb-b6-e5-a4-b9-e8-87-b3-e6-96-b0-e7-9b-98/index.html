@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="-----挂载数据库盘 fdisk -l fdisk /dev/xvdb 根据提示，依次输入&ldquo;n&rdquo;，&ldquo;p&rdquo;&ldquo;1&rdquo;，两次回车，&ldquo;wq&rdquo;， mkfs.ext4 /dev/xvdb1 mkdir /var/www echo &#39;/dev/xvdb1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab cat /etc/fstab mount -a&rdquo;命令挂载新分区，然后用&ldquo;df -h&rdquo;命令查看 ----复制数据 cd /data mkdir tmp chmod 1777 tmp mkdir var mkdir home cd /var cp -ax * /data/var cd /home cp -ax * /data/home cd / cp var var.old cp tmp tmp.old cp home home.old ln -s /data/var /var ln -s /data/tmp /tmp ln -s /data/home /home 链接：在系统工作时调整分区：移动/home 在系统工作时调整分区：整理数据&lt;/p&gt; &lt;/a&gt;" />
 <meta property="og:description" content="-----挂载数据库盘 fdisk -l fdisk /dev/xvdb 根据提示，依次输入&ldquo;n&rdquo;，&ldquo;p&rdquo;&ldquo;1&rdquo;，两次回车，&ldquo;wq&rdquo;， mkfs.ext4 /dev/xvdb1 mkdir /var/www echo &#39;/dev/xvdb1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab cat /etc/fstab mount -a&rdquo;命令挂载新分区，然后用&ldquo;df -h&rdquo;命令查看 ----复制数据 cd /data mkdir tmp chmod 1777 tmp mkdir var mkdir home cd /var cp -ax * /data/var cd /home cp -ax * /data/home cd / cp var var.old cp tmp tmp.old cp home home.old ln -s /data/var /var ln -s /data/tmp /tmp ln -s /data/home /home 链接：在系统工作时调整分区：移动/home 在系统工作时调整分区：整理数据&lt;/p&gt; &lt;/a&gt;" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" />
+<link rel="canonical" href="http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" />
+<meta property="og:url" content="http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-12-29T21:40:07+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/","headline":"Linux移动数据文件夹至新盘","dateModified":"2012-12-29T21:40:07+08:00","datePublished":"2012-12-29T21:40:07+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/"},"description":"-----挂载数据库盘 fdisk -l fdisk /dev/xvdb 根据提示，依次输入&ldquo;n&rdquo;，&ldquo;p&rdquo;&ldquo;1&rdquo;，两次回车，&ldquo;wq&rdquo;， mkfs.ext4 /dev/xvdb1 mkdir /var/www echo &#39;/dev/xvdb1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab cat /etc/fstab mount -a&rdquo;命令挂载新分区，然后用&ldquo;df -h&rdquo;命令查看 ----复制数据 cd /data mkdir tmp chmod 1777 tmp mkdir var mkdir home cd /var cp -ax * /data/var cd /home cp -ax * /data/home cd / cp var var.old cp tmp tmp.old cp home home.old ln -s /data/var /var ln -s /data/tmp /tmp ln -s /data/home /home 链接：在系统工作时调整分区：移动/home 在系统工作时调整分区：整理数据&lt;/p&gt; &lt;/a&gt;","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/","headline":"Linux移动数据文件夹至新盘","dateModified":"2012-12-29T21:40:07+08:00","datePublished":"2012-12-29T21:40:07+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/"},"description":"-----挂载数据库盘 fdisk -l fdisk /dev/xvdb 根据提示，依次输入&ldquo;n&rdquo;，&ldquo;p&rdquo;&ldquo;1&rdquo;，两次回车，&ldquo;wq&rdquo;， mkfs.ext4 /dev/xvdb1 mkdir /var/www echo &#39;/dev/xvdb1 /data ext4 defaults 0 0&#39; &gt;&gt; /etc/fstab cat /etc/fstab mount -a&rdquo;命令挂载新分区，然后用&ldquo;df -h&rdquo;命令查看 ----复制数据 cd /data mkdir tmp chmod 1777 tmp mkdir var mkdir home cd /var cp -ax * /data/var cd /home cp -ax * /data/home cd / cp var var.old cp tmp tmp.old cp home home.old ln -s /data/var /var ln -s /data/tmp /tmp ln -s /data/home /home 链接：在系统工作时调整分区：移动/home 在系统工作时调整分区：整理数据&lt;/p&gt; &lt;/a&gt;","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -679,19 +679,19 @@ ln -s /data/home /home</p>
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Linux移动数据文件夹至新盘 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Linux移动数据文件夹至新盘 - 馨羽的玩具&url=http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Linux移动数据文件夹至新盘 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Linux移动数据文件夹至新盘 - 馨羽的玩具&u=http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Linux移动数据文件夹至新盘 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Linux移动数据文件夹至新盘 - 馨羽的玩具&url=http://localhost:4000/posts/linux-e7-a7-bb-e5-8a-a8-e6-95-b0-e6-8d-ae-e6-96-87-e4-bb-b6-e5-a4-b9-e8-87-b3-e6-96-b0-e7-9b-98/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

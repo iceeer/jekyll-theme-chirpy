@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="错误：Cannot get hostname for your address 修改MySql 的配置文件 my.ini [mysqld] skip-name-resolve 它将禁止 MySql Server 对外部连接进行 DNS 解析，使用这一选项可以消除 MySql 进行 DNS 解析的时间。 但需要注意，如果开启该选项，则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求。 去掉mysql的root用户的密码 use mysql;update user set password=password(&#39;&#39;) where user=&#39;root&#39;; flush privileges; 压力测试 mysqlslap -a --concurrency=50,100 --number-of-queries=1000 mysqlslap 使用总结 设置Linux下Mysql表名不区分大小写 /etc/my.cnf中的[mysqld]后添加添加lower_case_table_names=1 Mysql集群 mysql 集群 jdbc配置 mysql导入 mysql -u root -p database_name mysql&gt;source d:\sample.sql mysql导出 mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名 phpmyadmin导入大文件 php.ini修改post_max_size、upload_max_filesize、memory_limit、max_execution_time=0、max_input_time = -1 phpMyAdmin的目录，找到根目录下的config.inc.php文件，修改这个参数 $cfg[&#39;UploadDir&#39;] = &#39;ImportSQLFile&#39;; $cfg[&#39;SaveDir&#39;] = &#39;ExportSQLFile&#39;; $cfg[&#39;ExecTimeLimit&#39;] = 0; 然后把我们需要导入的sql文件复制到ImportSQLFile中 帝国备份王 出错的话修改一下php.ini：&nbsp;short_open_tag = On 备份到FTP：MySQLBackupFTP（免费版只能备份2个数据库） 恢复/导入：用Navicat执行&ldquo;Execute SQL File&rdquo;，不勾选&ldquo;Run multiple queries in each execution&rdquo; 如何修复MySQL数据库(MyISAM / InnoDB)" />
 <meta property="og:description" content="错误：Cannot get hostname for your address 修改MySql 的配置文件 my.ini [mysqld] skip-name-resolve 它将禁止 MySql Server 对外部连接进行 DNS 解析，使用这一选项可以消除 MySql 进行 DNS 解析的时间。 但需要注意，如果开启该选项，则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求。 去掉mysql的root用户的密码 use mysql;update user set password=password(&#39;&#39;) where user=&#39;root&#39;; flush privileges; 压力测试 mysqlslap -a --concurrency=50,100 --number-of-queries=1000 mysqlslap 使用总结 设置Linux下Mysql表名不区分大小写 /etc/my.cnf中的[mysqld]后添加添加lower_case_table_names=1 Mysql集群 mysql 集群 jdbc配置 mysql导入 mysql -u root -p database_name mysql&gt;source d:\sample.sql mysql导出 mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名 phpmyadmin导入大文件 php.ini修改post_max_size、upload_max_filesize、memory_limit、max_execution_time=0、max_input_time = -1 phpMyAdmin的目录，找到根目录下的config.inc.php文件，修改这个参数 $cfg[&#39;UploadDir&#39;] = &#39;ImportSQLFile&#39;; $cfg[&#39;SaveDir&#39;] = &#39;ExportSQLFile&#39;; $cfg[&#39;ExecTimeLimit&#39;] = 0; 然后把我们需要导入的sql文件复制到ImportSQLFile中 帝国备份王 出错的话修改一下php.ini：&nbsp;short_open_tag = On 备份到FTP：MySQLBackupFTP（免费版只能备份2个数据库） 恢复/导入：用Navicat执行&ldquo;Execute SQL File&rdquo;，不勾选&ldquo;Run multiple queries in each execution&rdquo; 如何修复MySQL数据库(MyISAM / InnoDB)" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/" />
+<link rel="canonical" href="http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/" />
+<meta property="og:url" content="http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2011-12-09T14:24:11+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/","headline":"mysql使用","dateModified":"2011-12-09T14:24:11+08:00","datePublished":"2011-12-09T14:24:11+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/"},"description":"错误：Cannot get hostname for your address 修改MySql 的配置文件 my.ini [mysqld] skip-name-resolve 它将禁止 MySql Server 对外部连接进行 DNS 解析，使用这一选项可以消除 MySql 进行 DNS 解析的时间。 但需要注意，如果开启该选项，则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求。 去掉mysql的root用户的密码 use mysql;update user set password=password(&#39;&#39;) where user=&#39;root&#39;; flush privileges; 压力测试 mysqlslap -a --concurrency=50,100 --number-of-queries=1000 mysqlslap 使用总结 设置Linux下Mysql表名不区分大小写 /etc/my.cnf中的[mysqld]后添加添加lower_case_table_names=1 Mysql集群 mysql 集群 jdbc配置 mysql导入 mysql -u root -p database_name mysql&gt;source d:\\sample.sql mysql导出 mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名 phpmyadmin导入大文件 php.ini修改post_max_size、upload_max_filesize、memory_limit、max_execution_time=0、max_input_time = -1 phpMyAdmin的目录，找到根目录下的config.inc.php文件，修改这个参数 $cfg[&#39;UploadDir&#39;] = &#39;ImportSQLFile&#39;; $cfg[&#39;SaveDir&#39;] = &#39;ExportSQLFile&#39;; $cfg[&#39;ExecTimeLimit&#39;] = 0; 然后把我们需要导入的sql文件复制到ImportSQLFile中 帝国备份王 出错的话修改一下php.ini：&nbsp;short_open_tag = On 备份到FTP：MySQLBackupFTP（免费版只能备份2个数据库） 恢复/导入：用Navicat执行&ldquo;Execute SQL File&rdquo;，不勾选&ldquo;Run multiple queries in each execution&rdquo; 如何修复MySQL数据库(MyISAM / InnoDB)","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/","headline":"mysql使用","dateModified":"2011-12-09T14:24:11+08:00","datePublished":"2011-12-09T14:24:11+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/"},"description":"错误：Cannot get hostname for your address 修改MySql 的配置文件 my.ini [mysqld] skip-name-resolve 它将禁止 MySql Server 对外部连接进行 DNS 解析，使用这一选项可以消除 MySql 进行 DNS 解析的时间。 但需要注意，如果开启该选项，则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求。 去掉mysql的root用户的密码 use mysql;update user set password=password(&#39;&#39;) where user=&#39;root&#39;; flush privileges; 压力测试 mysqlslap -a --concurrency=50,100 --number-of-queries=1000 mysqlslap 使用总结 设置Linux下Mysql表名不区分大小写 /etc/my.cnf中的[mysqld]后添加添加lower_case_table_names=1 Mysql集群 mysql 集群 jdbc配置 mysql导入 mysql -u root -p database_name mysql&gt;source d:\\sample.sql mysql导出 mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名 phpmyadmin导入大文件 php.ini修改post_max_size、upload_max_filesize、memory_limit、max_execution_time=0、max_input_time = -1 phpMyAdmin的目录，找到根目录下的config.inc.php文件，修改这个参数 $cfg[&#39;UploadDir&#39;] = &#39;ImportSQLFile&#39;; $cfg[&#39;SaveDir&#39;] = &#39;ExportSQLFile&#39;; $cfg[&#39;ExecTimeLimit&#39;] = 0; 然后把我们需要导入的sql文件复制到ImportSQLFile中 帝国备份王 出错的话修改一下php.ini：&nbsp;short_open_tag = On 备份到FTP：MySQLBackupFTP（免费版只能备份2个数据库） 恢复/导入：用Navicat执行&ldquo;Execute SQL File&rdquo;，不勾选&ldquo;Run multiple queries in each execution&rdquo; 如何修复MySQL数据库(MyISAM / InnoDB)","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -682,19 +682,19 @@ $cfg['ExecTimeLimit'] = 0;<br />
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=mysql使用 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=mysql使用 - 馨羽的玩具&url=http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=mysql使用 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=mysql使用 - 馨羽的玩具&u=http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=mysql使用 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/mysql-e4-bd-bf-e7-94-a8/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=mysql使用 - 馨羽的玩具&url=http://localhost:4000/posts/mysql-e4-bd-bf-e7-94-a8/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

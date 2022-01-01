@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="修改php.ini确认有这行：extension=php_ldap.dll 修改config_inc.php： # SET UP the Login Method $g_login_method = LDAP; $g_ldap_server = &#39;ldap://10.136.238.54:389&#39;; $g_ldap_root_dn = &#39;O=STD&#39;; $g_ldap_organization = &#39;&#39;; #Domino LDAP使用cn，Mantis不支持中文名登录 $g_ldap_uid_field = &#39;uid&#39;; $g_ldap_bind_dn =&#39;&#39;; $g_ldap_bind_passwd = &#39;&#39;; # Use email address in LDAP rather than the email stored in the database. $g_use_ldap_email = ON; # The LDAP Protocol Version, if 0, then the protocol version is not set. $g_ldap_protocol_version = 3; # --- signup ---------------------- $g_allow_signup = OFF; $g_lost_password_feature = OFF; *注意原来系统里的管理员帐号不要删掉，LDAP里要有同名的管理员帐号才能登录" />
 <meta property="og:description" content="修改php.ini确认有这行：extension=php_ldap.dll 修改config_inc.php： # SET UP the Login Method $g_login_method = LDAP; $g_ldap_server = &#39;ldap://10.136.238.54:389&#39;; $g_ldap_root_dn = &#39;O=STD&#39;; $g_ldap_organization = &#39;&#39;; #Domino LDAP使用cn，Mantis不支持中文名登录 $g_ldap_uid_field = &#39;uid&#39;; $g_ldap_bind_dn =&#39;&#39;; $g_ldap_bind_passwd = &#39;&#39;; # Use email address in LDAP rather than the email stored in the database. $g_use_ldap_email = ON; # The LDAP Protocol Version, if 0, then the protocol version is not set. $g_ldap_protocol_version = 3; # --- signup ---------------------- $g_allow_signup = OFF; $g_lost_password_feature = OFF; *注意原来系统里的管理员帐号不要删掉，LDAP里要有同名的管理员帐号才能登录" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/" />
+<link rel="canonical" href="http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/" />
+<meta property="og:url" content="http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-05-10T13:54:10+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/","headline":"Mantis集成LDAP","dateModified":"2012-05-10T13:54:10+08:00","datePublished":"2012-05-10T13:54:10+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/"},"description":"修改php.ini确认有这行：extension=php_ldap.dll 修改config_inc.php： # SET UP the Login Method $g_login_method = LDAP; $g_ldap_server = &#39;ldap://10.136.238.54:389&#39;; $g_ldap_root_dn = &#39;O=STD&#39;; $g_ldap_organization = &#39;&#39;; #Domino LDAP使用cn，Mantis不支持中文名登录 $g_ldap_uid_field = &#39;uid&#39;; $g_ldap_bind_dn =&#39;&#39;; $g_ldap_bind_passwd = &#39;&#39;; # Use email address in LDAP rather than the email stored in the database. $g_use_ldap_email = ON; # The LDAP Protocol Version, if 0, then the protocol version is not set. $g_ldap_protocol_version = 3; # --- signup ---------------------- $g_allow_signup = OFF; $g_lost_password_feature = OFF; *注意原来系统里的管理员帐号不要删掉，LDAP里要有同名的管理员帐号才能登录","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/","headline":"Mantis集成LDAP","dateModified":"2012-05-10T13:54:10+08:00","datePublished":"2012-05-10T13:54:10+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/"},"description":"修改php.ini确认有这行：extension=php_ldap.dll 修改config_inc.php： # SET UP the Login Method $g_login_method = LDAP; $g_ldap_server = &#39;ldap://10.136.238.54:389&#39;; $g_ldap_root_dn = &#39;O=STD&#39;; $g_ldap_organization = &#39;&#39;; #Domino LDAP使用cn，Mantis不支持中文名登录 $g_ldap_uid_field = &#39;uid&#39;; $g_ldap_bind_dn =&#39;&#39;; $g_ldap_bind_passwd = &#39;&#39;; # Use email address in LDAP rather than the email stored in the database. $g_use_ldap_email = ON; # The LDAP Protocol Version, if 0, then the protocol version is not set. $g_ldap_protocol_version = 3; # --- signup ---------------------- $g_allow_signup = OFF; $g_lost_password_feature = OFF; *注意原来系统里的管理员帐号不要删掉，LDAP里要有同名的管理员帐号才能登录","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -687,19 +687,19 @@ $g_lost_password_feature = OFF;</p>
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Mantis集成LDAP - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Mantis集成LDAP - 馨羽的玩具&url=http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Mantis集成LDAP - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Mantis集成LDAP - 馨羽的玩具&u=http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=Mantis集成LDAP - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/mantis-e9-9b-86-e6-88-90ldap/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=Mantis集成LDAP - 馨羽的玩具&url=http://localhost:4000/posts/mantis-e9-9b-86-e6-88-90ldap/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="mstsc.exe 客户端 mstsc.exe /? 查看参数 mstsc.exe /console 登录到服务器主机当前用户的桌面，连接上服务器以后当前主机的用户会黑屏，只有远程用户可以看到桌面，而且看到的这个桌面就是原本已经在服务器本机登录的桌面了。 tscc.msc 配置（可以配置：限制每个用户使用一个会话） 开启远程桌面 1.从另一台机器远程开启Windows远程桌面： Wmic /node:&quot;192.168.3.130&quot; /USER:&quot;administrator&quot; PATH win32_terminalservicesetting WHERE (__Class!=&quot;&quot;) CALL SetAllowTSConnections 1 2.用远程桌面客户端登入远程系统 远程桌面超过最大连接数解决办法 运行 mstsc /v:IP /console 或者使用&nbsp;tsmmc.msc (Win 2003) 组策略修改： 组策略级别要高于终端服务配置，当启用组策略后终端服务配置中的相应选项会变成灰色不可修改 运行－gpedit.msc－计算机配置－管理模板－Windows组件－终端服务 双击右边的&rdquo;限制连接数量&ldquo;－选择&rdquo;已启用&ldquo;－填入允许的最大连接数 模拟Ctrl Alt Del 1、Ctrl+Alt+End 2、开始菜单--windows安全性 链接：远程桌面多用戶同时连接數破解通用补丁Universal Termsrv.dll Patch 下载：UniversalTermsrvPatch_20090425 端口修改工具" />
 <meta property="og:description" content="mstsc.exe 客户端 mstsc.exe /? 查看参数 mstsc.exe /console 登录到服务器主机当前用户的桌面，连接上服务器以后当前主机的用户会黑屏，只有远程用户可以看到桌面，而且看到的这个桌面就是原本已经在服务器本机登录的桌面了。 tscc.msc 配置（可以配置：限制每个用户使用一个会话） 开启远程桌面 1.从另一台机器远程开启Windows远程桌面： Wmic /node:&quot;192.168.3.130&quot; /USER:&quot;administrator&quot; PATH win32_terminalservicesetting WHERE (__Class!=&quot;&quot;) CALL SetAllowTSConnections 1 2.用远程桌面客户端登入远程系统 远程桌面超过最大连接数解决办法 运行 mstsc /v:IP /console 或者使用&nbsp;tsmmc.msc (Win 2003) 组策略修改： 组策略级别要高于终端服务配置，当启用组策略后终端服务配置中的相应选项会变成灰色不可修改 运行－gpedit.msc－计算机配置－管理模板－Windows组件－终端服务 双击右边的&rdquo;限制连接数量&ldquo;－选择&rdquo;已启用&ldquo;－填入允许的最大连接数 模拟Ctrl Alt Del 1、Ctrl+Alt+End 2、开始菜单--windows安全性 链接：远程桌面多用戶同时连接數破解通用补丁Universal Termsrv.dll Patch 下载：UniversalTermsrvPatch_20090425 端口修改工具" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" />
+<link rel="canonical" href="http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" />
+<meta property="og:url" content="http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2011-04-28T13:09:22+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/","headline":"远程桌面（RDP）","dateModified":"2011-04-28T13:09:22+08:00","datePublished":"2011-04-28T13:09:22+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/"},"description":"mstsc.exe 客户端 mstsc.exe /? 查看参数 mstsc.exe /console 登录到服务器主机当前用户的桌面，连接上服务器以后当前主机的用户会黑屏，只有远程用户可以看到桌面，而且看到的这个桌面就是原本已经在服务器本机登录的桌面了。 tscc.msc 配置（可以配置：限制每个用户使用一个会话） 开启远程桌面 1.从另一台机器远程开启Windows远程桌面： Wmic /node:&quot;192.168.3.130&quot; /USER:&quot;administrator&quot; PATH win32_terminalservicesetting WHERE (__Class!=&quot;&quot;) CALL SetAllowTSConnections 1 2.用远程桌面客户端登入远程系统 远程桌面超过最大连接数解决办法 运行 mstsc /v:IP /console 或者使用&nbsp;tsmmc.msc (Win 2003) 组策略修改： 组策略级别要高于终端服务配置，当启用组策略后终端服务配置中的相应选项会变成灰色不可修改 运行－gpedit.msc－计算机配置－管理模板－Windows组件－终端服务 双击右边的&rdquo;限制连接数量&ldquo;－选择&rdquo;已启用&ldquo;－填入允许的最大连接数 模拟Ctrl Alt Del 1、Ctrl+Alt+End 2、开始菜单--windows安全性 链接：远程桌面多用戶同时连接數破解通用补丁Universal Termsrv.dll Patch 下载：UniversalTermsrvPatch_20090425 端口修改工具","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/","headline":"远程桌面（RDP）","dateModified":"2011-04-28T13:09:22+08:00","datePublished":"2011-04-28T13:09:22+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/"},"description":"mstsc.exe 客户端 mstsc.exe /? 查看参数 mstsc.exe /console 登录到服务器主机当前用户的桌面，连接上服务器以后当前主机的用户会黑屏，只有远程用户可以看到桌面，而且看到的这个桌面就是原本已经在服务器本机登录的桌面了。 tscc.msc 配置（可以配置：限制每个用户使用一个会话） 开启远程桌面 1.从另一台机器远程开启Windows远程桌面： Wmic /node:&quot;192.168.3.130&quot; /USER:&quot;administrator&quot; PATH win32_terminalservicesetting WHERE (__Class!=&quot;&quot;) CALL SetAllowTSConnections 1 2.用远程桌面客户端登入远程系统 远程桌面超过最大连接数解决办法 运行 mstsc /v:IP /console 或者使用&nbsp;tsmmc.msc (Win 2003) 组策略修改： 组策略级别要高于终端服务配置，当启用组策略后终端服务配置中的相应选项会变成灰色不可修改 运行－gpedit.msc－计算机配置－管理模板－Windows组件－终端服务 双击右边的&rdquo;限制连接数量&ldquo;－选择&rdquo;已启用&ldquo;－填入允许的最大连接数 模拟Ctrl Alt Del 1、Ctrl+Alt+End 2、开始菜单--windows安全性 链接：远程桌面多用戶同时连接數破解通用补丁Universal Termsrv.dll Patch 下载：UniversalTermsrvPatch_20090425 端口修改工具","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -686,19 +686,19 @@ Wmic /node:"192.168.3.130" /USER:"administrator" PATH win32_terminalservicesetti
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=远程桌面（RDP） - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=远程桌面（RDP） - 馨羽的玩具&url=http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=远程桌面（RDP） - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=远程桌面（RDP） - 馨羽的玩具&u=http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=远程桌面（RDP） - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=远程桌面（RDP） - 馨羽的玩具&url=http://localhost:4000/posts/e8-bf-9c-e7-a8-8b-e6-a1-8c-e9-9d-a2-ef-bc-88rdp-ef-bc-89/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>

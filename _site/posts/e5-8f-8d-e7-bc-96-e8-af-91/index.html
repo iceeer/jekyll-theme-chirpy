@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="Java反编译 使用jd-gui反编译后去掉注释&nbsp;/* *d* **/ 去掉最后一行自动生成的注释&nbsp;/* Location:[Ss]+?(?=*/)*/$ .access$ 反编译偶内部类调用外部类成员问题很简单的一个测试类源码： public class testOuter { private int a; private int b; private void fun() { a += 1; } class testInner { int x = 0; testInner() { b = 1; a = 0; fun(); } }编译生成的Class文件：class testOuter$testInner { int x = 0; testOuter$testInner(testOuter paramtestOuter) { testOuter.access$002(paramtestOuter, 1); testOuter.access$102(paramtestOuter, 0); testOuter.access$200(paramtestOuter); }}可以看出，为了使内部类访问外部类的私有成员，编译器生成了形似 &quot;外部类.access$XYZ&quot;的函数。XYZ为数字。X是按照私有成员在内部类出现的顺序递增的。YZ为02的话，标明是基本变量成员；YZ为00的话标明是对象成员或者函数。 32位？64位 其实普通文本编辑器就行（比如notepad），打开之后搜索PE 旁边是L就是32位 u是64位 链接：java反编译，内部类调用外部类成员总结" />
 <meta property="og:description" content="Java反编译 使用jd-gui反编译后去掉注释&nbsp;/* *d* **/ 去掉最后一行自动生成的注释&nbsp;/* Location:[Ss]+?(?=*/)*/$ .access$ 反编译偶内部类调用外部类成员问题很简单的一个测试类源码： public class testOuter { private int a; private int b; private void fun() { a += 1; } class testInner { int x = 0; testInner() { b = 1; a = 0; fun(); } }编译生成的Class文件：class testOuter$testInner { int x = 0; testOuter$testInner(testOuter paramtestOuter) { testOuter.access$002(paramtestOuter, 1); testOuter.access$102(paramtestOuter, 0); testOuter.access$200(paramtestOuter); }}可以看出，为了使内部类访问外部类的私有成员，编译器生成了形似 &quot;外部类.access$XYZ&quot;的函数。XYZ为数字。X是按照私有成员在内部类出现的顺序递增的。YZ为02的话，标明是基本变量成员；YZ为00的话标明是对象成员或者函数。 32位？64位 其实普通文本编辑器就行（比如notepad），打开之后搜索PE 旁边是L就是32位 u是64位 链接：java反编译，内部类调用外部类成员总结" />
-<link rel="canonical" href="http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/" />
-<meta property="og:url" content="http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/" />
+<link rel="canonical" href="http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/" />
+<meta property="og:url" content="http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/" />
 <meta property="og:site_name" content="馨羽的玩具" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-06-15T11:38:59+08:00" />
@@ -48,7 +48,7 @@
 <meta name="twitter:site" content="@iceeer" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/","headline":"反编译","dateModified":"2012-06-15T11:38:59+08:00","datePublished":"2012-06-15T11:38:59+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/"},"description":"Java反编译 使用jd-gui反编译后去掉注释&nbsp;/* *d* **/ 去掉最后一行自动生成的注释&nbsp;/* Location:[Ss]+?(?=*/)*/$ .access$ 反编译偶内部类调用外部类成员问题很简单的一个测试类源码： public class testOuter { private int a; private int b; private void fun() { a += 1; } class testInner { int x = 0; testInner() { b = 1; a = 0; fun(); } }编译生成的Class文件：class testOuter$testInner { int x = 0; testOuter$testInner(testOuter paramtestOuter) { testOuter.access$002(paramtestOuter, 1); testOuter.access$102(paramtestOuter, 0); testOuter.access$200(paramtestOuter); }}可以看出，为了使内部类访问外部类的私有成员，编译器生成了形似 &quot;外部类.access$XYZ&quot;的函数。XYZ为数字。X是按照私有成员在内部类出现的顺序递增的。YZ为02的话，标明是基本变量成员；YZ为00的话标明是对象成员或者函数。 32位？64位 其实普通文本编辑器就行（比如notepad），打开之后搜索PE 旁边是L就是32位 u是64位 链接：java反编译，内部类调用外部类成员总结","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/","headline":"反编译","dateModified":"2012-06-15T11:38:59+08:00","datePublished":"2012-06-15T11:38:59+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/"},"description":"Java反编译 使用jd-gui反编译后去掉注释&nbsp;/* *d* **/ 去掉最后一行自动生成的注释&nbsp;/* Location:[Ss]+?(?=*/)*/$ .access$ 反编译偶内部类调用外部类成员问题很简单的一个测试类源码： public class testOuter { private int a; private int b; private void fun() { a += 1; } class testInner { int x = 0; testInner() { b = 1; a = 0; fun(); } }编译生成的Class文件：class testOuter$testInner { int x = 0; testOuter$testInner(testOuter paramtestOuter) { testOuter.access$002(paramtestOuter, 1); testOuter.access$102(paramtestOuter, 0); testOuter.access$200(paramtestOuter); }}可以看出，为了使内部类访问外部类的私有成员，编译器生成了形似 &quot;外部类.access$XYZ&quot;的函数。XYZ为数字。X是按照私有成员在内部类出现的顺序递增的。YZ为02的话，标明是基本变量成员；YZ为00的话标明是对象成员或者函数。 32位？64位 其实普通文本编辑器就行（比如notepad），打开之后搜索PE 旁边是L就是32位 u是64位 链接：java反编译，内部类调用外部类成员总结","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -682,19 +682,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=反编译 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=反编译 - 馨羽的玩具&url=http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=反编译 - 馨羽的玩具&u=http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=反编译 - 馨羽的玩具&u=http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=反编译 - 馨羽的玩具&url=http://jekyll.xystoy.com//posts/e5-8f-8d-e7-bc-96-e8-af-91/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=反编译 - 馨羽的玩具&url=http://localhost:4000/posts/e5-8f-8d-e7-bc-96-e8-af-91/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
