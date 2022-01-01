@@ -24,7 +24,7 @@ comments: []
 thisDb:=@ReplaceSubstring(@ReplaceSubstring(@Subset(@DbName;-1);" ";"+");"\";"/");<br />
 aa:=@URLEncode("domino";@AttachmentNames);<br />
 class= @LowerCase(@RightBack(@AttachmentNames; "."));<br />
-@If(@Attachments!=0;"[<a class="""+" href="" target=" _mce_href=">"+@AttachmentNames+"</a>]";"")</p>
+@If(@Attachments!=0;"[<a class="" href="" target="">"+@AttachmentNames+"</a>]";"")</p>
 <p><strong>关于附件的一些设置：</strong><br />
 1.HTTPAllowDecodedUrlPercent=1 ; 允许上传的文件带百分号(%)<br />
 2.修改服务器文档中-因特网协议-HTTP-请求内容的最大大小(Maximum size of request content) 为&ldquo;0&rdquo; (无限制)<br />
