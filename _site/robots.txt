@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: http://jekyll.xystoy.com//sitemap.xml
