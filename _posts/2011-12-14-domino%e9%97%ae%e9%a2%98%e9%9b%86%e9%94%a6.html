@@ -51,7 +51,7 @@ Microsoft Telnet> status</p>
 <p>其他原因链接：<a href="http://blog.sina.com.cn/s/blog_5375a8ff0100tppt.html">http://blog.sina.com.cn/s/blog_5375a8ff0100tppt.html</a></p>
 <p><a href="http://www-01.ibm.com/support/docview.wss?uid=swg1LO59467">Domino 8.5.2 FP1 的BUG</a></p>
 <h1><strong>Attempt to perform folder operation on non-folder note</strong></h1>
-<p>检查一下数据库 load fixup -f <数据库名></p>
+<p>检查一下数据库 load fixup -f &lt;数据库名&gt;</p>
 <p><strong>Router: Connection from server not used; Server not in local domain.</strong><br />
 解决：连接文档中domain设置错误</p>
 <p><strong>This field cannot be split into multiple paragraphs</strong><br />
@@ -63,7 +63,7 @@ Microsoft Telnet> status</p>
 <p><strong>&nbsp;Database open error: &nbsp;RRV bucket is corrupt.&nbsp;RRV 存储区损坏</strong></p>
 <p>fixup也不行的话从备份恢复，最后使用compact试试</p>
 <p><strong>Database open error: : This database is currently in use by another person or process, and cannot be accessed at this time. In order to share a Notes database, it must be accessed via a Domino Server by all users of the database.</strong><br />
-drop <数据库名>试试，可能是Domino的BUG<br />
+drop &lt;数据库名&gt;试试，可能是Domino的BUG<br />
 LO47094: DATABASE IS NOT ACCESSIBLE AFTER AN FILE ACCESS ERROR OCURRED IN HTTP TASK http://www-01.ibm.com/support/docview.wss?uid=swg1LO47094<br />
 临时的方案是tell http quit然后load http<br />
 或者找解锁文件的软件(比如unlocker)对邮件数据库文件解锁</p>
