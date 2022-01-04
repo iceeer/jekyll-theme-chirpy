@@ -37,7 +37,7 @@ comments: []
 <p>先取全部Web用户数的10%，在使用命令"show statistic domino.threads.active.peak"查看运行线程数最大峰值，如果大于最大线程数，则修改线程数为最大峰值的稍大值</p>
 <p><strong><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: normal;">Internet协议-HTTP-活动线程数</span></strong></p>
 <p>在服务器文档中-因特网协议-HTTP</p>
-<p><span style="color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">单CPU服务器<=64&nbsp;<br style="padding: 0px; margin: 0px;" />多CPU服务器<=80</span></p>
+<p><span style="color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">单CPU服务器小于等于64&nbsp;多CPU服务器小于等于80</span></p>
 <p>2、代码</p>
 <p><strong>3、硬件</strong></p>
 <p><strong>群集</strong></p>
@@ -52,12 +52,12 @@ set configuration HTTPJavaMaxHeapSize=512M
 <p>分区服务器 会报错：java.lang.Exception: Notes initialization failure - err 421</p>
 <p>解决：将notes.ini拷到Domino下，或者Path环境变量里添加Data目录</p>
 <p><strong>8、其他</strong></p>
-<div id="_mcePaste">server_pool_tasks=80</div>
-<div id="_mcePaste">server_max_concurrent_trans=100</div>
-<div id="_mcePaste">Show_Server_Performance=1</div>
-<div id="_mcePaste">RouterDbCacheSize=6100</div>
-<div id="_mcePaste">NSF_DBcache_maxentries=6000</div>
-<div id="_mcePaste">SCHEDULE_NO_VALIDATE=1</div>
+<div>server_pool_tasks=80</div>
+<div>server_max_concurrent_trans=100</div>
+<div>Show_Server_Performance=1</div>
+<div>RouterDbCacheSize=6100</div>
+<div>NSF_DBcache_maxentries=6000</div>
+<div>SCHEDULE_NO_VALIDATE=1</div>
 <p>server_pool_tasks=80</p>
 <p>server_max_concurrent_trans=100</p>
 <p>Show_Server_Performance=1</p>
@@ -78,7 +78,7 @@ set configuration HTTPJavaMaxHeapSize=512M
 <p style="text-indent: 0px; padding: 0px; margin: 0px;">其它平台，建议不超过256MB</p>
 <p><strong><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: normal;">INotesThreadMemoryGivePoolsBack=1 </span></strong><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: normal;">优化HTTP私有内存的使用</span></p>
 <p><strong><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: normal;">数据库设置</span></strong></p>
-<p><strong></strong><span style="text-indent: -1cm;" lang="EN-US"><span style="font-style: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;</span></span><span style="text-indent: -1cm; font-family: 宋体;">不维护未读标记，允许设计锁定，允许文档锁定，不覆盖空闲空间，压缩设计，对附件使用</span><span style="text-indent: -1cm;" lang="EN-US">LZ1</span><span style="text-indent: -1cm; font-family: 宋体;">压缩</span></p>
+<p><strong></strong><span style="text-indent: -1cm;" lang="EN-US"><span style="font-style: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;</span></span>不维护未读标记，允许设计锁定，允许文档锁定，不覆盖空闲空间，压缩设计，对附件使用LZ1压缩</p>
 <p><strong>sh stat domino</strong><br />
 domino.cache.design.count应略小于 domino.cache.design.maxsize值</p>
 <p>如果Domino.Threads.Active.Peak 值等于 Domino.Threads.Total。http请求可能在等待http服务提供空闲的线程。如果这样的话，应该在服务器文档中增加活动线程数量，使其小于它。最好每次增加减少5个，找到最佳性能。</p>
