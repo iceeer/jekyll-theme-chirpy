@@ -22,7 +22,7 @@ tags:
 comments: []
 ---
 <p><strong>调整iNotes邮箱显示的组件（WEB）</strong></p>
-<p>.../<邮箱名>/inotes/<span style="color: #ff0000;">mail</span>/?OpenDocument&amp;ui=<span style="color: #99cc00;">portal</span></p>
+<p>.../&lt;邮箱名&gt;/inotes/<span style="color: #ff0000;">mail</span>/?OpenDocument&amp;ui=<span style="color: #99cc00;">portal</span></p>
 <p>除了邮件(<span style="color: #ff0000;">mail</span>)还可以使用下面这些：</p>
 <table border="1" frame="border" rules="all" cellspacing="0" cellpadding="4">
 <tbody>
@@ -71,14 +71,14 @@ dwa_ulite&nbsp;&nbsp; iNotes ultra lite 模式（8.5+）</p>
 比如只显示邮件和通讯录:<br />
 <code>iNotes_WA_Areas = 010010</code></p>
 <p><strong>其他一些iNotes可选参数：</strong></p>
-<p>开启iNotes RSS订阅功能：.../<邮箱名>/iNotes/Proxy/?OpenDocument&amp;Form=s_RSS&amp;NKA</p>
+<p>开启iNotes RSS订阅功能：.../&lt;邮箱名&gt;/iNotes/Proxy/?OpenDocument&amp;Form=s_RSS&amp;NKA</p>
 <p>具体配置见：<a href="http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/topic/com.ibm.help.domino.admin85.doc/DOC/H_ENABLING_RSS_FEEDS_FOR_LOTUS_INOTES_STEPS.html">Enabling RSS feeds for Lotus iNotes</a></p>
 <p><strong><a href="/?p=387">iNotes 8.0（Forms*.ntf）修改</a></strong></p>
 <p><strong>iNotes简洁版（ultra-light）</strong></p>
-<pre>http://<server.domain>/<mailfile path>/?OpenDatabase&amp;ui=inotes_ulite</pre>
+<pre>http://server.domain/mailfile path/?OpenDatabase&amp;ui=inotes_ulite</pre>
 <p>禁用ultra-light：Notes_WA_Ultralight=0</p>
 <pre><strong>隐藏注销按钮：</strong>
-http://<server.domain>/<mailfile path>/inotes/mail/?OpenDocument&amp;ui=mail&amp;layout=LO!H
+http://server.domain/mailfile path/inotes/mail/?OpenDocument&amp;ui=mail&amp;layout=LO!H
 <strong>启用设置-安全中的修改Internet密码</strong>打开配置设置Lotus iNotes - 要求 SSL 以访问安全邮件功能 设置为无Lotus iNotes - 修改 Internet 口令 设置为启用
 <strong>文档删除后马上更新限额显示（8.5+）：事务记录-限额限制 选择&ldquo;添加注释时检查文件中使用的空间&rdquo;</strong></pre>
 <p><strong>附件类型安全控制白名单（8.5.3+）</strong></p>
