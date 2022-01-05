@@ -63,9 +63,9 @@ comments: []
 <p><strong>修改示例：</strong><br />
 1、附件区高度修改：Forms85.nsf 子表单l_MailMemoReadCode中：var WX=AAA.EcK.getElementById('e-' + this.sId + '-attachmentsarea-container');if (WX){WX.style.height=sSize;加上<em>WX.style.height='8em';</em><br />
 2、附件区默认为列表显示：Forms85.nsf 子表单f_AttachmentsAreaRead中：
-<param name="Attachment_ReadOnlyMode" value="1">
-<param name="Attachment_ListViewMode" value="' + (Boy.AXMode || '0') + '">改为：
-<param name="Attachment_ReadOnlyMode" value="1">
-<param name="Attachment_ListViewMode" value="2">
-3、上传图片功能添加支持png（IE控件模式上传无效）：表单h_StdPageEditImageCode中var Cvq=CHk.toLowerCase();if ((Cvq != ".gif") && (Cvq != ".jpg") && (Cvq != ".jpeg")){alert(<dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return false;}改为var Cvq=CHk.toLowerCase();if ((Cvq != ".gif") && (Cvq != ".jpg") && (Cvq != ".jpeg") && (Cvq != ".png")){alert(<dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return false;}<br />
-子表单l_MiscStdPageEdit****中var ELS=CXv.match(/(\.(gif|jpg|jpeg))$/i);if (!ELS){alert(<dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return;}改为var ELS=CXv.match(/(\.(gif|jpg|jpeg|png))$/i);if (!ELS){alert(<dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return;}</p>
+&lt;param name="Attachment_ReadOnlyMode" value="1">
+&lt;param name="Attachment_ListViewMode" value="' + (Boy.AXMode || '0') + '">改为：
+&lt;param name="Attachment_ReadOnlyMode" value="1">
+&lt;param name="Attachment_ListViewMode" value="2">
+3、上传图片功能添加支持png（IE控件模式上传无效）：表单h_StdPageEditImageCode中var Cvq=CHk.toLowerCase();if ((Cvq != ".gif") && (Cvq != ".jpg") && (Cvq != ".jpeg")){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return false;}改为var Cvq=CHk.toLowerCase();if ((Cvq != ".gif") && (Cvq != ".jpg") && (Cvq != ".jpeg") && (Cvq != ".png")){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return false;}<br />
+子表单l_MiscStdPageEdit****中var ELS=CXv.match(/(\.(gif|jpg|jpeg))$/i);if (!ELS){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return;}改为var ELS=CXv.match(/(\.(gif|jpg|jpeg|png))$/i);if (!ELS){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return;}</p>
