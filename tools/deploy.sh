@@ -56,10 +56,7 @@ build() {
 }
 
 test() {
-  bundle exec htmlproofer \
-    --disable-external \
-    --allow_hash_href \
-    "$SITE_DIR"
+
 }
 
 resume_site_dir() {
