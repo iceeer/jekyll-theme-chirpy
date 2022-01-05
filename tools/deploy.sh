@@ -57,7 +57,6 @@ build() {
 
 test() {
   bundle exec htmlproofer \
-    --disable-external \
     --allow_hash_href \
     --allow_missing_href \
     --ignore-empty-mailto \
