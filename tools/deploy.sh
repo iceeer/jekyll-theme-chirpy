@@ -60,7 +60,8 @@ test() {
     --disable-external \
     --allow_hash_href \
     --allow_missing_href \
-    --ignore_missing_alt \
+    --ignore-empty-mailto \
+    --empty_alt_ignore \
     "$SITE_DIR"
 }
 
