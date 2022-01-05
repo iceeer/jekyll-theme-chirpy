@@ -32,21 +32,21 @@ class= @LowerCase(@RightBack(@AttachmentNames; "."));<br />
 <p><br class="spacer_" /></p>
 <p><strong>Office2007格式附件不能下载：</strong></p>
 <p><strong> </strong></p>
-<div id="_mcePaste">问题描述：邮件中的附件是Office2007格式，单击文件名时，弹出的另存为页面，将附件自动存为了zip格式，而且解压后不是正确的Office2007文件格式。</div>
-<div id="_mcePaste">原因：因为Microsoft Office 2007 MIME格式未列在Domino Web Server metabase（httpd.cnf）中，所以导致请求一个Microsoft Office2007文件时，被当作未知类型的请求处理。此时服务器会使用&ldquo;Application/octet-stream&rdquo;内容作为返回来替代 Office 2007 MIME类型。</div>
-<div id="_mcePaste">受影响版本：6.x,7.x,8.0.x,8.5,8.5.1</div>
-<div id="_mcePaste">解决办法：修改httpd.cnf，在文件后添加以下：</div>
-<div id="_mcePaste">#</div>
-<div id="_mcePaste"># Microsoft Office 2007 formats</div>
-<div id="_mcePaste">#</div>
-<div id="_mcePaste">AddType .docx application/vnd.openxmlformats-officedocument.wordprocessingml.document</div>
-<div id="_mcePaste">AddType .dotx application/vnd.openxmlformats-officedocument.wordprocessingml.template</div>
-<div id="_mcePaste">AddType .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</div>
-<div id="_mcePaste">AddType .xltx application/vnd.openxmlformats-officedocument.spreadsheetml.template</div>
-<div id="_mcePaste">AddType .pptx application/vnd.openxmlformats-officedocument.presentationml.presentation</div>
-<div id="_mcePaste">AddType .potx application/vnd.openxmlformats-officedocument.presentationml.template</div>
-<div id="_mcePaste">AddType .ppsx application/vnd.openxmlformats-officedocument.presentationml.slideshow</div>
-<div id="_mcePaste">重启domio服务器即可。</div>
+<div>问题描述：邮件中的附件是Office2007格式，单击文件名时，弹出的另存为页面，将附件自动存为了zip格式，而且解压后不是正确的Office2007文件格式。</div>
+<div>原因：因为Microsoft Office 2007 MIME格式未列在Domino Web Server metabase（httpd.cnf）中，所以导致请求一个Microsoft Office2007文件时，被当作未知类型的请求处理。此时服务器会使用&ldquo;Application/octet-stream&rdquo;内容作为返回来替代 Office 2007 MIME类型。</div>
+<div>受影响版本：6.x,7.x,8.0.x,8.5,8.5.1</div>
+<div>解决办法：修改httpd.cnf，在文件后添加以下：</div>
+<div>#</div>
+<div># Microsoft Office 2007 formats</div>
+<div>#</div>
+<div>AddType .docx application/vnd.openxmlformats-officedocument.wordprocessingml.document</div>
+<div>AddType .dotx application/vnd.openxmlformats-officedocument.wordprocessingml.template</div>
+<div>AddType .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</div>
+<div>AddType .xltx application/vnd.openxmlformats-officedocument.spreadsheetml.template</div>
+<div>AddType .pptx application/vnd.openxmlformats-officedocument.presentationml.presentation</div>
+<div>AddType .potx application/vnd.openxmlformats-officedocument.presentationml.template</div>
+<div>AddType .ppsx application/vnd.openxmlformats-officedocument.presentationml.slideshow</div>
+<div>重启domio服务器即可。</div>
 <p>问题描述：邮件中的附件是Office2007格式，单击文件名时，弹出的另存为页面，将附件自动存为了zip格式，而且解压后不是正确的Office2007文件格式。<br />
 原因：因为Microsoft Office 2007 MIME格式未列在Domino Web Server metabase（httpd.cnf）中，所以导致请求一个Microsoft Office2007文件时，被当作未知类型的请求处理。此时服务器会使用&ldquo;Application/octet-stream&rdquo;内容作为返回来替代 Office 2007 MIME类型。<br />
 受影响版本：6.x,7.x,8.0.x,8.5,8.5.1解决办法：修改httpd.cnf，在文件后添加以下：</p>

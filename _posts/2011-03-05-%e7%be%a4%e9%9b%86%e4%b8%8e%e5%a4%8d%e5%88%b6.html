@@ -25,17 +25,17 @@ comments: []
 2、复制文件至其他服务器，创建集群，群集目录设置log.nsf、mail.box不同步<br />
 3、打开管理端-群集-所有服务器文档-选中服务器文档后点击&ldquo;添加到群集&rdquo;</p>
 <p><br class="spacer_" /> <strong>不使用客户端复制数据库：</strong></p>
-<div id="_mcePaste">It is straightforward for Domino servers in a clusters, for non clustered Domino servers you need to update your notes.ini first.</div>
-<div id="_mcePaste">set co CLUSTER_ADMIN_ON=1 Dynamically used for non-clustered Domino servers.</div>
-<div id="_mcePaste">CL COPY source target</div>
-<div id="_mcePaste">CL copy server1!!dbA.nsf server2!!dbB.nsf</div>
-<div id="_mcePaste">COPY, replica ID will be different on server 2</div>
-<div id="_mcePaste">CL copy server1!!dbA.nsf server2!!dbB.nsf REPLICA</div>
-<div id="_mcePaste">This will create a replica on server 2</div>
-<div id="_mcePaste">CL copy server1!!dbA.nsf server2!!dbB.nsf TEMPLATE</div>
-<div id="_mcePaste">This will only copy a template without documents, only design</div>
-<div id="_mcePaste">CL copy dbA.nsf dbB.nsf</div>
-<div id="_mcePaste">On the current server you will have a copy (replica ID will be different</div>
+<div>It is straightforward for Domino servers in a clusters, for non clustered Domino servers you need to update your notes.ini first.</div>
+<div>set co CLUSTER_ADMIN_ON=1 Dynamically used for non-clustered Domino servers.</div>
+<div>CL COPY source target</div>
+<div>CL copy server1!!dbA.nsf server2!!dbB.nsf</div>
+<div>COPY, replica ID will be different on server 2</div>
+<div>CL copy server1!!dbA.nsf server2!!dbB.nsf REPLICA</div>
+<div>This will create a replica on server 2</div>
+<div>CL copy server1!!dbA.nsf server2!!dbB.nsf TEMPLATE</div>
+<div>This will only copy a template without documents, only design</div>
+<div>CL copy dbA.nsf dbB.nsf</div>
+<div>On the current server you will have a copy (replica ID will be different</div>
 <p>It is straightforward for Domino servers in a clusters, for non clustered Domino servers you need to update your notes.ini first.set co CLUSTER_ADMIN_ON=1 Dynamically used for non-clustered Domino servers.CL COPY source target&nbsp;&nbsp;CL copy server1!!dbA.nsf server2!!dbB.nsfCOPY, replica ID will be different on server 2&nbsp;&nbsp;CL copy server1!!dbA.nsf server2!!dbB.nsf REPLICAThis will create a replica on server 2&nbsp;&nbsp;CL copy server1!!dbA.nsf server2!!dbB.nsf TEMPLATEThis will only copy a template without documents, only design&nbsp;&nbsp;CL copy dbA.nsf dbB.nsfOn the current server you will have a copy (replica ID will be different</p>
 <p><strong>ICM配置：</strong> <strong>notes.ini 中将</strong><strong>ICM</strong><strong>添加ServerTasks项</strong></p>
 <p><strong>load icm 开启ICM任务</strong></p>

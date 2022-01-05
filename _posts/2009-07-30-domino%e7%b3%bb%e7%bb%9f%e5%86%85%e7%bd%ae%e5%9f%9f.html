@@ -86,22 +86,22 @@ $WindowTitle</p>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">HTTPS</td>
-<td width="57%" align="left" valign="top">Indicates if SSL mode is enabled for the server.&nbsp;</p>
+<td width="57%" align="left" valign="top">Indicates if SSL mode is enabled for the server.&nbsp;
 <p>指示服务器是否启用 SSL 模式。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">HTTPS_CLIENT_CERT_COMMON_NAME</td>
-<td width="57%" align="left" valign="top">The common name on the x.509 certificate&nbsp;</p>
+<td width="57%" align="left" valign="top">The common name on the x.509 certificate&nbsp;
 <p>验证字上的公共名称</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">HTTPS_CLIENT_CERT_ISSUER_COMMON_NAME</td>
-<td width="57%" align="left" valign="top">The issuer of the x.509 certificate&nbsp;</p>
+<td width="57%" align="left" valign="top">The issuer of the x.509 certificate&nbsp;
 <p>x.509 验证字的发行者</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">HTTPS_KEYSIZE</td>
-<td width="57%" align="left" valign="top">The session key during an SSL session. For example, 40-bit,  128-bit.&nbsp;</p>
+<td width="57%" align="left" valign="top">The session key during an SSL session. For example, 40-bit,  128-bit.&nbsp;
 <p>会话过程中的会话密钥。例如：40-bit、128-bit。</td>
 </tr>
 <tr>
@@ -118,43 +118,43 @@ $WindowTitle</p>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Path_Translated</td>
-<td width="57%" align="left" valign="top">The server provides a translated version of PATH_INFO, which takes the path  and does any virtual-to-physical mapping to it.&nbsp;</p>
+<td width="57%" align="left" valign="top">The server provides a translated version of PATH_INFO, which takes the path  and does any virtual-to-physical mapping to it.&nbsp;
 <p>服务器提供 PATH_INFO 的翻译版本，它获得路径并能对其进行从虚拟地址到物理地址的任何映射。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Query_String</td>
-<td width="57%" align="left" valign="top">The information that follows the question mark (?) in the URL that referenced  this script.<strong> </strong>地址 ? 后的信息，或在某些情况下是引用此 Script 的 URL 中位于 !* 后的信息。&nbsp;</p>
+<td width="57%" align="left" valign="top">The information that follows the question mark (?) in the URL that referenced  this script.<strong> </strong>地址 ? 后的信息，或在某些情况下是引用此 Script 的 URL 中位于 !* 后的信息。&nbsp;
 <p class="note"><strong>Note </strong>If your Domino server is configured to allow  search engines to search your Web site Domino will generate URLs with an  exclamation mark (!) instead of a question mark (?).<strong> </strong><span>If this is the  case the Query_String <span class="resultofText">CGI</span> variable includes the information that follows the exclamation mark (!). Domino  always recognizes both the question mark (?) and the exclamation mark (!), but  only generates URLs with the exclamation mark (!) if your site is accessible to  Web search engines.</span><strong> </strong>Generating URLs with an exclamation mark (!)  makes them more searchable.</p>
 </td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Query_String_Decoded</td>
-<td width="57%" align="left" valign="top">Returns the same as Query_String, but decodes the string.<strong> </strong>For example,  if a URL references a view name that contains characters that are not allowed in  a URL, the name is encoded.<strong> </strong><span>This <span class="resultofText">CGI</span> variable decodes that string.</span><strong> </strong>Path_Info_Decoded is available to Domino applications only.&nbsp;</p>
+<td width="57%" align="left" valign="top">Returns the same as Query_String, but decodes the string.<strong> </strong>For example,  if a URL references a view name that contains characters that are not allowed in  a URL, the name is encoded.<strong> </strong><span>This <span class="resultofText">CGI</span> variable decodes that string.</span><strong> </strong>Path_Info_Decoded is available to Domino applications only.&nbsp;
 <p>返回值与 Query_String 相同，但是将字符串解码。例如：如果 URL 引用了一个包含不允许出现在 URL 中的字符的视图名称，此名称会被编码。此 CGI 变量将字符串解码。Path_Info_Decoded 仅对于 Domino 应用程序可用。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Remote_Addr</td>
-<td width="57%" align="left" valign="top">The IP address of the remote host making the request.&nbsp;</p>
+<td width="57%" align="left" valign="top">The IP address of the remote host making the request.&nbsp;
 <p>发出请求的远程主机的 IP 地址。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Remote_Host</td>
-<td width="57%" align="left" valign="top">The name of the host making the request.&nbsp;</p>
+<td width="57%" align="left" valign="top">The name of the host making the request.&nbsp;
 <p>发出请求的主机名称。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Remote_Ident</td>
-<td width="57%" align="left" valign="top">This variable will be set to the remote user name retrieved from the server.  Use this variable only for logging.&nbsp;</p>
+<td width="57%" align="left" valign="top">This variable will be set to the remote user name retrieved from the server.  Use this variable only for logging.&nbsp;
 <p>此变量会设置为从服务器提取的远程用户名。仅登录时使用此变量。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Remote_User</td>
-<td width="57%" align="left" valign="top">Authentication method that returns the authenticated user name.&nbsp;</p>
+<td width="57%" align="left" valign="top">Authentication method that returns the authenticated user name.&nbsp;
 <p>返回被验证用户名的验证方法。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Request_Content</td>
-<td width="57%" align="left" valign="top">Supported only for agents. Contains the data sent with an HTTP POST request.  The data is usually "URLencoded," consisting of name=value pairs concatenated by  ampersands. For example, FirstName=John&amp;LastName=Doe&nbsp;</p>
+<td width="57%" align="left" valign="top">Supported only for agents. Contains the data sent with an HTTP POST request.  The data is usually "URLencoded," consisting of name=value pairs concatenated by  ampersands. For example, FirstName=John&amp;LastName=Doe&nbsp;
 <p>仅由代理支持。包含使用 HTTP POST 请求发送的数据。此数据经常是&ldquo;URL 编码的&rdquo;，由用&ldquo;&amp;&rdquo;连接的 name=value 对组成。例如： FirstName=John&amp;LastName=Doe</td>
 </tr>
 <tr>
@@ -163,37 +163,37 @@ $WindowTitle</p>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Request_Method</td>
-<td width="57%" align="left" valign="top">The method used to make the request. For HTTP, this is "GET," "HEAD," "POST,"  and so on.&nbsp;</p>
+<td width="57%" align="left" valign="top">The method used to make the request. For HTTP, this is "GET," "HEAD," "POST,"  and so on.&nbsp;
 <p>用于发出请求的方法。对于 HTTP，是&ldquo;GET&rdquo;、&ldquo;HEAD&rdquo;、&ldquo;POST&rdquo; 等等。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Script_Name</td>
-<td width="57%" align="left" valign="top">A virtual path to the script being executed, used for self-referencing  URLs.&nbsp;</p>
+<td width="57%" align="left" valign="top">A virtual path to the script being executed, used for self-referencing  URLs.&nbsp;
 <p>到被执行的 Script 的虚拟路径，用于自引用的 URL。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Server_Name</td>
-<td width="57%" align="left" valign="top">The server's host name, DNS alias, or IP address as it would appear in  self-referencing URLs.&nbsp;</p>
+<td width="57%" align="left" valign="top">The server's host name, DNS alias, or IP address as it would appear in  self-referencing URLs.&nbsp;
 <p>服务器的宿主名称、DNS 别名或 IP 地址，将出现在自引用的 URL 中。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Server_Protocol</td>
-<td width="57%" align="left" valign="top">The name and revision of the information protocol accompanying this  request.&nbsp;</p>
+<td width="57%" align="left" valign="top">The name and revision of the information protocol accompanying this  request.&nbsp;
 <p>与请求同时出现的信息协议的名称和修订。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Server_Port</td>
-<td width="57%" align="left" valign="top">The port to which the request was sent.&nbsp;</p>
+<td width="57%" align="left" valign="top">The port to which the request was sent.&nbsp;
 <p>发送请求的端口。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Server_Software</td>
-<td width="57%" align="left" valign="top"><span>The name and version of the information server software running the  <span class="resultofText">CGI</span> program.</span>&nbsp;</p>
+<td width="57%" align="left" valign="top"><span>The name and version of the information server software running the  <span class="resultofText">CGI</span> program.</span>&nbsp;
 <p>运行 CGI 程序的信息服务器软件的名称和版本。</td>
 </tr>
 <tr>
 <td width="43%" align="left" valign="top">Server_URL_Gateway_Interface</td>
-<td width="57%" align="left" valign="top"><span>The version of the <span class="resultofText">CGI</span> spec with which the server complies.</span>&nbsp;</p>
+<td width="57%" align="left" valign="top"><span>The version of the <span class="resultofText">CGI</span> spec with which the server complies.</span>&nbsp;
 <p>服务器遵守的 CGI 规范的版本。</td>
 </tr>
 </tbody>

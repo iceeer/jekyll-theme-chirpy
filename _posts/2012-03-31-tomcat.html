@@ -30,11 +30,11 @@ comments: []
 <p><strong>Tomcat IP访问限制</strong><br />
 server.xml<br />
 只允许192.168.1.*网段访问：<br />
-<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="192.168.1.*" deny=""/><br />
+Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="192.168.1.*" deny=""/><br />
 只允许192.168.1.10、192.168.1.30访问：<br />
-<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="192.168.1.10,192.168.1.30" deny=""/><br />
+Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="192.168.1.10,192.168.1.30" deny=""/><br />
 根据主机名进行限制：<br />
-<Valve className="org.apache.catalina.valves.RemoteHostValve" allow="abc.com" deny=""/></p>
+Valve className="org.apache.catalina.valves.RemoteHostValve" allow="abc.com" deny=""/></p>
 <p><strong>解决Rmi等安全受限</strong></p>
 <p>修改catalina.policy<br />
 grant{<br />
@@ -44,8 +44,8 @@ permission java.security.AllPermission;<br />
 <p><strong>应用版本</strong>：myapp##02.0.war</p>
 <p>安装服务：service install tomcat7</p>
 <p><strong>与Nginx集成</strong></p>
-<p><Engine> settings the server.xml file:<br />
-<Valve className="org.apache.catalina.valves.RemoteIpValve"&nbsp; /><br />
+<p>Engine settings the server.xml file:<br />
+Valve className="org.apache.catalina.valves.RemoteIpValve"&nbsp; /><br />
 Nginx location字段：<br />
 proxy_pass http://127.0.0.1:8888;<br />
 proxy_redirect off;<br />
