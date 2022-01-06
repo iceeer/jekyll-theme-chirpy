@@ -55,11 +55,6 @@ build() {
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
 }
 
-test() {
-  bundle exec htmlproofer --allow-hash-href --alt-ignore --assume_extension --disable_external  --allow_missing_href  "$SITE_DIR"
-
-}
-
 resume_site_dir() {
   if [[ -n $_baseurl ]]; then
     # Move the site file to the regular directory '_site'
