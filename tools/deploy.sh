@@ -56,12 +56,8 @@ build() {
 }
 
 test() {
-  bundle exec htmlproofer \
-    --allow_hash_href \
-    --allow_missing_href \
-    --ignore-empty-mailto \
-    --empty_alt_ignore \
-    "$SITE_DIR"
+  bundle exec htmlproofer --allow-hash-href --alt-ignore --assume_extension --disable_external  --allow_missing_href  "$SITE_DIR"
+
 }
 
 resume_site_dir() {
