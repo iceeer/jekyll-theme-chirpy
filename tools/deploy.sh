@@ -56,7 +56,7 @@ build() {
 }
 
 test() {
-  bundle exec htmlproofer     --disable-external     --check-html     --allow_hash_href  --alt-ignore    "$SITE_DIR"
+  bundle exec htmlproofer     --disable-external     --check-html     --allow_hash_href  --alt-ignore --extension .erb    "$SITE_DIR"
 }
 
 resume_site_dir() {
