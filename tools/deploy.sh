@@ -56,7 +56,7 @@ build() {
 }
 
 test() {
-  bundle exec htmlproofer --ignore-files page.min.js,post.min.js --disable-external --allow-missing-href --empty-alt-ignore --allow_hash_href  --alt-ignore --ignore-empty-mailto --extension .js    "$SITE_DIR"
+  bundle exec htmlproofer --ignore_files page.min.js --disable-external --allow-missing-href --empty-alt-ignore --allow_hash_href  --alt-ignore --ignore-empty-mailto --extension .js    "$SITE_DIR"
 }
 
 resume_site_dir() {
