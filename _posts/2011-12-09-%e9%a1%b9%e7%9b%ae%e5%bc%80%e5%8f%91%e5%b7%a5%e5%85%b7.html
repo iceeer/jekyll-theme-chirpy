@@ -1,0 +1,30 @@
+---
+layout: post
+status: publish
+published: true
+title: 项目开发工具
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1339
+wordpress_url: http://iceeer.huiq.net/?p=1339
+date: '2011-12-09 14:25:14 +0800'
+date_gmt: '2011-12-09 06:25:14 +0800'
+categories:
+- 杂
+tags: []
+comments: []
+---
+<p><strong>hudson - 持续集成</strong><br /> 插件：http://hudson-ci.org/downloads/plugins/</p>
+<p><strong>Maven -&nbsp;项目构建和管理的工具</strong></p>
+<p>常见的lifecycle有 | clean | package ear | pageage jar | package war | site等等<br />下面就是一些default lifecycle的phase<br />validate <br />initialize <br />generate-sources <br />process-sources <br />generate-resources <br />process-resources<br />compile compile <br />process-classes <br />generate-test-sources <br />process-test-sources <br />generate-test-resources <br />process-test-resources <br />test-compile <br />process-test-classes <br />test <br />prepare-package<br />package <br />pre-integration-test <br />integration-test <br />post-integration-test <br />verify <br />install <br />deploy</p>
+<p><strong>Subversion</strong></p>
+<p>对SVN瘦身,去掉老版本:</p>
+<p>svnadmin dump /path/to/current/repo -r9000:10000 > svn.dump<br />svnadmin create /path/to/new/repo<br />svnadmin load /path/to/new/repo svn.dump Version 9000 and below are gone. The repository is now at version 1000.
+链接： http://www.blogjava.net/BearRui/archive/2009/10/22/hudson-maven-svn.html Hudson+Maven+SVN 快速搭建持续集成环境
+ http://gavin-chen.iteye.com/blog/336607 Maven plugin中的lifecycle、phase、goal、mojo概念及作用的理解 
+ http://trinea.iteye.com/blog/1290898 maven用途、核心概念、用法、常用参数和命令、扩展 

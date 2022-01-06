@@ -1,0 +1,71 @@
+---
+layout: post
+status: publish
+published: true
+title: iNotes 8.5修改
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 2021
+wordpress_url: http://blog.xystoy.com/?p=2021
+date: '2013-09-26 14:45:27 +0800'
+date_gmt: '2013-09-26 06:45:27 +0800'
+categories:
+- Domino/Notes
+tags:
+- Domino
+- iNotes
+- 邮件
+comments: []
+---
+<h1><b>定制 Lotus iNotes 的外观</b></h1>
+<p>可以通过创建有多个内置定制点的扩展表单文件（此版本提供的 Forms85_x.nsf），定制 IBM(R) Lotus(R) iNotes(TM) 外观和行为。创建扩展表单文件后，可以使用 IBM(R) Lotus(R) Domino(R) Designer 进行编辑，将定制添加到 Lotus iNotes中。full 模式和 lite 模式都不支持定制。</p>
+<p><strong>备注&nbsp;</strong>单个 Domino 服务器不支持多个扩展表单文件。</p>
+<p>扩展表单文件包含以下可用于定制 Lotus iNotes 的子表单：</p>
+<ul>
+<li>Custom_Banner - 替换 Lotus iNotes 徽标</li>
+<li>Custom_Common_Utils - 添加从 Custom_JS 和 Custom_JS_lite 调用的功能</li>
+<li>Custom_CSS - 添加新 CSS 样式</li>
+<li>Custom_JS - 包含回调功能，可用于添加或删除操作栏项目、在显示页面或提交页面添加其他代码。用于较早的&rdquo;经典&ldquo;结构式表单。（大多数代码使用较新的表单，但一些较早的表单仍在使用。）</li>
+<li>Custom_JS_Edit - 向富文本编辑器添加更多字体</li>
+<li>Custom_JS_Lite - 对 Custom_JS 包含相似的回调功能，用于较新的&ldquo;lite&rdquo;结构式表单</li>
+<li>Custom_Masthead - 向所有页面添加 masthead</li>
+<li>Custom_Name_Lite - 用于韩语名称显示格式的代码</li>
+<li>Custom_Page_Dictionary - 添加新的变量值以用于 Custom_CSS subform</li>
+<li>Custom_WelcomePage - 为最终用户的欢迎页面添加更多选项</li>
+</ul>
+<h4><a name="H_CUSTOMIZING_THE_LOOK_OF_LOTUS_INOTES_STEPS_MIDTOPIC_35839520030004426"></a><b>创建扩展表单文件</b></h4>
+<ol>
+<li>在 Domino Designer 或 Lotus Notes 客户机上，单击&ldquo;文件&rdquo;-&ldquo;应用程序&rdquo;-&ldquo;新建&rdquo;。</li>
+<li>在&ldquo;Specify New Application Name and Location （指定新应用程序名称和位置）&rdquo;部分，选择 Domino 服务器。</li>
+<li>对于&ldquo;文件名称&rdquo;，输入&ldquo;Forms85_x.nsf&rdquo;，并在 Domino 数据目录下的 iNotes 目录中找到它。</li>
+<li>在&ldquo;Specify Template for New Application （为新建应用程序指定模板）&rdquo;部分，选择 Domino 服务器。</li>
+<li>单击&ldquo;显示高级模板&rdquo;。</li>
+<li>选择&ldquo;Lotus iNotes 扩展表单 (8.5)&rdquo;模板 (Forms85_x.ntf)。</li>
+<li>确定不要选中&ldquo;继承以后的设计更改&rdquo;。</li>
+</ol>
+<h4><a name="H_CUSTOMIZING_THE_INOTES_WEB_ACCESS_MAIL_FILE_TEMPLATE_STEPS_MIDTOPIC_44495286429562417"></a><b>修改 Lotus iNotes 公共表单文件</b></h4>
+<p>每次修改 Forms85_x.nsf 文件时，使用此过程。</p>
+<p><strong>（可以使用tell http inotes flushforms使修改生效）</strong></p>
+<ol>
+<li>将 Forms85_x.nsf 拷贝到临时目录。</li>
+<li>根据需要，在 Forms85_x 文件的临时拷贝中更改表单。</li>
+<li>使用 dbc f 服务器命令刷新 Domino 服务器数据库高速缓存。</li>
+<li>将新的 Forms85_x 文件拷贝回 Domino Data 目录下的 Lotus iNotes 目录中。</li>
+<li>使用 tell http restart 服务器命令停止并重新启动服务器上的 HTTP 进程。</li>
+<li>清除浏览器高速缓存。</li>
+<li>测试更改。</li>
+</ol>
+<p><strong>修改示例：</strong><br />
+1、附件区高度修改：Forms85.nsf 子表单l_MailMemoReadCode中：var WX=AAA.EcK.getElementById('e-' + this.sId + '-attachmentsarea-container');if (WX){WX.style.height=sSize;加上<em>WX.style.height='8em';</em><br />
+2、附件区默认为列表显示：Forms85.nsf 子表单f_AttachmentsAreaRead中：
+&lt;param name="Attachment_ReadOnlyMode" value="1">
+&lt;param name="Attachment_ListViewMode" value="' + (Boy.AXMode || '0') + '">改为：
+&lt;param name="Attachment_ReadOnlyMode" value="1">
+&lt;param name="Attachment_ListViewMode" value="2">
+3、上传图片功能添加支持png（IE控件模式上传无效）：表单h_StdPageEditImageCode中var Cvq=CHk.toLowerCase();if ((Cvq != ".gif") && (Cvq != ".jpg") && (Cvq != ".jpeg")){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return false;}改为var Cvq=CHk.toLowerCase();if ((Cvq != ".gif") && (Cvq != ".jpg") && (Cvq != ".jpeg") && (Cvq != ".png")){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return false;}<br />
+子表单l_MiscStdPageEdit****中var ELS=CXv.match(/(\.(gif|jpg|jpeg))$/i);if (!ELS){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return;}改为var ELS=CXv.match(/(\.(gif|jpg|jpeg|png))$/i);if (!ELS){alert(&lt;dwa:string id="L_WARN_FILE_TYPE_NOT_SUPPORTED"/>);return;}</p>

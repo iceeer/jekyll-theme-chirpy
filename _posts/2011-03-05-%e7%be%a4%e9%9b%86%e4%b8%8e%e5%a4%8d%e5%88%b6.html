@@ -1,0 +1,81 @@
+---
+layout: post
+status: publish
+published: true
+title: 群集与复制
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 959
+wordpress_url: http://iceeer.huiq.net/?p=959
+date: '2011-03-05 23:14:49 +0800'
+date_gmt: '2011-03-05 15:14:49 +0800'
+categories:
+- 杂
+tags: []
+comments: []
+---
+<p><span style="color: #555555; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px;"><strong>集群要求</strong>：集群中的所有服务器都必须在同一个 Domino 域中，并共享相同的 Domino目录。</span></p>
+<p><strong>集群设置步骤</strong><br />
+1、安装好第一台服务器<br />
+2、复制文件至其他服务器，创建集群，群集目录设置log.nsf、mail.box不同步<br />
+3、打开管理端-群集-所有服务器文档-选中服务器文档后点击&ldquo;添加到群集&rdquo;</p>
+<p><br class="spacer_" /> <strong>不使用客户端复制数据库：</strong></p>
+<div>It is straightforward for Domino servers in a clusters, for non clustered Domino servers you need to update your notes.ini first.</div>
+<div>set co CLUSTER_ADMIN_ON=1 Dynamically used for non-clustered Domino servers.</div>
+<div>CL COPY source target</div>
+<div>CL copy server1!!dbA.nsf server2!!dbB.nsf</div>
+<div>COPY, replica ID will be different on server 2</div>
+<div>CL copy server1!!dbA.nsf server2!!dbB.nsf REPLICA</div>
+<div>This will create a replica on server 2</div>
+<div>CL copy server1!!dbA.nsf server2!!dbB.nsf TEMPLATE</div>
+<div>This will only copy a template without documents, only design</div>
+<div>CL copy dbA.nsf dbB.nsf</div>
+<div>On the current server you will have a copy (replica ID will be different</div>
+<p>It is straightforward for Domino servers in a clusters, for non clustered Domino servers you need to update your notes.ini first.set co CLUSTER_ADMIN_ON=1 Dynamically used for non-clustered Domino servers.CL COPY source target&nbsp;&nbsp;CL copy server1!!dbA.nsf server2!!dbB.nsfCOPY, replica ID will be different on server 2&nbsp;&nbsp;CL copy server1!!dbA.nsf server2!!dbB.nsf REPLICAThis will create a replica on server 2&nbsp;&nbsp;CL copy server1!!dbA.nsf server2!!dbB.nsf TEMPLATEThis will only copy a template without documents, only design&nbsp;&nbsp;CL copy dbA.nsf dbB.nsfOn the current server you will have a copy (replica ID will be different</p>
+<p><strong>ICM配置：</strong> <strong>notes.ini 中将</strong><strong>ICM</strong><strong>添加ServerTasks项</strong></p>
+<p><strong>load icm 开启ICM任务</strong></p>
+<p><strong>命令：</strong> Load clrepl 开启群集复制器</p>
+<p>Show cluster显示群集信息</p>
+<p>tell clrepl log 强制记录群集复制</p>
+<p>show stat server &nbsp;显示服务器统计信息</p>
+<p>show stat replica cluster.*&nbsp;显示复制器群集统计信息</p>
+<p style="padding: 0px 0px 10px 0px;">如:Replica.Cluster.WorkQueueDepth 显示等待复制的已修改的数据库数。如果等待的数据库数经常大于0的话，需要考虑添加一个或者多个群集复制器。然而，如果没有足够的网络带宽来处理这些传输事务的话，等待复制的数据库数量也很有可能大于0。如果时因为网络带宽的原因，您需要考虑专为群集建一个私有的<a style="color: #0066cc; text-decoration: none; font-size: 14px; line-height: 22px;" href="http://www.pcdog.com/special/1027/index.html" target="_blank">局域网</a>。此外，添加处理器和内存也能提高复制的性能。</p>
+<p style="padding: 0px 0px 10px 0px;">Replica.Cluster.SecondsOnQueue 显示复制队列中最后一个数据库在等待复制所需要的时间。由于群集复制器每15秒检查一次队列，在负荷较轻的情况下，这个数应该小于15。如果这个数经常大于30的话，您需要考虑添加一个或者多个复制器。</p>
+<p style="padding: 0px 0px 10px 0px;">每次应该只添加一个群集复制器，直到统计信息达到您希望的数值为止。</p>
+<p style="padding: 0px 0px 10px 0px;">启动多个群集复制器可以将 Domino 配置为在每次服务器启动时自动启动多个群集复制器，也可以仅为当前会话启动多个群集复制器。</p>
+<p style="padding: 0px 0px 10px 0px;">在启动服务器时自动启动多个群集复制器要在启动服务器时自动启动多个群集复制器，需要在服务器的NOTES.INI文件中添加或修改以下参数：CLUSTER_REPLICATORS=Number</p>
+<p style="padding: 0px 0px 10px 0px;"><strong>问题：数据库手动同步成功，集群没有同步</strong></p>
+<p style="padding: 0px 0px 10px 0px;"><span style="font-size: x-small;">新建数据库副本，或者使用scanEZ - Replication Auditor查看有问题的文档 </span></p>
+<p>查看服务器的时间是否相同</p>
+<h1 style="font-size: 1.5em; font-style: normal; margin-bottom: 0.5em; word-spacing: 0.1em; font-family: Arial, sans-serif; line-height: normal;"><b>如何在集群中进行复制</b></h1>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">集群复制是由事件驱动，不是定时驱动的。当集群复制器检测到数据库更改时，它会立即向集群中的其他副本推出此更改。如果有积压的复制事件，集群复制器将把这些事件存储在内存中，直至可以向其他集群服务器推出它们。如果在发送上一次更改之前同一数据库又发生了更改，则集群复制器将集中这些更改，然后一起发送以节省处理时间。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">由于 IBM(R) Lotus(R) Domino(TM) 仅在内存中存储复制事件，所以只有在源服务器和目标服务器都可用时，才能成功完成复制。如果目标服务器不可用，集群复制器将继续在内存中存储这些事件，直至目标服务器变为可用。集群复制器尝试将这些复制事件定期推向目标服务器。两次尝试之间的时间间隔从一小时开始逐渐增加，直至最大值（一天）。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">如果在完成复制前源服务器停止运行，则内存中的复制事件将丢失。因此，无论何时重新启动集群服务器，都应使用标准复制（REPLICA 任务）对集群中的所有成员强制执行立即复制。在集群服务器之间定期安排复制（如一天几次）也是确保数据库保持同步的好方法。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">当集群复制器将复制事件记录在日志文件中时，同时还会记录下任何等候重试的复制事件。这使您可以查看当前没有被同步的数据库以及查看阻碍复制进行的错误。纠正错误并成功完成复制后，将不再记录错误信息。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">&ldquo;集群复制器&rdquo;将复制公式的处理留给标准复制器。因为这些公式可能占用大量处理能力，所以为降低使用集群复制的负载，集群复制器不处理这些公式。因此，如果使用选择性复制，数据库暂时可能包括与选择公式不匹配的文档。运行标准复制时，Domino 将删除这些文档。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">此外，集群复制器不遵守&ldquo;复制设置&rdquo;对话框中&ldquo;高级&rdquo;面板上的设置。因此，不能禁用特定数据库元素（如 ACL、代理和设计元素）的复制。集群复制器总是尝试使所有副本相同，以便故障转移的用户不会注意到发生了故障转移。</p>
+<p class="note" style="margin-top: 1em; margin-bottom: 1em; color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;"><strong>备注&nbsp;</strong>集群复制器会忽略&ldquo;节省空间&rdquo;设置&ldquo;仅接收摘要和 40 KB 的 富文本格式&rdquo;。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;"><strong>警告&nbsp;</strong>标准复制不能自动删除对特定数据库元素（如 ACL、代理或设计元素）所做的更改。如果限制这些项的复制对数据库很重要，请考虑对该数据库只使用标准复制，不使用集群复制。</p>
+<h2 style="font-size: 1.25em; font-style: normal; margin-bottom: 0em; padding-bottom: 0em; font-family: Arial, sans-serif; line-height: normal;"><a name="H_HOW_REPLICATION_WORKS_IN_A_CLUSTER_OVER_MIDTOPIC_181724681629235255"></a><b>集群中的复制历史</b></h2>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">因为集群中复制事件发生得极其频繁，所以集群复制器不能在每次复制数据库时都读取复制历史记录或向其中写入这些信息。复制成功时，历史记录信息将被存储在内存中。每个后续的成功复制事件都会添加到保存在内存中的历史记录信息中。每隔大约一小时，集群复制器将历史记录信息传输至数据库。</p>
+<h2 style="font-size: 1.25em; font-style: normal; margin-bottom: 0em; padding-bottom: 0em; font-family: Arial, sans-serif; line-height: normal;"><a name="H_HOW_REPLICATION_WORKS_IN_A_CLUSTER_OVER_MIDTOPIC_181724681629235256"></a><b>集群中个人文件夹的复制</b></h2>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">标准复制期间，个人文件夹及其内容不进行复制（与文件夹所有者的客户机进行复制时除外）。不过，在集群中，个人文件夹将被复制到集群中的其他副本。这样可以确保当客户机故障转移时，无论访问哪个副本，数据库的内容都是相同的。集群复制和标准复制都支持在集群中复制个人文件夹及其内容。</p>
+<p style="color: #000000; font-family: Arial, sans-serif; font-size: 12px; font-style: normal; line-height: normal;">只有文件夹的创建者或集群中的服务器才能访问个人文件夹。只有在数据库访问控制列表 (ACL) 中被定义为&ldquo;服务器&rdquo;或&ldquo;服务器组&rdquo;用户类型的服务器才能访问和复制数据库中的个人文件夹。ACL 中未明确包括的服务器不能复制个人文件夹。</p>
+<p><strong>在一个群集的环境中如何重建群集数据库目录（cldbdir.nsf）</strong><br />
+1.在群集的所有成员服务器上，停止以下任务：cldbdir,clrepl<br />
+2.在群集的所有成员服务器上，删除或者重命名cldbdir.nsf<br />
+3.在群集的主服务器上（如果有主服务器的话---否则在群集中的任何一台服务器都可以），运行load cldbdir 和load clrepl任务来启动 cldbdir和clrepl任务。这样，一个新的cldbdir数据库就会自动被创建。<br />
+4.把第3步新建的cldbdir.nsf复制到群集中的其他成员服务器上。<br />
+5.在其他成员服务器上，启动cldbdir 和clrepl任务。</p>
+<p>这样可以确保群集中所有成员服务器的cldbdir.nsf数据库来自同一个复本拷贝。</p>
+<p>链接：<a href="http://www-10.lotus.com/ldd/dominowiki.nsf/dx/14022008070103WEBG4Q.htm">Creating copies and replicas without using a notes client</a></p>
+<p><a href="http://www-01.ibm.com/support/docview.wss?rs=463&amp;context=SSKTMJ&amp;context=SSKTWP&amp;context=SSRNU3&amp;context=SSRNUY&amp;q1=how+to+create+private+lan+cluster&amp;uid=swg21154031&amp;loc=en_US&amp;cs=utf-8&amp;lang=en">Configuring a Private LAN for a Domino Cluster</a></p>
+<p><a href="http://www.ibm.com/developerworks/lotus/library/ls-Configuring_a_Cluster/index.html">Fine Points of Configuring a Cluster</a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/ls-Domino_clusters_Part1/">优化 Lotus Domino 服务器性能: Domino 集群，第 1 部分</a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/ls-Domino_clusters_Part2/">优化 Lotus Domino 服务器性能: Domino 集群，第 2 部分</a></p>
+<p><a href="http://blog.csdn.net/sunxiaozi/archive/2007/03/27/1542257.aspx">Domino群集 for B/S system测试log，step by step</a></p>

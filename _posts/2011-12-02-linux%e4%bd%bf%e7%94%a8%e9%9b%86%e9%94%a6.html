@@ -1,0 +1,128 @@
+---
+layout: post
+status: publish
+published: true
+title: Linux使用集锦
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1329
+wordpress_url: http://iceeer.huiq.net/?p=1329
+date: '2011-12-02 14:06:01 +0800'
+date_gmt: '2011-12-02 06:06:01 +0800'
+categories:
+- 软件
+- Linux
+tags: []
+comments: []
+---
+<p><strong>查看登录用户</strong> who</p>
+<p><strong>linux搜索文件</strong> find / -name</p>
+<p><strong>删除文件</strong>：m -f 文件地址</p>
+<p><strong>删除文件夹</strong>：rm -rf 文件夹地址</p>
+<p><strong>显示当前文件夹信息</strong> ls&nbsp;-al</p>
+<p><strong>人类看得懂的方式显示硬盘空间&nbsp;</strong>df -h<br />
+<strong>查看文件夹大小</strong>&nbsp;du -sm -h 文件夹名</p>
+<p><strong>linux内核和版本查询命令</strong><br />
+uname -a<br />
+cat /proc/version</p>
+<p><strong>查看内存大小</strong>：grep MemTotal /proc/meminfo</p>
+<p><strong>查看打开的端口</strong>：netstat -nap | grep LISTEN</p>
+<p>netstat -lptu<br />
+netstat -tulpn</p>
+<p><strong>杀进程</strong>：killall 进程名</p>
+<p>killall -HUP some_process_name</p>
+<p><strong>解压缩</strong>：tar -xzvf *.tar.gz</p>
+<p><strong>使用sudo时不提示输入密码</strong>：<br />
+sudo visudo and add the following line:<br />
+MYUSERNAME ALL=NOPASSWD: ALL<br />
+replacing MYUSERNAME with your username :)<br />
+gconf-editor</p>
+<p>sfdisk -l</p>
+<p><strong>重启命令</strong>：<br />
+1、reboot<br />
+2、shutdown -r now 立刻重启(root用户使用)<br />
+3、shutdown -r 10 过10分钟自动重启(root用户使用)<br />
+4、shutdown -r 20:35 在时间为20:35时候重启(root用户使用)<br />
+如果是通过shutdown命令设置重启的话，可以用shutdown -c命令取消重启</p>
+<p><strong>关机命令</strong>：<br />
+1、halt 立刻关机<br />
+2、poweroff 立刻关机<br />
+3、shutdown -h now 立刻关机(root用户使用)<br />
+4、shutdown -h 10 10分钟后自动关机<br />
+如果是通过shutdown命令设置关机的话，可以用shutdown -c命令取消重启<br />
+<code><strong>查看内存信息</strong></code><br />
+<code>free -m</code><br />
+<strong><span style="font-family: monospace;">查看进程</span></strong><br />
+<span style="font-family: monospace;">top</span><br />
+<span style="font-family: monospace;">htop &nbsp; <a href="http://wiki.centos.org/zh/AdditionalResources/Repositories/RPMForge">需要安装 RPMforge</a></span><br />
+<strong><span style="font-family: monospace;">局域网唤醒计算机</span></strong><br />
+wakeonlan 00:18:F3:CD:78:A0<br />
+<strong>运行sh文件出现</strong>M: bad interpreter: No such file or directory解决：<br />
+dos2unix securetomcat.sh</p>
+<p><strong>设置环境变量</strong>：/etc/profile</p>
+<p><strong>设置开机启动</strong>：chkconfig mysqld on</p>
+<p><strong>开启DHCP</strong><br />
+lshw -class network<br />
+dhclient eth0<br />
+<strong>&nbsp;网络配置</strong></p>
+<p>Debian:<br />
+/etc/network/interfaces</p>
+<p><strong>Centos设置静态IP</strong></p>
+<p>/etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p>DEVICE=eth0<br />
+BOOTPROTO=none<br />
+BROADCAST=192.168.168.255<br />
+HWADDR=00:0c:29:56:58:94<br />
+IPADDR=192.168.168.168<br />
+NETMASK=255.255.255.0<br />
+GATEWAY=192.168.168.2<br />
+ONBOOT=yes<br />
+TYPE=Ethernet<br />
+IPV6INIT=no<br />
+USERCTL=no<br />
+DNS1=192.168.168.2<br />
+DNS2=202.96.209.133</p>
+<p>临时设置：</p>
+<p>ifconfig eth0 192.168.168.168 netmask 255.255.255.0<br />
+route add default gw 192.168.168.2</p>
+<p><strong>vi</strong><br />
+i --> edit<br />
+type esc and :q! --> quit edit<br />
+type esc and :wq! --> write &amp; quit + override</p>
+<p><strong>查看网络端口</strong> netstat -anp</p>
+<p><strong>端口转发：</strong><a title="Permanent Link to How-To: Redirecting network traffic to a new IP using IPtables" href="http://www.debuntu.org/how-to-redirecting-network-traffic-to-a-new-ip-using-iptables/" rel="bookmark">How-To: Redirecting Network Traffic To A New IP Using IPtables</a></p>
+<p><strong>删除所有待发送邮件</strong>：<code>postsuper -d ALL</code></p>
+<p><strong>修改为上海时区</strong>：cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
+<p>查看当前时区：date -R<br />
+hwclock<br />
+修改时间 date MMDDhhmmYYYY<br />
+hwclock --systohc</p>
+<p><strong>同步时间</strong>：ntpdate us.pool.ntp.org 然后hwclock --systohc</p>
+<p><strong>防火墙iptables使用<br />
+</strong>防火墙服务的配置文件是：/etc/sysconfig/iptables</p>
+<p>iptables -L 查看</p>
+<p>iptables -A INPUT -p tcp --dport 80 -j ACCEPT 允许80端口</p>
+<p>#禁止其他未允许的规则访问<br />
+iptables -A INPUT -j REJECT&nbsp; （注意：如果22端口未加入允许规则，SSH链接会直接断开。）<br />
+iptables -A FORWARD -j REJECT</p>
+<p><strong>测试UDP</strong></p>
+<p>nc -vuz 42.11.12.13 123</p>
+<p><strong>清除邮件</strong></p>
+<blockquote><p>cd /var/spool/mail<br />
+echo "">root</p></blockquote>
+<p>清掉sendmail邮件发送队列</p>
+<blockquote><p>cd /var/spool/mqueue/<br />
+rm *</p></blockquote>
+<p>递归修改文件夹及子目录权限：</p>
+<blockquote><p>chmod -R 770 /root</p></blockquote>
+<p>链接：<a href="http://serverfault.com/questions/99952/ubuntu-how-can-i-avoid-typing-a-password-on-every-admin-action">ubuntu - how can I avoid typing a password on every admin action?</a></p>
+<p><a title="Ubuntu搬家" href="/?p=1510">Ubuntu搬家</a></p>
+<p><a href="http://blog.51yip.com/linux/1120.html">centos网络配置(手动设置，自动获取)的2种方法</a></p>
+<p><a href="http://www.cyberciti.biz/tips/howto-postfix-flush-mail-queue.html">Postfix Flush the Mail Queue</a></p>
+<h2><a title="到《Linux上iptables防火墙的基本应用教程》的永久链接" href="http://www.vpser.net/security/linux-iptables.html" rel="bookmark">Linux上iptables防火墙的基本应用教程</a></h2>
+<p><a href="http://www.oschina.net/translate/useful-linux-commands-for-newbies">对 Linux 新手非常有用的 20 个命令</a>&nbsp;<a href="http://www.oschina.net/translate/20-advanced-commands-for-middle-level-linux-users?from=20130811">对中级 Linux 用户非常有用的 20 个命令</a>&nbsp;<a href="http://www.oschina.net/translate/20-advanced-commands-for-linux-experts?from=20130811">对 Linux 专家非常有用的 20 个命令</a></p>

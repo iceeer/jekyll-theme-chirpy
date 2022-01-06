@@ -1,0 +1,50 @@
+---
+layout: post
+status: publish
+published: true
+title: 编码与乱码
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1278
+wordpress_url: http://iceeer.huiq.net/?p=1278
+date: '2011-09-01 09:26:21 +0800'
+date_gmt: '2011-09-01 01:26:21 +0800'
+categories:
+- 开发
+- 数据库
+- 网页
+- Java
+tags:
+- Eclipse
+- JSP
+- my.ini
+- mysql
+- Servlet
+- Tomcat
+- 乱码
+- 参数
+- 数据库
+- 编码
+- 配置
+comments: []
+---
+<pre><strong>Eclipse</strong>启动选项添加（默认文件编码）：-Dfile.encoding=UTF-8</pre>
+<pre><strong>jar</strong>以UTF-8运行：chcp 65001 > nul &amp;&amp; call java -jar -Dfile.encoding=UTF-8 -Duser.language=en -Duser.country=US scheduler.jar 同时修改控制台字体
+
+<strong>Tomcat</strong>目录-->conf目录-->server.xml里找出这段:&lt;Connector port="8080"  添加 URIEncoding="UTF-8"</pre>
+<pre><strong>mysql</strong> my.ini：</pre>
+<pre>（先检查mysql> SHOW VARIABLES LIKE 'collation%';mysql> SHOW VARIABLES LIKE 'character_set%';）</pre>
+<pre>[mysqld]</pre>
+<pre>character-set-server=utf8</pre>
+<pre>collation-server=utf8_general_ci</pre>
+<pre>init-connect='SET NAMES utf8'</pre>
+<p>[client]</p>
+<pre>default-character-set=utf8</pre>
+<p>错误：非法字符： 65279<br /> 原因：是由于文件在保存的时候在前面加入了bom字符.UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。字符"ZERO WIDTH NO-BREAK SPACE"的UTF-8编码是EF BB BF。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。<br /> 解决：使用批量转换工具，比如：ultracodingswitch</p>
+<pre>链接：<a href="http://www.blogjava.net/wldandan/archive/2007/09/04/142669.html">MYSQL 字符集问题</a></pre>
+<pre><a href="/wp-content/uploads/2011/09/jsp_chinese_encode.doc">jsp中文乱码问题</a></pre>

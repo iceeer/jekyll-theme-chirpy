@@ -1,0 +1,62 @@
+---
+layout: post
+status: publish
+published: true
+title: Tomcat
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1251
+wordpress_url: http://iceeer.huiq.net/?p=1251
+date: '2012-03-31 16:01:33 +0800'
+date_gmt: '2012-03-31 08:01:33 +0800'
+categories:
+- 杂
+tags:
+- Tomcat
+- 内存
+- 访问限制
+comments: []
+---
+<pre><strong><code>java.lang.OutOfMemoryError: PermGen space</code></strong>
+<code>内存的永久保存区域，这块内存主要是被JVM存放Class和Meta信息的,Class在被Loader时就会被放到PermGen space中，它和存放类实例(Instance)的Heap区域不同,GC(Garbage Collection)不会在主程序运行期对PermGen space进行清理，所以如果你的应用中有很CLASS的话,就很可能出现PermGen space错误，这种错误常见在web服务器对JSP进行pre compile的时候。如果你的WEB APP下都用了大量的第三方jar, 其大小超过了jvm默认的大小(4M)那么就会产生此错误信息了</code>
+<code>建议：将相同的第三方<wbr />jar文件移置到to<wbr />mcat/share<wbr />d/lib目录下，这<wbr />样可以达到减少jar<wbr />&nbsp;文档重复占用内存的目<wbr />的。&nbsp;</code>
+<span style="font-family: monospace;">-Xms64m -Xmx256m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m</span>
+<strong>java.lan</strong><wbr /><strong>g.OutOfMem</strong><wbr /><strong>oryError:&nbsp;Java&nbsp;heap&nbsp;space&nbsp;</strong> JVM堆的设置是指java程序运行过程中JVM可以调配使用的内存空间的设置.JVM在启动的时候会自动设置Heap size的值，其初始空间(即-Xms)是物理内存的1/64，最大空间(-Xmx)是物理内存的1/4。可以利用JVM提供的-Xmn -Xms -Xmx等选项可进行设置。Heap size 的大小是Young Generation 和Tenured Generaion 之和。 提示：在JVM中如果98％的时间是用于GC且可用的Heap size 不足2％的时候将抛出此异常信息。 提示：Heap Size 最大不要超过可用物理内存的80％，一般的要将-Xms和-Xmx选项设置为相同，而-Xmn为1/4的-Xmx值。 Heap&nbsp;Size&nbsp;最大不要超过可用物理<wbr />内存的80％，一般的<wbr />要将-Xms和-Xm<wbr />x选项设置为相同，而<wbr />-Xmn为1/4的-<wbr />Xmx值。JAVA_OPTS=<wbr />"-server&nbsp;-Xms800m&nbsp;-Xmx800m&nbsp;&nbsp;&nbsp;-XX:MaxNew<wbr />Size=256m"<wbr /></pre>
+<p><strong>Tomcat IP访问限制</strong><br />
+server.xml<br />
+只允许192.168.1.*网段访问：<br />
+Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="192.168.1.*" deny=""/><br />
+只允许192.168.1.10、192.168.1.30访问：<br />
+Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="192.168.1.10,192.168.1.30" deny=""/><br />
+根据主机名进行限制：<br />
+Valve className="org.apache.catalina.valves.RemoteHostValve" allow="abc.com" deny=""/></p>
+<p><strong>解决Rmi等安全受限</strong></p>
+<p>修改catalina.policy<br />
+grant{<br />
+permission java.security.AllPermission;<br />
+};</p>
+<p><a title="代理设置" href="/?p=1401"><strong>Tomcat代理设置</strong></a></p>
+<p><strong>应用版本</strong>：myapp##02.0.war</p>
+<p>安装服务：service install tomcat7</p>
+<p><strong>与Nginx集成</strong></p>
+<p>Engine settings the server.xml file:<br />
+Valve className="org.apache.catalina.valves.RemoteIpValve"&nbsp; /><br />
+Nginx location字段：<br />
+proxy_pass http://127.0.0.1:8888;<br />
+proxy_redirect off;<br />
+proxy_set_header Host $host;<br />
+proxy_set_header X-Forwarded-Host $host;<br />
+proxy_set_header X-Forwarded-Server $host;<br />
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br />
+proxy_set_header X-Real-IP $remote_addr;</p>
+<p><strong>Tomcat优化</strong></p>
+<p><a href="http://www.oschina.net/translate/tomcat-performance-tuning?from=20130727">Tomcat 生产服务器性能优化</a></p>
+<p><a href="http://hongye612430.iteye.com/blog/1326978">Tomcat下高访问量WEB应用的JVM配置</a></p>
+<p>链接：<br />
+<a href="http://mark.koli.ch/2009/01/understanding-javas-perm-gen-maxpermsize-heap-space-etc.html">Understanding Java's "Perm Gen" (MaxPermSize, heap space, etc.</a><br />
+<a href="http://jayjayjays.iteye.com/blog/278854">tomcat:tomcat的OutOfMemoryError解决</a></p>

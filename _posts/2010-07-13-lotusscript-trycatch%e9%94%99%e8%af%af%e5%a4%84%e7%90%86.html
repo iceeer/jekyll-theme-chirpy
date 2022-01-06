@@ -1,0 +1,71 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino LotusScript脚本代码集
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 843
+wordpress_url: http://iceeer.huiq.net/?p=843
+date: '2010-07-13 08:46:41 +0800'
+date_gmt: '2010-07-13 00:46:41 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags:
+- Domino
+- lotusscript
+- ls
+- 代码
+- 脚本
+comments: []
+---
+<p><strong>Try/Catch错误处理</strong><br />
+ code  try:<br />
+	'set up error handler<br />
+	On Error Goto catch</p>
+<p>	Goto finally<br />
+catch:<br />
+	'log error<br />
+	'Msgbox Erl & ":" & Error<br />
+	MsgBox LSI_Info(2) & " called by " & LSI_Info(12) & "(" & LSI_Info(430) & "): " & Error$ & " - Line: " & CStr(Erl)<br />
+	'resume to the final thing<br />
+	Resume finally</p>
+<p>finally:<br />
+	'do the final thing code </p>
+<p>Option Public<br />
+Option Declare<br />
+Sub Initialize<br />
+	'set up error handler<br />
+	On Error Goto catch</p>
+<p>	'变量定义<br />
+	Dim s As New NotesSession'当前进程<br />
+	Dim dbCur As NotesDatabase'当前数据库<br />
+	Dim collection As NotesDocumentCollection'选中文档的集合<br />
+	Dim doc As NotesDocument'处理的文档</p>
+<p>	'变量初始化<br />
+	Set dbCur = s.CurrentDatabase<br />
+	Set collection = dbCur.UnprocessedDocuments</p>
+<p>	Set doc = collection.GetFirstDocument'获得第一个要处理的文档<br />
+	While Not doc Is Nothing'当集合中没有要处理的文档时退出<br />
+		'处理文档</p>
+<p>		'获得下一要处理的文档<br />
+		Set doc = collection.GetNextDocument(doc)<br />
+	Wend</p>
+<p>	Goto finally<br />
+catch:<br />
+	'log error<br />
+	Msgbox Erl & ":" & Error<br />
+	'resume to the final thing<br />
+	Resume finally</p>
+<p>finally:<br />
+	'do the final thing<br />
+	Exit Sub'不抛出错误<br />
+End Sub</p>
+<p>链接：<br />
+<a href="http://www.dominopower.com/issues/issue200606/00001780001">LSI_Info: obscure but useful information in LotusScript</a></p>

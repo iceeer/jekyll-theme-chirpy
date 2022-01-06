@@ -1,0 +1,72 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino调试
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 409
+wordpress_url: http://iceeer.huiq.org/?p=409
+date: '2010-04-13 15:54:22 +0800'
+date_gmt: '2010-04-13 07:54:22 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags:
+- Domino
+- Eclipse
+- java
+- Remote
+- 客户端
+- 调试
+- 远程
+comments: []
+---
+<p>JavaVerboseGC=1 开启内存GC信息<br />
+JavaVerbose=1 开启Java详细信息<br />
+Debug_DSApi=10<br />
+Debug_Threadid=1<br />
+Debug_SSO_Trace_Level=2<br />
+Debug_Outfile=c:debugdebug.txt<br />
+WebAuth_Verbose_Trace=1<br />
+WebSess_Verbose_Trace=1<br />
+Console_Loglevel=2<br />
+Console_Log_Enabled=1<br />
+Log_Update=2<br />
+Debug_AMgr=*&rdquo;显示详细的代理运行调试信息</p>
+<p><strong>远程调试服务器Java代码</strong></p>
+<p>1、首先修改Domino配置文件notes.ini<br />
+<em>JavaEnableDebug=1<br />
+JavaDebugOptions=transport=dt_socket,server=y,suspend=n,address=8000</em></p>
+<p>Debug_AMgr=*<br />
+PS:默认远程调试端口：9788，address=8000表示调试端口修改为8000，&ldquo;Debug_AMgr=*&rdquo;显示详细的代理运行调试信息</p>
+<p>2、启动Domino服务器<br />
+会看到远程调试开启的提示：<em>JVM: WARNING: Remote Java Debugging is enabled, resulting in decreased performance and potentially compromised security</em><br />
+3、打开Designer写Java代理并且设置Java代理编译时带调试信息<br />
+4、设置Java断点<br />
+5、打开Java透视图（Perspective），点击调试（Debug），调试类型为&ldquo;Java远程调试（Java Remote Debug）&rdquo;<br />
+6、打开Debug透视图<br />
+6、运行代理&nbsp;tell amgr run databaseName.nsf 'agentName'</p>
+<p><strong>调试客户端代理</strong></p>
+<p>1、添加<samp>JavaEnableDebug=1</samp>至客户端&nbsp;<samp>notes.ini</samp><samp></samp><samp>2、Tools&nbsp;>&nbsp;Java Debugging Preferences</samp><samp></samp><samp>3、重启客户端</samp><samp></samp><samp></samp><samp>4、打开源码，Run&nbsp;>&nbsp;Debug Configurations&nbsp;<samp>127.0.0.0</samp></samp><samp>.</samp><samp></samp><samp>5、Debug</samp><samp></samp><samp>测试代码：Thread.sleep(10000);&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("TEST DEBUG IN CLIENT");</samp><samp></samp><samp></samp><samp></samp><samp></samp></p>
+<p><strong>常用调试命令：</strong></p>
+<p>start consolelog<br />
+set config DEBUG_THREADID=1<br />
+set config DEBUG_CAPTURE_TIMEOUT=1<br />
+set config DEBUG_SHOW_TIMEOUT=1<br />
+tell http debug thread on</p>
+<p>>show server<br />
+>show task time<br />
+>tell router show queue</p>
+<p>&nbsp;</p>
+<p>链接：<a href="http://www.tlcc.com/admin/tips.nsf/tipurlref/20041213">Debug Domino Java agents with WebSphere Studio</a></p>
+<p><a href="http://www.domiclipse.com/domiclipse/web.nsf/htdocs/dj-tutorials">Domiclipse Java Tutorials</a></p>
+<p><a href="http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.designer.domino.ui.doc/wpd_programming_ui_java_debug.html">Debugging Java code</a></p>
+<p><a href="http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/topic/com.ibm.designer.domino.main.doc/H_USING_THE_REMOTE_DEBUGGER.html">Using the Remote Debugger</a></p>
+<p><a href="http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/topic/com.ibm.designer.domino.main.doc/h_debug_agents_am_debugger.html">Agent Manager debugging information</a></p>
+<p><a href="http://www-01.ibm.com/support/docview.wss?uid=swg21454020">Collecting data for Domino SMTP mail routing issues</a></p>

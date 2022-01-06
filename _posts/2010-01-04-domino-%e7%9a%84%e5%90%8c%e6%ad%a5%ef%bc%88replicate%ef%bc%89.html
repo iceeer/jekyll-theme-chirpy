@@ -1,0 +1,36 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino 的同步（Replicate）
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 554
+wordpress_url: http://iceeer.huiq.org/?p=554
+date: '2010-01-04 13:29:05 +0800'
+date_gmt: '2010-01-04 05:29:05 +0800'
+categories:
+- 未分类
+tags: []
+comments: []
+---
+<p>建立同步：<br />
+1.<br />
+2.使用Nexus（通过Notes API设置源数据库与目标数据库相同的Replica ID）[wpfilebase tag='file' id='2']<br />
+3.手动修改数据库Replica ID（详见<a href="http://www-01.ibm.com/support/docview.wss?rs=0&uid=swg21094568">How to change the replica ID of a database</a>）</p>
+<p>同步选项：</p>
+<p>同步命令：</p>
+<p>replica</p>
+<p>push</p>
+<p>pull<br />
+<strong>新建副本命令：</strong><br />
+先设置Cluster_admin_on=1 启用群集的命令（无需重启立即生效）<br />
+CL COPY  source server>!! source database>  target server>!! target database></p>
+<p>链接：<br />
+<a href="http://www-01.ibm.com/support/docview.wss?uid=swg21112871" target="_blank">Which Notes database properties replicate?</a><br />
+<a href="http://www.timtripcony.com/blog.nsf/d6plinks/TTRY-7J4STC">Nexus: replica ID management utility</a></p>

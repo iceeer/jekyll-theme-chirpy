@@ -1,0 +1,132 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino标识（ID）
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 615
+wordpress_url: http://iceeer.huiq.net/?p=615
+date: '2010-06-16 14:51:24 +0800'
+date_gmt: '2010-06-16 06:51:24 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags:
+- Domino
+- 标识
+comments: []
+---
+<table style="height: 296px; width: 100%;" border="1" cellspacing="0" cellpadding="4">
+<tbody>
+<tr style="text-align: center;">
+<th>标识类型</th>
+<th>使用</th>
+<th>包含数据库信息</th>
+<th>各数据库</th>
+<th>文档修改</th>
+<th>数据库副本</th>
+<th>Notes数据库复制</th>
+<th>系统数据库复制</th>
+</tr>
+<tr style="text-align: left;">
+<td>Database ID</td>
+<td>数据库标识</td>
+<td></td>
+<td>唯一</td>
+<td>n/a</td>
+<td><span style="color: #ff6666;">不同</span></td>
+<td><span style="color: #ff6666;">不同</span></td>
+<td><span style="color: #ff6666;">不同</span></td>
+</tr>
+<tr>
+<td>Replica ID</td>
+<td>数据库副本标识</td>
+<td></td>
+<td>唯一</td>
+<td>n/a</td>
+<td>相同</td>
+<td>different</td>
+<td>same</td>
+</tr>
+<tr>
+<td>UNID (Universal Note ID)</td>
+<td>唯一地确定了文档</td>
+<td></td>
+<td>唯一</td>
+<td>相同</td>
+<td>相同</td>
+<td>相同</td>
+<td>相同</td>
+</tr>
+<tr>
+<td>OID(Originator ID)</td>
+<td>确定文档(note)的特殊的修订版本</td>
+<td></td>
+<td>唯一</td>
+<td>different</td>
+<td>same</td>
+<td>same</td>
+<td>same  (w/o revision)</td>
+</tr>
+<tr>
+<td>NID (Note ID)</td>
+<td>确定给定数据库中的一个特殊的文档</td>
+<td></td>
+<td>不唯一</td>
+<td>相同</td>
+<td><span style="color: #ff6666;">不同</span></td>
+<td>相同</td>
+<td>相同</td>
+</tr>
+<tr>
+<td>GNID (Global Note ID)</td>
+<td>确定一个特殊数据库中的一个特殊文档</td>
+<td>不包含</td>
+<td>唯一</td>
+<td>same</td>
+<td>different</td>
+<td>different</td>
+<td>same</td>
+</tr>
+<tr>
+<td>IID (Instance ID)</td>
+<td>确定一个给定数据库中的一个文档(note)的特殊修订版本</td>
+<td>不包含</td>
+<td>不唯一</td>
+<td>different</td>
+<td>different</td>
+<td>different</td>
+<td>same  (w/o revision)</td>
+</tr>
+<tr>
+<td>GIID (Global Instance ID)</td>
+<td>确定一个特殊数据库中的一个文档(note)的特殊修订版本</td>
+<td style="text-align: left;">包含</td>
+<td>唯一</td>
+<td>different</td>
+<td>different</td>
+<td>different</td>
+<td>same  (w/o revision)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://iceeer.huiq.net/wp-content/uploads/2010/06/ID.jpg"><img class="size-full wp-image-890 alignleft" title="ID" src="http://iceeer.huiq.net/wp-content/uploads/2010/06/ID.jpg" alt="" width="375" height="146" /></a>第一行：OF后为文件号(File)</p>
+<p>第二行：ON后为文档号(Note)</p>
+<p>第三行：序列时间（SD后）和序列号（SN后）</p>
+<p>第四行：DB后16位数字与数据库副本标识相同</p>
+<p>第五行：NT后为Note ID</p>
+<p>第一、二行组合为Universal Note ID</p>
+<p>第一、二、三行组合为Originator ID</p>
+<p>第四、五行组合为Global Note ID</p>
+<p><br class="spacer_" /></p>
+<p><br class="spacer_" /></p>
+<p><br class="spacer_" /></p>
+<p>链接：<br />
+<a href="http://www-01.ibm.com/support/docview.wss?uid=swg27002668">What are the components of a Note ID?</a></p>
+<p><a href="http://blog.csdn.net/freefly/archive/2009/09/23/4583533.aspx">Lotus Note ID详解 </a></p>
