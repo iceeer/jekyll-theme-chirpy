@@ -1,0 +1,37 @@
+---
+layout: post
+status: publish
+published: true
+title: Ubuntu搬家
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1510
+wordpress_url: http://iceeer.huiq.org/?p=1510
+date: '2012-04-18 20:42:56 +0800'
+date_gmt: '2012-04-18 12:42:56 +0800'
+categories:
+- 软件
+- Linux
+tags: []
+comments: []
+---
+<p>把Ubuntu从Vmware虚拟机搬到一台华硕的笔记本上跑：</p>
+<p>难过的是笔记本光驱坏了，优盘启动Ubuntu安装又失败，只好把硬盘拆下来作为移动硬盘插在台式机上。本来想硬盘对拷也就行了，可惜从容量大到拷到小的不行，唉！只好把移动硬盘挂到虚拟机上安装个Ubuntu。</p>
+<p>先备份原来虚拟机里的系统：</p>
+<p>cd /<br />
+tar cvpzf backup.tgz / --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys</p>
+<p>拷到新安装的系统后解压缩恢复：</p>
+<p>tar xvpfz backup.tgz -C /</p>
+<p>没想到放到笔记本后还有事，网络不通</p>
+<p>lshw -class network 查看到eth1为disabled，应该是网卡不一样导致的<br />
+开启：ifconfig eth0 up<br />
+修改：nano /etc/network/interfaces中的eth0为eth1</p>
+<p>链接：</p>
+<p><a href="http://www.linuxeden.com/html/sysadmin/20100302/70884.html">用tar备份linux系统</a><br />
+<a href="https://help.ubuntu.com/community/BackupYourSystem/TAR?highlight=%28%5CbCategoryBackupRecovery%5Cb%29">BackupYourSystemTAR</a></p>
+<p><a href="https://help.ubuntu.com/community/RecoveringUbuntuAfterInstallingWindows">恢复GRUB&nbsp;</a></p>

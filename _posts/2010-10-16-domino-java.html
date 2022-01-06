@@ -1,0 +1,48 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino Java
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 803
+wordpress_url: http://iceeer.huiq.net/?p=803
+date: '2010-10-16 13:36:11 +0800'
+date_gmt: '2010-10-16 05:36:11 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags: []
+comments: []
+---
+<p><span style="color: #ff0000;"><strong>如果可能，最好不要用Domino Java（是C++的对象，不能回收）！用的话注意内存回收（Recyle）</strong></span></p>
+<p>Java 类路径</p>
+<p>Include the classes in the agent/web service you are writing.</p>
+<p>Put the classes in a Java script library and include the script library.</p>
+<p>Use the JavaUserClasses notes.ini setting.</p>
+<p>Put the classes in the jvm/lib/ext folder.</p>
+<p>Session session = getSession();</p>
+<p>PrintWriter pw = getAgentOutput();</p>
+<p>AgentContext agentContext = session.getAgentContext();</p>
+<p>Database dbCur = agentContext.getCurrentDatabase();</p>
+<p>Document doc = agentContext.getDocumentContext();</p>
+<p><strong>安全设置</strong></p>
+<p>jvmlibsecurityjava.policy</p>
+<p><strong>设置</strong></p>
+<p>;JavaMinHeapSize=67108864&nbsp;&nbsp; &nbsp;64MB<br />
+;JavaMaxHeapSize=1073741824&nbsp;&nbsp; &nbsp;1024MB。 　容易照成OutOfMemory错误<br />
+HTTPJVMMaxHeapSize=1024M 1/4内存&nbsp; 容易照成内存不够的错误 导致系统崩溃<br />
+HTTPJVMMaxHeapSizeSet=1<br />
+JavaVerboseGC=1 开启内存GC信息<br />
+JavaVerbose=1 开启Java详细信息</p>
+<p>Runtime.getRuntime().totalMemory() ，Runtime.getRuntime().freeMemory()可以查看JVM内存使用情况</p>
+<p>链接：<a href="http://lekkimworld.com/2006/04/04/java_in_notes_domino_explained_classloading.html">Java in Notes/Domino Explained: Classloading</a></p>
+<p><a href="http://lekkimworld.com/2006/03/26/1143379518658.html">Managing external Java dependencies in Domino Designer</a></p>
+<p><a href="http://www-10.lotus.com/ldd/ddwiki.nsf/dx/Java_memory_management_in_NotesDomino">Java memory management in Notes/Domino</a></p>
+<p><a href="http://publib.boulder.ibm.com/infocenter/javasdk/v6r0/index.jsp?topic=/com.ibm.java.doc.diagnostics.60/diag/understanding/concepts.html">Understanding the IBM Software Developers Kit (SDK) for Java</a></p>
+<p><a href="http://www-10.lotus.com/ldd/ddwiki.nsf/dx/reuse_java_xpage.htm">Using existing Java in an Xpage</a></p>

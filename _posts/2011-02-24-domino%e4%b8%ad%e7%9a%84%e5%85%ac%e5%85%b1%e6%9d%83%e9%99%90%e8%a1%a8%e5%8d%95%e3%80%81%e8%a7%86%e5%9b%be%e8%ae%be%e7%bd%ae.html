@@ -1,0 +1,68 @@
+---
+layout: post
+status: publish
+published: true
+title: Domino中的特殊表单
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 995
+wordpress_url: http://iceeer.huiq.net/?p=995
+date: '2011-02-24 16:21:45 +0800'
+date_gmt: '2011-02-24 08:21:45 +0800'
+categories:
+- 开发
+- Domino/Notes
+tags:
+- Domino
+- 公共权限表单
+- 公共权限视图
+- 内置表单
+- 系统表单
+comments: []
+---
+<p style="color: #7f7f7f;">1. $$ViewTemplate for +视图名称.<br />
+$$Search；$$NavigateTemplate for；$defaultView；$defaultForm、$defaultNav、$searchForm、$file、$icon、$help、$about 和 $first</p>
+<p style="color: #7f7f7f;">2. $$ViewTemplateDefault （当你通过web直接查看某视图时，WEB将会显示出该表单&ldquo;不能直接查看视图&rdquo;）<br />
+在Notes的WEB编程中，使用命名为『($$ViewTemplateDefault) | $$ViewTemplateDefault』的表单可以为Notes数据库提供一个缺省的WEB导航格式。</p>
+<p style="color: #7f7f7f;">3.$$ReturnDocumentDeleted<br />
+定义WEB上文档被删除后的提示信息</p>
+<p style="color: #7f7f7f;">4.$$ReturnAuthenticationFailure<br />
+用户名称和口令验证失败后的提示信息表单.</p>
+<p style="color: #7f7f7f;">5.$$ReturnAuthorizationFailure<br />
+当用户对数据库的访问权限不够时提示信息.</p>
+<p style="color: #7f7f7f;">6.$$ReturnGeneralError （当系统返回错误时用的表单；）<br />
+一些其他的错误发生时提示信息.</p>
+<p style="color: #7f7f7f;">7.$$SearchTemplateDefaultForm（查询表单）</p>
+<p style="color: #7f7f7f;">&nbsp; 数据库在WEB上的缺省搜索表单名称</p>
+<p style="color: #7f7f7f;">8.$$ViewTemplate for base；是用来显示base视图的表单；</p>
+<p style="color: #7f7f7f;">$$ViewTemplateDefault：为默认表单，也就是说，你打开任何一个视图，如果该视图没有特别指定用哪个表单打开（比如，base视图就指定用$$ViewTemplate for base表单打开），则它就用这个表单打开</p>
+<p style="color: #7f7f7f;">9.$$ReturnGeneralError；当系统返回错误时用的表单；<br />
+$$SearchTemplateDefault：查询表单；<br />
+$$ViewTemplate for base；是用来显示base视图的表单；<br />
+$$ViewTemplateDefault：为默认表单，也就是说，你打开任何一个视图，如果该视图没有特别指定用哪个表单打开（比如，base视图就指定用$$ViewTemplate for base表单打开），则它就用这个表单打开</p>
+<p style="color: #7f7f7f;">显示定制的错误消息<br />
+要定制显示给 Web 用户的错误消息外观，向数据库中添加定制的错误消息表单。如果发生错误条件，且其定制表单存在，则 Domino 使用定制表单来显示错误消息。否则，Domino 使用缺省错误消息表单。添加到数据库的消息表单将覆盖由管理员设置的服务器范围内的消息。<br />
+要在表单和错误条件之间创建关联，创建拥有下列名称之一的表单。然后创建名为 MessageString 的可编辑的文本域来保存错误消息。添加要与错误消息一起显示的其他文本、链接以及其他表单对象。表单名称 条件<br />
+$$ReturnAuthenticationFailure 不能校验用户名称和口令。<br />
+$$ReturnAuthorizationFailure 用户对该数据库没有足够的存取级别。<br />
+$$ReturnDocumentDeleted 成功删除文档。<br />
+$$ReturnGeneralError 出现了其他错误条件。</p>
+<p style="color: #7f7f7f;">&nbsp;在 Web 应用程序中，要创建表单与视图或导航器之间的关联，可为表单指派一个保留名称。用户打开视图或导航器时 Domino 将表单用作模板。这对于在站点上创建视图和导航器的标准显示来说是一种好方法。<br />
+使用以下保留表单名称创建表单与视图或导航器之间的关联。<br />
+请注意 Domino 要求表单上必须有嵌入视图或 $$ViewBody 域，但可以不考虑其值。</p>
+<p style="color: #7f7f7f;">$$ViewTemplate for viewname 嵌入视图或$$ViewBody域将表单与特定视图关联。<br />
+表单名包括 viewname，即视图的别名，如果没有别名，就包括视图的名称。<br />
+$$NavigatorTemplate for navigatorname&nbsp;&nbsp; 嵌入导航器或$$NavigatorBody 域<br />
+将表单与特定导航器关联。表单名包括 navigatorname，即导航器名称。例如：被命名为 "$$NavigatorTemplate for World Map" 的表单将与 World Map 导航器关联。Domino 忽略在表单上创建和读取存取列表。<br />
+$$ViewTemplateDefault 嵌入视图或$$ViewBody 域<br />
+使该表单成为所有与另一表单不关联的 Web 视图的模板。<br />
+$$NavigatorTemplateDefault 嵌入导航器或$$NavigatorBody 域<br />
+使该表单成为所有与另一表单不关联的 Web 导航器的模板。</p>
+<p><a href="http://www-10.lotus.com/ldd/ddwiki.nsf/dx/XPages_Public_Access_Support">&nbsp;公共表单、视图设置</a></p>
+<p>链接：</p>
+<p><a href="http://www-10.lotus.com/ldd/ddwiki.nsf/dx/XPages_Public_Access_Support">XPages Public Access Support</a></p>

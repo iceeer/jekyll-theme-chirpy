@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: Lotus Notes/Domino 的 API 编程
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1225
+wordpress_url: http://iceeer.huiq.net/?p=1225
+date: '2011-08-24 14:25:53 +0800'
+date_gmt: '2011-08-24 06:25:53 +0800'
+categories:
+- 开发
+- Domino/Notes
+- Visual Studio
+tags:
+- API
+- C#
+- Domino
+- DSAPI
+- Notes
+comments: []
+---
+<p>错误处理：</p>
+<p><strong>Must specify type of OS ("DOS", "OS2", etc) on C command line!</strong></p>
+<p>按照网上搜索到的解决方法在包含的最上面加上了<em>#define NT</em><del datetime="2011-08-24T06:22:56+00:00">，编译通过后部署到Domino里出现<em>HTTP Server: Failed to load DSAPI module</em>，其实如果是32位Windows系统应该改成#define W32，其它系统可以查看globl.h中定义的</del></p>
+<p>如果使用VS（2010）开发就不需要这么做了。<br /> <strong>使用VS(2010)开发</strong><br /> 1、创建项目<br /> 选择Win32控制台程序<br />，应用程序设置：类型为dll，选择"导出符号"<br /> 2、修改项目属性<br /> 配置属性 - C/C++ - 多处理器编译 选择为"是(/MP)"<br /> 配置属性 - VC++目录 - 包含目录 添加notescppinclude所在目录<br /> 配置属性 - VC++目录 - 预编译头 选择"不使用预编译头"<br /> 配置属性 - 预处理器 - 预处理器定义 添加"W32"<br /> 配置属性 - 链接器 - 输入 - 附加依赖项 添加notes.lib路径<br /> 3、代码里注意加上 extern "C" {} （不加这个害的我一直 Failed to load DSAPI module）<br /> 示例下载</p>
+<p><strong>调试</strong></p>
+<pre>Debug_DSApi=3<br />Debug_Threadid=1<br />Debug_SSO_Trace_Level=2<br />Debug_Outfile=c:debugdebug.txt<br />WebAuth_Verbose_Trace=1<br />WebSess_Verbose_Trace=1<br />Console_Loglevel=2<br />Console_Log_Enabled=1</pre>
+<p>链接：</p>
+<p><a href="http://www.tutorialspoint.com/ansi_c/c_function_references.htm">C - Built-in Library Functions</a></p>
+<p><a href="https://www.ibm.com/developerworks/lotus/documentation/capi/">Lotus C/C++ API Toolkits for Lotus Notes and Domino documentation</a></p>
+<p><a href="http://frostillic.us/?p=155">Starting work on a DSAPI filter for Domino 8.5.2 on 64-bit Ubuntu &laquo; Tired Programmer</a></p>
+<p><a href="http://www.kongsli.net/nblog/2008/03/06/setting-up-a-dsapi-project-in-visual-studio-2005/">Setting up a DSAPI project in Visual Studio 2005</a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/lotus/capi-nd/">Lotus Notes/Domino 的 C API 编程</a></p>

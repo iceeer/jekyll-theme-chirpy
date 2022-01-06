@@ -1,0 +1,41 @@
+---
+layout: post
+status: publish
+published: true
+title: Nginx缓冲、反向代理
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1664
+wordpress_url: http://iceeerblog.sinaapp.com/?p=1664
+date: '2013-04-19 10:51:08 +0800'
+date_gmt: '2013-04-19 02:51:08 +0800'
+categories:
+- 未分类
+tags: []
+comments: []
+---
+<p><strong>使用</strong><br />
+nginx -t 检查配置<br />
+<strong>Windows下编译</strong><br />
+cgwin下<br />
+cd ~<br />
+wget http://nginx.org/download/nginx-1.2.8.tar.gz<br />
+tar -xzvf nginx-1.2.8.tar.gz<br />
+git clone https://github.com/gnosek/nginx-upstream-fair.git<br />
+git clone ttps://github.com/yaoweibin/nginx_upstream_check_module.git<br />
+cd nginx-1.2.8<br />
+./configure --prefix=. --sbin-path=nginx --with-cc-opt="-D FD_SETSIZE=4096" --add-module=../nginx-upstream-fair --add-module=../nginx_upstream_check_module<br />
+make<br />
+make install</p>
+<p>编译后，将nginx.exe及从cygwin/bin下拷贝cygwin1.dll,cyggcc_s-1.dll,cygz.dll,cygcrypto-0.9.8.dll,cygssl-0.9.8.dll,cygpcre-0.dll,cygcrypt-0.dll这几个dll到nginx目录下，从nginx windows版 拷贝conf、html、logs到nginx目录里。</p>
+<p>链接：<a href="http://momodog.iteye.com/blog/1284086">Nginx+Tomcat 负载均衡集群方案</a><br />
+<a href="http://www.iteye.com/topic/1119500">Nginx初步实践</a><br />
+<a href="http://www.yaosansi.com/post/1469.html">nginx 0.8.54/1.0.0 在 cygwin 环境下的编译（包括 nginx_mod_h264_streaming-2.2.7） </a><br />
+<a href="http://www.ttjoin.com/blog/index.php/archives/51">关于nginx upstream的几种配置方式</a></p>
+<p><a href="http://my.oschina.net/766/blog/156826?from=20130901">nginx模块nginx-http-footer-filter(淘宝开发)</a></p>
+<p><a title="tengine &ndash; Web服务器[centos]" href="http://blog.xystoy.com/?p=1870">淘宝修改版tengine</a></p>

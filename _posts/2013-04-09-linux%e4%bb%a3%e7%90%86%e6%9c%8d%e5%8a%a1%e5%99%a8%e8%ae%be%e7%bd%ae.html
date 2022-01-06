@@ -1,0 +1,120 @@
+---
+layout: post
+status: publish
+published: true
+title: CentOS使用集锦
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1857
+wordpress_url: http://blog.xystoy.com/?p=1857
+date: '2013-04-09 16:10:31 +0800'
+date_gmt: '2013-04-09 08:10:31 +0800'
+categories:
+- 软件
+- Linux
+tags: []
+comments: []
+---
+<p><strong>重启</strong><br />
+reboot<br />
+<strong>关闭</strong><br />
+poweroff<br />
+<strong>附加的安装源</strong></p>
+<p>yum install yum-priorities<br />
+rpm -Uvh http://apt.sw.be/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm<br />
+rpm -Uvh&nbsp;http://mirror.ancl.hawaii.edu/linux/epel/6/i386/epel-release-6-8.noarch.rpm<br />
+<del>rpm -Uvh http://mirrors.dotsrc.org/jpackage/6.0/generic/free/RPMS/jpackage-utils-5.0.0-7.jpp6.noarch.rpm</del></p>
+<p>yum update</p>
+<p><b>yum grouplist</b></p>
+<p><b>yum groupinstall "X Window System" "GNOME Desktop Environment"</b></p>
+<p><strong>vnc服务器设置&nbsp;</strong></p>
+<p>yum install tigervnc<br />
+yum install tigervnc-server<br />
+vncserver :n n是sessionnumber，不指定默认为1，也可以是2、3等等，1对应的远控端口就是5901<br />
+vncserver -list<br />
+vncserver -kill :n</p>
+<p><strong>yum的代理服务器配置</strong></p>
+<p>修改文件/etc/yum.conf，加上：<br />
+proxy=http://name:password@192.168.1.1:8080</p>
+<p><strong>Centos设置静态IP</strong></p>
+<p>先用ifconfig看一下eth多少，然后创建文件ifcfg-eth？</p>
+<p>/etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p>DEVICE=eth0<br />
+BOOTPROTO=none<br />
+BROADCAST=192.168.168.255<br />
+HWADDR=00:0c:29:56:58:94<br />
+IPADDR=192.168.168.168<br />
+NETMASK=255.255.255.0<br />
+GATEWAY=192.168.168.2<br />
+ONBOOT=yes<br />
+TYPE=Ethernet<br />
+IPV6INIT=no<br />
+USERCTL=no<br />
+DNS1=192.168.168.2<br />
+DNS2=202.96.209.133</p>
+<p>重启网络服务：&nbsp;service network restart<br />
+<strong>网络临时设置</strong><br />
+ifconfig eth0 192.168.0.22 netmask 255.255.255.0<br />
+route add default gw 192.168.0.1<br />
+echo "nameserver 168.95.1.1" > /etc/resolv.conf<br />
+<strong>网络图形化设置</strong><br />
+yum install system-config-network-tui<br />
+开机即启动网卡：sed -i -e 's/ONBOOT=no/ONBOOT=yes/' /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p><strong>防火墙设置</strong><br />
+yum install system-config-firewall-tui<br />
+iptables -L<br />
+<strong>Yum使用</strong><br />
+yum update 更新<br />
+yum install<br />
+yum remove<br />
+yum search<br />
+yum list<br />
+<strong>在虚拟机中复制后网卡改变的解决方法</strong><br />
+rm -f /etc/udev/rules.d/70-persistent-net.rules 然后重启后设置网络</p>
+<p>或修改/etc/udev/rules.d/70-persistent-net.rules和/etc/sysconfig/network-scripts改为eth0，并且mac相同<br />
+<strong>查看版本</strong><br />
+cat /etc/redhat-release<br />
+uname -i<br />
+<strong>CentOS如何开机不进X</strong><br />
+默认安装X的CentOS开机就会启动X，但是有的时候我们不想这么做，而是在需要配置的时候才启动X。<br />
+我们可以修改/etc/inittab文件。找到id:5: initdefault:这一行，将它改为id:3:initdefault:后重新启动系统即可。<br />
+这是因为Linux操作系统有六种不同的运行级(run level)，在不同的运行级下，系统有着不同的状态，这六种运行级分别为：<br />
+0：停机(记住不要把initdefault 设置为0，因为这样会使Linux无法启动 )<br />
+1：单用户模式，就像Win9X下的安全模式。<br />
+2：多用户，但是没有 NFS 。<br />
+3：完全多用户模式，标准的运行级。<br />
+4：一般不用，在一些特殊情况下可以用它来做一些事情。<br />
+5：X11，即进到 X-window 系统。<br />
+6：重新启动 (记住不要把initdefault 设置为6，因为这样会使Linux不断地重新启动)。<br />
+其中运行级3就是我们要进入的标准Console字符界面模式。</p>
+<p><strong>yum安装本地源</strong></p>
+<p>mount -o loop /media/CentOS-6.3-x86_64-bin-DVD1.iso /media/CentOS/<br />
+yum --disablerepo=/* --enablerepo=c6-media install gcc</p>
+<p>恢复其他源&nbsp;yum --enablerepo=* install gcc</p>
+<p><strong>端口：</strong><br />
+netstat   -tunpl<br />
+查看TCP端口&nbsp;netstat -ant</p>
+<p>查看UDP端口&nbsp;netstat -anu</p>
+<p><strong>服务：</strong></p>
+<p>关闭服务 service 服务名 stop</p>
+<p>禁用自动启动 chkconfig 服务名 off</p>
+<p><strong>查看温度：</strong></p>
+<p>yum install -y lm_sensors</p>
+<p>sensors</p>
+<h2 id="post-4815"><a title="Permalink to （原创）RHEL/CentOS 6.x 系统服务详解" href="http://www.ha97.com/4815.html" rel="bookmark">RHEL/CentOS 6.x 系统服务详解</a></h2>
+<p>时间设置：<a href="http://www.huanxiangwu.com/102/rhel-centos-time-solution">RHEL Centos时间不正确的解决方法</a></p>
+<p>etc/sysconfig/clock<br />
+ZONE=&rdquo;Asia/Shanghai&rdquo;<br />
+UTC=false</p>
+<p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
+<p><strong>硬盘安装：<a href="http://blog.csdn.net/cnclenovo/article/details/11358447">新的开始之Win7、CentOS 6.4 双系统 硬盘安装</a></strong></p>
+<p>链接：<a href="http://easwy.com/blog/archives/proxy-setting-on-linux-console/">Linux下常用程序的代理服务器(proxy)配置</a><br />
+<a href="http://blog.csdn.net/daydreamingboy/article/details/8196747">tigerVNC的简单使用教程（CentOS的远程桌面连接）</a><br />
+<a href="http://blog.miniasp.com/post/2012/07/30/CentOS-63-Minimal-Installation-and-Configuration-Notes.aspx">CentOS 6.3 最小安裝 (minimal) 初始化設定筆記</a><br />
+<a href="http://www.envision-systems.com.au/blog/2012/09/21/fix-eth0-network-interface-when-cloning-redhat-centos-or-scientific-virtual-machines-using-oracle-virtualbox-or-vmware/">Fix eth0 network interface when cloning RedHat, CentOS or Scientific virtual machines using Oracle VirtualBox or VMWare</a><br />
+<a href="http://repoforge.org/use/">RepoForge</a></p>

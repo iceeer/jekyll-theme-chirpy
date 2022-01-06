@@ -1,0 +1,43 @@
+---
+layout: post
+status: publish
+published: true
+title: 源码管理
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 1951
+wordpress_url: http://blog.xystoy.com/?p=1951
+date: '2013-07-25 15:00:02 +0800'
+date_gmt: '2013-07-25 07:00:02 +0800'
+categories:
+- 开发
+tags:
+- SVN
+- GIT
+comments: []
+---
+<p><strong>Git</strong></p>
+<p><a href="http://blog.csdn.net/laizhenhai88/article/details/7234974">Eclipse上GIT插件EGIT使用手册</a></p>
+<p>撤销本地修改：git reset --hard origin/master</p>
+<p>提交前预览：git commit -v</p>
+<p>添加所有修改的：git add -A</p>
+<p>提交全部并记录：git commit -a -m 'message'</p>
+<p>推送：git push</p>
+<p>更新：git pull</p>
+<p>查看当前状态：git status</p>
+<p>忽略文件：添加到.gitignore</p>
+<p>忽略文件后，如果已经提交过的，运行：</p>
+<pre><code>1)git rm -r --cached .
+2)git add .
+3)git commit -m ".gitignore is now working"</code></pre>
+<p><strong>SVN</strong></p>
+<p>服务器迁移后修改本地路径：svn sw --relocate</p>
+<p>VisualSVN Server复制迁移后客户端提交出错：</p>
+<p>The POST request returned invalid XML in the response: XML parse error at line<br />
+3: not well-formed (invalid token) (/svn/dev/!svn/me)</p>
+<p>解决方法：打开SVN服务器管理端，右击服务器点击&ldquo;属性&rdquo;，反复勾选"Automatically adjust permissions"并点击应用</p>

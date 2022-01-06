@@ -1,0 +1,51 @@
+---
+layout: post
+status: publish
+published: true
+title: 关系数据库嫁给Domino
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 930
+wordpress_url: http://iceeer.huiq.net/?p=930
+date: '2010-10-16 13:44:27 +0800'
+date_gmt: '2010-10-16 05:44:27 +0800'
+categories:
+- TODO
+- 开发
+- Domino/Notes
+tags:
+- DECS
+- Domino
+- java
+- Oracle
+- RDB
+- repeat
+- 关系数据库
+comments: []
+---
+<p><strong>DECS</strong></p>
+<p>decsadm.nsf &nbsp;DECS管理端</p>
+<p>ndctest.exe 测试数据库服务连接</p>
+<p>问题搜集：</p>
+<p>"<em>No database were found</em> on ..." &nbsp; 连不到Domino服务器造成的，trace一下</p>
+<p>decs Monitor failure -- Error: [Execute Statement]ORA-01747: user.table.column, table.column 查一下数据库设计中是否有SQL保留字</p>
+<p>功能：</p>
+<p>监控Domino文档的创建、打开、更新、删除并同步到关系数据库</p>
+<p>关系数据库的更新（创建、删除好像不会同步到Domino，在关系数据库删除后如果在Domino中打开对应文档会出现错误：&nbsp; DECS: Monitor failure -- Error: Cannot locate corresponding external record: ...）</p>
+<p>从关系数据库导入Key（防止Domino数据库存在相同关键字的文档）</p>
+<p><strong>DCR</strong></p>
+<p>在数据库属性中启用&ldquo;允许使用DCR连接到外部数据库&rdquo;</p>
+<p>在数据库中创建Data Connection</p>
+<p>在表单域属性中设置</p>
+<p><strong>Domino DB2</strong></p>
+<p><strong><a href="http://iceeer.huiq.net/wp-content/uploads/2010/10/DB2D8trial.pdf">DB2 For Domino Administrators And Developers</a><br /> </strong></p>
+<p>链接：</p>
+<p><a href="http://www.slideshare.net/dominion/integrating-domino-data-with-decs-dcrs-and-lclsx">Integrating Domino Data with DECS, DCRs, and LC/LSX</a></p>
+<p><a href="http://www-10.lotus.com/ldd/ddwiki.nsf/dx/xpage_integration_rdb.htm">Using XPages to Integrate Between Notes Applications with Relational Databases</a></p>
+<p><a href="https://www-304.ibm.com/support/docview.wss?uid=swg27002633">Domino Enterprise Connection Services (DECS) troubleshooting script</a></p>
+<p><a href="http://blog.csdn.net/mdifferent/archive/2011/04/28/6368955.aspx">数据库设计中SQL保留字</a></p>

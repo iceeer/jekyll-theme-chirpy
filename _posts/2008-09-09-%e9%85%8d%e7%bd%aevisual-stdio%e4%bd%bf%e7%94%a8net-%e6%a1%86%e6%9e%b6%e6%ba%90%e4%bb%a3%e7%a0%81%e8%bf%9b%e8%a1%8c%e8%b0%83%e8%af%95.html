@@ -1,0 +1,56 @@
+---
+layout: post
+status: publish
+published: true
+title: 配置Visual Stdio使用.NET 框架源代码进行调试
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 32
+wordpress_url: http://iceeer.huiqiu.net.cn/?p=32
+date: '2008-09-09 22:18:58 +0800'
+date_gmt: '2008-09-09 14:18:58 +0800'
+categories:
+- 开发
+- Visual Studio
+tags:
+- ".net"
+- Visual Studio
+- 代码
+- 工具
+- 开发
+- 调试
+comments: []
+---
+<p id="h-km"><strong id="h-km0">0)</strong> 安装 <a id="h-km1" href="https://connect.microsoft.com/VisualStudio/Downloads/DownloadDetails.aspx?DownloadID=10443&amp;wa=wsignin1.0" target="_blank"><span style="color: #810081;">Visual Studio 2008 QFE</span></a> 补丁，修正下载源代码时的性能问题。</p>
+<p id="h-km3"><strong id="h-km4">1)</strong> 打开Visual Studio 2008，进入 <strong id="q1az">Tools</strong> > <strong id="q1az0">Options </strong>> <strong id="q1az1">Debugging </strong>> <strong id="q1az2">General</strong>（工具>选项>调试>常规）.  <br id="tidn" /></p>
+<ul id="h-km9">
+<li id="h-km10">关闭&rdquo;<strong id="h-km12">Enable Just My Code</strong>&rdquo;(启用&ldquo;仅我的代码&rdquo;) 设置</li>
+<li id="h-km13">开启&rdquo;<strong id="h-km15">Enable Source Server Support</strong>&rdquo; (从符号服务器加载符号)设置</li>
+</ul>
+<p id="h-km16"><strong id="h-km17">2)</strong> 进入&rdquo;Symbols&rdquo;页设置下载源码的路径</p>
+<ul id="h-km18">
+<li id="h-km19">设置符号文件路径: <strong id="tidn0">http://referencesource.microsoft.com/symbols</strong></li>
+<li id="h-km21">设置缓冲文件夹&ldquo;<span id="n936" class="nonLinkTerms"><strong id="n9360">Cache symbols from symbols server to this directory</strong></span>&rdquo;（将符号从符号服务器缓冲到此目录）路径</li>
+<li id="h-km22">&ldquo;<strong id="df8n">Search the above locations only when symbols are loaded manually</strong>&ldquo;(使用以上位置加载符号)选项：如果启用则手动下载源码</li>
+</ul>
+<p id="h-km23"><span style="color: #ff6600;">-如果使用Visual Stdio 2005 ，就看<a id="zz14" title="这篇" href="http://www.wintellect.com/cs/blogs/jrobbins/archive/2008/02/06/download-all-the-net-reference-source-code-at-once-with-net-mass-downloader.aspx">这篇</a> 。</span></p>
+<p id="h-km27"><span style="color: #000000;">-相关工具:</span></p>
+<ul id="h-km29">
+<li id="h-km30">
+<div id="h-km31"><span style="color: #000000;"><a id="ys5r" title="Net Mass Downloader" href="http://www.codeplex.com/NetMassDownloader">Net Mass Downloader</a> - 把全部源码下载下来的工具 <br id="fu9h" /></span></div>
+</li>
+</ul>
+<p id="u-oq"><span style="color: #000000;"> 也可以自己去</span><span style="color: #000000;">微软官方</span><span style="color: #000000;">下载提供的<a id="h-xw" title="源码库" href="http://referencesource.microsoft.com/netframework.aspx">源码库</a> <br id="fu9h1" /></span></p>
+<div id="fu9h2">
+<ul id="fu9h3">
+<li id="h-km33">
+<div id="h-km34"><a id="fp_n" title="Visual Studio Team System 2008 Team Suite 90天评估版" href="http://msdn.microsoft.com/zh-cn/evalcenter/bb655862.aspx">Visual Studio Team System 2008 Team Suite 90天评估版</a> - 这可是最重要的，无需介绍吧</div>
+</li>
+</ul>
+<p id="u-oq0"><br id="h-km35" /></p>
+</div>

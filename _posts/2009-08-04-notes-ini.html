@@ -1,0 +1,78 @@
+---
+layout: post
+status: publish
+published: true
+title: notes.ini
+author:
+  display_name: iceeer
+  login: iceeer
+  email: superuser@xystoy.com
+  url: ''
+author_login: iceeer
+author_email: superuser@xystoy.com
+wordpress_id: 343
+wordpress_url: http://iceeer.huiq.org/?p=343
+date: '2009-08-04 15:52:52 +0800'
+date_gmt: '2009-08-04 07:52:52 +0800'
+categories:
+- Domino/Notes
+tags:
+- Domino
+- ini
+- Notes
+- 配置
+comments: []
+---
+<p><strong>http_pwd_change_cache_hours</strong>=1 ;强行将老密码有效期改为一个小时</p>
+<p>HTTP_PWD_CHANGE_CACHE_HOURS=0 禁用HTTP密码缓存功能<br />
+如果要立即清理HTTP密码缓存，可以在控制台执行命令：show nlcache reset</p>
+<p><strong><a href="http://www.admincamp.de/customer/notesini.nsf/85255a87005060c585255a850068ca6f/005d5bb8854cee38c1256d6e007dd450?OpenDocument">Client_Clock</a></strong>=1 ;Enables the RPC's (from the client to a server) to be outputed to a file or the screen (0= Disabled)</p>
+<p><strong>ADMIN_CLIENT_SKIP_DOMINO</strong>=1 ;IBM Lotus Administrator打开文件项时不扫描domino文件夹内容</p>
+<p><strong>HTTPAllowDecodedUrlPercent</strong>=1 ; 解决Domino禁止URL地址包含百分号(%)</p>
+<p><strong>agentThreadDebug</strong>=1 ;值设为1或者0，1表示打开代理调试模式<br />
+<strong>AMgr_SchedulingInterval</strong>=10 ;设置代理管理器安排定时代理的最小时间间隔,10表示最小间隔为10分钟。AMgr_SchedulingInterval的有效值是1到60分钟<br />
+<strong>Amgr_WeekendDays</strong>=1,6,7 ;指定代理管理器的&ldquo;周末&rdquo;时间,在定时代理中可以设定该代理周末不运行,&ldquo;周末&rdquo;时间Amgr_WeekendDays的默认值是周六、周日<br />
+<strong>DominoAsynchronizeAgents </strong>= 1 ;平行的运行WEB触发的代理。例如，如果有一个WEBQUERYOPEN代理，同时运行这个代理的几率很大，但是NOTES不支持同时运行同一个代理，因此，如果三个用户同时申请了运行这个代理，那么只有一个用户的申请被批准，其余的只有等待。用了以上的设置之后，三个用户可以同时运行这个代理。</p>
+<p><strong>FormulaTimeout</strong>=60 ;设置公式运行时间限制,60表示公式最大执行时间为60秒，默认为无限制<br />
+<strong>Platform_Statistics_Enabled</strong>=1 ;让Domino最大限度地获得系统的内存，Domino 5.0.2（及更高版本）的这一属性支持Windows NT和Solaris平台<br />
+<strong>GOFASTER</strong>=1 ;设置加快视图索引速度,0表示放慢</p>
+<p><strong>NoWebFileSystemACLs</strong>=1 ;允许匿名用户访问dominoHTML目录</p>
+<p><strong>DominoCompleteDoctype</strong>改变Domino生成的HTML 标签(Domino 6.5.3+支持)，当出现HTML代码、游览器相同但显示效果不同时试着修改一下 标签看看。可取的值为：<br />
+0;<br />
+1;<br />
+2;<br />
+PS:也可以通过修改$$HTMLFrontMatter域（Domino 7.0.2+支持）</p>
+<p><strong>Server_Session_Timeout</strong> =30 ;30分钟后，如果用户 端（WEB）处于空闲状态，则自动关闭用户客户端到服务器端的连接，并释放资源。当用户重新操作客户端时，可再次创建新的连接（无需重输口令）</p>
+<p><strong>ServerTasks=</strong>;程序运行时运行的任务<br />
+<strong>ServerTasksAt0=</strong>;0点计划运行的任务（ServerTasksAt23则是23点时计划运行的任务）</p>
+<p><strong>TCPIP</strong>=TCP, 0, 15, 0,,12288,<br />
+;参数由6个部分组成，参数之间使用逗号（，）分隔。从左到右各个位置上的配置值分别是：</p>
+<p>argv[0] &mdash; Domino支持的协议名称，如：TCP、Netbios等。<br />
+argv[1] &mdash; 协议绑定的网络适配编号（未使用）。<br />
+argv[2] &mdash; 连接会话的请求编号（未使用）。<br />
+argv[3] &mdash; 数据缓冲区大小。若配置为0，则数据缓冲区大小使用缺省值。对于不同的协议，分配的缺省数据缓冲区大小也不相同。<br />
+TCP：缺省大小为 8000<br />
+XPC：缺省大小为 2000<br />
+Netbios：缺省值为 8000<br />
+argv[4] &mdash; 指定预分配的网络缓冲区的数目（未使用）。<br />
+argv[5] &mdash; 端口功能启用标志。<br />
+未启用加密与压缩功能标志值为 0x3000 （12288）<br />
+加密功能标志值为 0x8000 （32768）<br />
+压缩功能标志值为 0x0020 （32）<br />
+argv[5]的值，由其中某两个标志位值相加而来的。启用加密与压缩功能时，其值为 0x8000 + 0x0020 = 0x8020 （32800）；仅启用压缩功能时，其值为：0x0020 + 0x3000 = 0x3020 （12320）；同理，仅启用加密功能时，其值为： 0x8000 + 0x3000 = 0xB000（45056）</p>
+<p><strong><a href="/?p=612">日记相关配置项</a></strong></p>
+<p><strong>HTTPJVMMaxHeapSize</strong></p>
+<p><strong>HTTPJVMMaxHeapSizeSet</strong>=1 to prevent the server from resetting the HTTPJVMHeapSize ini back to 64 M from 256 M</p>
+<p><strong>JavaCompilerTarget=1.2 Java代理编译版本</strong></p>
+<p><strong>NAMES</strong>=NAMES, CN=serverwest/OU=west/O=acme!!NAMES, CN=servereast/OU=east/O=acme!!NAMES 多目录（只用来取用户信息）</p>
+<p><em>也可以通过配置目录服务实现多目录（服务器文档-基本-目录信息）</em></p>
+<p><strong>修改notes端口为13522</strong> ：TCPIP_TCPIPAddress=0, 192.168.1.110:13522</p>
+<p>PS:控制台修改配置命令：Set Configuration <em>配置名=配置值</em><br />
+Set configuration http_pwd_change_cache_hours=1<br />
+显示配置值：Show configuration <em>配置名</em><br />
+链接：<a href="http://www.ibm.com/developerworks/lotus/documentation/notes-ini/">Lotus Notes/Domino notes.ini settings</a><br />
+<a href="http://tech.it168.com/a2009/0427/273/000000273961.shtml">notes.ini文件的配置参数详解</a><br />
+<a href="http://www.kalechi.com/notesini/name?openview">Notes.ini Entries</a></p>
+<p><a href="https://www-304.ibm.com/support/docview.wss?uid=swg21096916">Quick Guide to Setting up Directory Assistance with the Master Address Book</a></p>
+<p><a href="http://www-12.lotus.com/ldd/doc/domino_notes/6.5.1/help65_admin.nsf/f4b82fbb75e942a6852566ac0037f284/5db188bd4abfaf9e85256dff004b55ea?OpenDocument">Editing the NOTES.INI file</a></p>
+<p><a href="http://blog.csdn.net/squallzhong/article/details/5201455">Domino安装配置系统之七 ：Lotus Domino R8.x分区服务器配置手册</a></p>
