@@ -1,0 +1,59 @@
+---
+title: windows删文件提示没权限
+date: 2025-12-19 +0800
+---
+问题：windows删文件提示没权限
+
+解决：获取权限
+
+运行reg，在右击菜单加上 获取管理员权限 菜单
+
+Add.reg
+
+```bash
+Windows Registry Editor Version 5.00
+
+[-HKEY_CLASSES_ROOT\*\shell\runas]
+
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="获取超级管理员权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,-78"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[-HKEY_CLASSES_ROOT\Directory\shell\runas]
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="获取超级管理员权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,-78"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+[-HKEY_CLASSES_ROOT\dllfile\shell]
+
+[HKEY_CLASSES_ROOT\dllfile\shell\runas]
+@="获取超级管理员权限"
+"HasLUAShield"=""
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\dllfile\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[-HKEY_CLASSES_ROOT\Drive\shell\runas]
+
+[HKEY_CLASSES_ROOT\Drive\shell\runas]
+@="获取超级管理员权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,-78"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Drive\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+```
