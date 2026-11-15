@@ -39,38 +39,26 @@
     </li>
     <!-- the real tabs -->
     {% for tab in site.tabs %}
-    {% if tab.url == '/tools/' %}
-    <!-- tools dropdown with sub-menus -->
-    <li class="nav-item nav-group{% if tab.url == page.url %}{{ " active" }}{% endif %}">
-      <a href="{% if tab.redirect %}{{ tab.redirect }}{% else %}{{ tab.url | relative_url }}{% endif %}" class="nav-link"{% if tab.redirect %} target="_blank" rel="noopener"{% endif %}>
-        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
-        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-
-        <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
-        <i class="fas fa-caret-down caret-unloaded unloaded"></i>
-      </a>
-      <ul class="sub-nav">
-        <li>
-          <a href="http://pacman.xystoy.com/" target="_blank" rel="noopener">
-            <i class="fa-fw fas fa-gamepad ml-xl-3 mr-xl-3 unloaded"></i>
-            <span>吃豆人</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://map.xystoy.com/" target="_blank" rel="noopener">
-            <i class="fa-fw fas fa-map-marked-alt ml-xl-3 mr-xl-3 unloaded"></i>
-            <span>地图</span>
-          </a>
-        </li>
-      </ul>
-    </li> <!-- .nav-group -->
-    {% else %}
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{% if tab.redirect %}{{ tab.redirect }}{% else %}{{ tab.url | relative_url }}{% endif %}" class="nav-link"{% if tab.redirect %} target="_blank" rel="noopener"{% endif %}>
         <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
         {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
 
         <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+      </a>
+    </li> <!-- .nav-item -->
+    {% if tab.url == '/tools/' %}
+    <!-- extra sibling tools (same level as 工具) -->
+    <li class="nav-item">
+      <a href="http://pacman.xystoy.com/" class="nav-link" target="_blank" rel="noopener">
+        <i class="fa-fw fas fa-gamepad ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>吃豆人</span>
+      </a>
+    </li> <!-- .nav-item -->
+    <li class="nav-item">
+      <a href="https://map.xystoy.com/" class="nav-link" target="_blank" rel="noopener">
+        <i class="fa-fw fas fa-map-marked-alt ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>地图</span>
       </a>
     </li> <!-- .nav-item -->
     {% endif %}
@@ -118,60 +106,3 @@
   </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->
-
-<style>
-  /* ---- sidebar tools dropdown ---- */
-  #sidebar .nav-group {
-    position: relative;
-  }
-
-  #sidebar .sub-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0;
-    list-style: none;
-    background: var(--sidebar-btn-bg);
-    border-top: 1px solid var(--sidebar-muted-color);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  #sidebar .sub-nav li {
-    width: 100%;
-  }
-
-  #sidebar .sub-nav a {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    height: 2.6rem;
-    padding-left: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--sidebar-muted-color);
-  }
-
-  #sidebar .sub-nav a:hover {
-    color: var(--sidebar-active-color) !important;
-    background: var(--sidebar-btn-bg);
-  }
-
-  #sidebar .nav-group:hover .sub-nav,
-  #sidebar .nav-group:focus-within .sub-nav {
-    display: block;
-  }
-
-  #sidebar .nav-group:hover .caret-unloaded {
-    transform: rotate(180deg);
-  }
-
-  #sidebar .sub-nav .fa-fw {
-    font-size: 0.9rem;
-  }
-</style>
