@@ -1,5 +1,5 @@
 ---
-title: "Could not install Gradle distribution from Reason:java.net.SocketTimeoutException"
+title: "Could not install Gradle distribution from Reason java.net.SocketTimeoutException"
 date: 2024-10-31 19:13:17 +0800
 ---
 

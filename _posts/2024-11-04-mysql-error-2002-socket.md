@@ -1,5 +1,5 @@
 ---
-title: "ERROR 2002 (HY000): Can't connect to local MySQL server through socket"
+title: "ERROR 2002 (HY000) Can't connect to local MySQL server through socket"
 date: 2024-11-04 +0800
 ---
 错误：允许mysql -u root -p报错

@@ -1,5 +1,5 @@
 ---
-title: "Failed to activate service 'org.freedesktop.systemd1': timed out"
+title: "Failed to activate service 'org.freedesktop.systemd1' timed out"
 date: 2025-05-07 +0800
 ---
 错误：
