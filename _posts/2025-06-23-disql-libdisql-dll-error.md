@@ -1,5 +1,5 @@
 ---
-title: disql: error while loading shared libraries: libdisql_dll.so
+title: "disql: error while loading shared libraries: libdisql_dll.so"
 date: 2025-06-23 +0800
 ---
 

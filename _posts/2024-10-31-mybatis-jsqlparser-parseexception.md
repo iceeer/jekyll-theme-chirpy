@@ -1,5 +1,5 @@
 ---
-title: mybatis报错：net.sf.jsqlparser.parser.ParseException
+title: "mybatis报错：net.sf.jsqlparser.parser.ParseException"
 date: 2024-10-31 10:50:38 +0800
 ---
 

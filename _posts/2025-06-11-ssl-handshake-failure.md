@@ -1,5 +1,5 @@
 ---
-title: javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+title: "javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure"
 date: 2025-06-11 +0800
 ---
 
